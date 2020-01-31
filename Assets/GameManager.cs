@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         InitLevel();
-        
     }
 
     // Update is called once per frame
@@ -59,7 +58,7 @@ public class GameManager : MonoBehaviour
             ChoreDone();
         }
     }
-
+    
     private void UpdateLevelTimer()
     {
         currentTime += Time.deltaTime;
@@ -69,5 +68,11 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("You lose!");
         }
+    }
+    
+    public void EndGame()
+    {
+
+        Application.Quit();
     }
 }
