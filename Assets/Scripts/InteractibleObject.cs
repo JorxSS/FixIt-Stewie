@@ -58,7 +58,7 @@ public class InteractibleObject : MonoBehaviour
 
     public void Throw()
     {
-        //player.GetComponent<PlayerController>().SetCarriedGO(null);
+        player.GetComponent<PlayerController>().SetCarriedGO(null);
         IdleToDestroyed();
     }
     public void Place()
