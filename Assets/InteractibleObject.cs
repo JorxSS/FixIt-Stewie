@@ -9,7 +9,6 @@ public class InteractibleObject : MonoBehaviour
         MOVABLE,
         DESTROYABLE,
         REPARABLE
-
     };
     
     public TypeOfObject typeOfObject;
@@ -30,41 +29,19 @@ public class InteractibleObject : MonoBehaviour
         state = State.IDLE;
     }
 
-    // Update is called once per frame
-    void Update()
+    void TriggerAction()
     {
-        switch(state)
+        switch(typeOfObject)
         {
-            case State.IDLE:
-                UpdateIDLE();
+            case TypeOfObject.MOVABLE:
+                IdleToAttached();
                 break;
-            case State.ATTACHED:
-                UpdateATTACHED();
+            case TypeOfObject.DESTROYABLE:
+                IdleToDestroyed();
                 break;
-            case State.DESTROYED:
-                UpdateDESTROYED();
+            case TypeOfObject.REPARABLE:
+                IdleToRepaired();
                 break;
-            case State.REPAIRED:
-                UpdateREPAIRED();
-                break;
-        }
-    }
-    void UpdateIDLE()
-    {
-        if (Input.GetKey(KeyCode.M))
-        {
-            switch(typeOfObject)
-            {
-                case TypeOfObject.MOVABLE:
-                    IdleToAttached();
-                    break;
-                case TypeOfObject.DESTROYABLE:
-                    IdleToDestroyed();
-                    break;
-                case TypeOfObject.REPARABLE:
-                    IdleToRepaired();
-                    break;
-            }
         }
     }
 
@@ -85,8 +62,4 @@ public class InteractibleObject : MonoBehaviour
         transform.position = new Vector3(1, 0, 0);
         state = State.ATTACHED;
     }
-
-    void UpdateATTACHED(){}
-    void UpdateDESTROYED(){}
-    void UpdateREPAIRED(){}
 }
