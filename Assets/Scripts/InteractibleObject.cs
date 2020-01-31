@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class InteractibleObject : MonoBehaviour
 {
+    public GameObject player;
     public enum TypeOfObject
     {
         MOVABLE,
@@ -12,22 +14,10 @@ public class InteractibleObject : MonoBehaviour
     };
     
     public TypeOfObject typeOfObject;
-    enum State
-    {
-        IDLE,
-        ATTACHED,
-        DESTROYED,
-        REPAIRED
-    };
 
-    State state;
     public GameObject reparedGO;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        state = State.IDLE;
-    }
+    public ContainerScript.Container container;
 
     public void TriggerAction()
     {
@@ -56,10 +46,29 @@ public class InteractibleObject : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void IdleToAttached(){
-        GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
+    void IdleToAttached() {
         transform.parent = player.transform;
-        transform.position = new Vector3(1, 0, 0);
-        state = State.ATTACHED;
+        transform.localPosition = new Vector3(0.01f, 0, 0);
+        BoxCollider boxCollider = GetComponent<BoxCollider>();
+        boxCollider.enabled = false;
+        NavMeshObstacle navMeshObstacle = GetComponent<NavMeshObstacle>();
+        navMeshObstacle.enabled = false;
+        player.GetComponent<PlayerController>().SetCarriedGO(this);
+    }
+
+    public void Throw()
+    {
+        player.GetComponent<PlayerController>().SetCarriedGO(null);
+        IdleToDestroyed();
+    }
+    public void Place()
+    {
+        transform.localPosition = new Vector3(1, 0, 0);
+        transform.parent = null;
+        BoxCollider boxCollider = GetComponent<BoxCollider>();
+        boxCollider.enabled = true;
+        NavMeshObstacle navMeshObstacle = GetComponent<NavMeshObstacle>();
+        navMeshObstacle.enabled = true;
+        player.GetComponent<PlayerController>().SetCarriedGO(null);
     }
 }
