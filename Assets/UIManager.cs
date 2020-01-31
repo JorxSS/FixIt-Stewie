@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     [Header("GameState Windows")]
     public GameObject winScreen;
     public GameObject loseScreen;
+    public GameObject pauseScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -28,5 +29,10 @@ public class UIManager : MonoBehaviour
     public void SwitchLoseScreen(bool enabled)
     {
         loseScreen.SetActive(enabled);
+    }
+
+    public void SwitchPauseScreen(bool enabled)
+    {
+        pauseScreen.SetActive(enabled);
     }
 }

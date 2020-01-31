@@ -60,6 +60,10 @@ public class GameManager : MonoBehaviour
         {
             ChoreDone();
         }
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            PauseGame();
+        }
     }
     
     private void UpdateLevelTimer()
@@ -72,10 +76,21 @@ public class GameManager : MonoBehaviour
             uiManager.SwitchLoseScreen(true);
         }
     }
-    
+
+    public void PauseGame()
+    {
+        uiManager.SwitchPauseScreen(true);
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        uiManager.SwitchPauseScreen(false);
+        Time.timeScale = 1;
+    }
+
     public void EndGame()
     {
-
         Application.Quit();
     }
 }
