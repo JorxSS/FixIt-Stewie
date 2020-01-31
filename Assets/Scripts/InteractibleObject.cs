@@ -18,16 +18,6 @@ public class InteractibleObject : MonoBehaviour
     public ContainerScript.Container container;
 
     // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-        
-    }
-
     public void TriggerAction()
     {
         switch(typeOfObject)
@@ -60,5 +50,11 @@ public class InteractibleObject : MonoBehaviour
         transform.parent = player.transform;
         transform.position = new Vector3(1, 0, 0);
         player.GetComponent<PlayerController>().SetCarriedGO(this);
+    }
+
+    public void Throw()
+    {
+        //player.GetComponent<PlayerController>().SetCarriedGO(null);
+        IdleToDestroyed();
     }
 }

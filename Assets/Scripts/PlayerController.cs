@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
                     ContainerScript containerScript = hit.collider.gameObject.GetComponent<ContainerScript>();
                     if(containerScript != null)
                     {
-                        containerScript.Throw();
+                        containerScript.Throw(carriedGO);
                     }
                 }
 

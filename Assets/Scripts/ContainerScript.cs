@@ -27,8 +27,12 @@ public class ContainerScript : MonoBehaviour
         
     }
 
-    public void Throw()
+    public void Throw(InteractibleObject objContainer)
     {
-        
+        if(objContainer.container == container)
+        {
+            //Throws object to trash
+            objContainer.Throw();
+        }
     }
 }
