@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Core Managers")]
+    public UIManager uiManager;
+
     [Header("Timers")]
     public float levelTime = 100f;
 
@@ -39,7 +42,7 @@ public class GameManager : MonoBehaviour
         choresCounter.SetDoneChores(currentChoresDone);
         if (currentChoresDone >= numChoresToWin)
         {
-           // Debug.Log("You win!");
+            uiManager.SwitchWinScreen(true);
         }
     }
 
@@ -66,7 +69,7 @@ public class GameManager : MonoBehaviour
 
         if (currentTime >= levelTime)
         {
-            //Debug.Log("You lose!");
+            uiManager.SwitchLoseScreen(true);
         }
     }
     
