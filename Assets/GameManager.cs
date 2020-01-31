@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentChoresDone = 0f;
         currentTime = 0f;
     }
 
@@ -49,5 +50,11 @@ public class GameManager : MonoBehaviour
         {
             ChoreDone();
         }
+    }
+
+    public void EndGame()
+    {
+
+        Application.Quit();
     }
 }
