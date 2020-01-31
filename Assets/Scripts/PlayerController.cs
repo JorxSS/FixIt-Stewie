@@ -59,9 +59,11 @@ public class PlayerController : MonoBehaviour
             }
         }
         movement.MoveWASD();
-
+        if (Input.GetKeyDown(KeyCode.P) && carriedGO != null)
+        {
+            carriedGO.Place();
+        }
     }
-
 
     public void SetCarriedGO(InteractibleObject go)
     {

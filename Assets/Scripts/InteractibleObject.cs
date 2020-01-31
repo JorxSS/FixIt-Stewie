@@ -56,12 +56,14 @@ public class InteractibleObject : MonoBehaviour
         player.GetComponent<PlayerController>().SetCarriedGO(this);
     }
 
-    void Place()
+    public void Place()
     {
-        transform.parent = transform.root;
+        transform.localPosition = new Vector3(1, 0, 0);
+        transform.parent = null;
         BoxCollider boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = true;
         NavMeshObstacle navMeshObstacle = GetComponent<NavMeshObstacle>();
         navMeshObstacle.enabled = true;
+        player.GetComponent<PlayerController>().SetCarriedGO(null);
     }
 }
