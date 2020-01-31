@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetDebugInput();
         currentTime += Time.deltaTime;
         if (currentTime >= levelTime)
         {
@@ -34,6 +35,19 @@ public class GameManager : MonoBehaviour
         if (currentChoresDone >= numChoresToWin)
         {
             Debug.Log("You win!");
+        }
+    }
+
+    public void ChoreDone()
+    {
+        ++currentChoresDone;
+    }
+
+    private void GetDebugInput()
+    {
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            ChoreDone();
         }
     }
 }
