@@ -25,6 +25,29 @@ public class InteractibleObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        switch(state)
+        {
+            case State.IDLE:
+                UpdateIDLE();
+                break;
+            case State.ATTACHED:
+                UpdateATTACHED();
+                break;
+            case State.DESTROYED:
+                UpdateDESTROYED();
+                break;
+            case State.REPAIRED:
+                UpdateREPAIRED();
+                break;
+
+        }
     }
+
+    void UpdateIDLE(){}
+
+    void UpdateATTACHED(){}
+
+    void UpdateDESTROYED(){}
+
+    void UpdateREPAIRED(){}
 }
