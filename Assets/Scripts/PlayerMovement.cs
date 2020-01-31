@@ -26,11 +26,18 @@ public class PlayerMovement : MonoBehaviour
         {
             agent.ResetPath();
         }
-
-        rb.transform.position += movement * speed * Time.deltaTime;
+        if (movement != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(movement);
+        }
+        //transform.rotation = Quaternion.LookRotation(movement);
+        //rb.transform.position += movement * speed * Time.deltaTime;
+        transform.Translate(movement * speed * Time.deltaTime, Space.World);
     }
     public void MoveToPoint(Vector3 point)
     {
+        transform.rotation = agent.transform.rotation;
         agent.SetDestination(point);
+        
     }
 }
