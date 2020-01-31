@@ -29,7 +29,7 @@ public class InteractibleObject : MonoBehaviour
         state = State.IDLE;
     }
 
-    void TriggerAction()
+    public void TriggerAction()
     {
         switch(typeOfObject)
         {
