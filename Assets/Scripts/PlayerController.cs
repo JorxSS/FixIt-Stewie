@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     Camera cam;
     // Start is called before the first frame update
     PlayerMovement movement;
+
+    InteractibleObject carriedGO = null;
+
     void Start()
     {
         cam = Camera.main;
@@ -43,11 +46,25 @@ public class PlayerController : MonoBehaviour
                 {
                     interactedObject.TriggerAction();
                 }
+                else if(carriedGO != null)
+                {
+                    ContainerScript containerScript = hit.collider.gameObject.GetComponent<ContainerScript>();
+                    if(containerScript != null)
+                    {
+                        containerScript.Throw();
+                    }
+                }
 
 
             }
         }
         movement.MoveWASD();
 
+    }
+
+
+    public void SetCarriedGO(InteractibleObject go)
+    {
+        carriedGO = go;
     }
 }

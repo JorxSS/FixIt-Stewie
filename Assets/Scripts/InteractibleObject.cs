@@ -12,21 +12,20 @@ public class InteractibleObject : MonoBehaviour
     };
     
     public TypeOfObject typeOfObject;
-    enum State
-    {
-        IDLE,
-        ATTACHED,
-        DESTROYED,
-        REPAIRED
-    };
 
-    State state;
     public GameObject reparedGO;
+
+    public ContainerScript.Container container;
 
     // Start is called before the first frame update
     void Start()
     {
-        state = State.IDLE;
+
+    }
+
+    void Update()
+    {
+        
     }
 
     public void TriggerAction()
@@ -60,6 +59,6 @@ public class InteractibleObject : MonoBehaviour
         GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
         transform.parent = player.transform;
         transform.position = new Vector3(1, 0, 0);
-        state = State.ATTACHED;
+        player.GetComponent<PlayerController>().SetCarriedGO(this);
     }
 }
