@@ -5,6 +5,15 @@ using UnityEngine;
 public class InteractibleObject : MonoBehaviour
 {
 
+    public enum TypeOfObject
+    {
+        MOVABLE,
+        DESTROYABLE,
+        REPARABLE
+
+    };
+    
+    public TypeOfObject typeOfObject;
     enum State
     {
         IDLE,
@@ -15,6 +24,7 @@ public class InteractibleObject : MonoBehaviour
     };
 
     State state;
+    public GameObject reparedGO;
 
     // Start is called before the first frame update
     void Start()
@@ -43,11 +53,42 @@ public class InteractibleObject : MonoBehaviour
         }
     }
 
-    void UpdateIDLE(){}
+    void UpdateIDLE()
+    {
+        if (Input.GetKey(KeyCode.M))
+        {
+            switch(typeOfObject)
+            {
+                case TypeOfObject.MOVABLE:
+                    IdleToAttached();
+                    break;
+                case TypeOfObject.DESTROYABLE:
+                    IdleToDestroyed();
+                    break;
+                case TypeOfObject.REPARABLE:
+                    IdleToRepaired();
+                    break;
+            }
+        }
+    }
+
+
+    void IdleToDestroyed()
+    {
+        Destroy(gameObject);
+    }
+
+    void IdleToRepaired()
+    {
+        Instantiate(reparedGO, transform.position, transform.rotation);
+        Destroy(gameObject);
+    }
+
+    void IdleToAttached(){}
 
     void UpdateATTACHED(){}
-
     void UpdateDESTROYED(){}
-
     void UpdateREPAIRED(){}
+
+
 }
