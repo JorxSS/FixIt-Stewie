@@ -14,34 +14,41 @@ public class GameManager : MonoBehaviour
     public int numChoresToWin = 10;
 
     [SerializeField]
-    float currentChoresDone = 0f;
+    int currentChoresDone = 0;
+
+    [Header("UI")]
+    public ProgressBar timerBar;
+    public ChoresCounter choresCounter;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentChoresDone = 0f;
-        currentTime = 0f;
+        InitLevel();
     }
 
     // Update is called once per frame
     void Update()
     {
         GetDebugInput();
-        currentTime += Time.deltaTime;
-        if (currentTime >= levelTime)
-        {
-            Debug.Log("You lose!");
-        }
+        UpdateLevelTimer();
+    }
 
+    public void ChoreDone()
+    {
+        ++currentChoresDone;
+        choresCounter.SetDoneChores(currentChoresDone);
         if (currentChoresDone >= numChoresToWin)
         {
             Debug.Log("You win!");
         }
     }
 
-    public void ChoreDone()
+    private void InitLevel()
     {
-        ++currentChoresDone;
+        currentTime = 0f;
+        currentChoresDone = 0;
+        choresCounter.SetDoneChores(currentChoresDone);
+        timerBar.SetProgress(0);
     }
 
     private void GetDebugInput()
@@ -51,7 +58,18 @@ public class GameManager : MonoBehaviour
             ChoreDone();
         }
     }
+    
+    private void UpdateLevelTimer()
+    {
+        currentTime += Time.deltaTime;
+        timerBar.SetProgress(1 - currentTime / levelTime);
 
+        if (currentTime >= levelTime)
+        {
+            Debug.Log("You lose!");
+        }
+    }
+    
     public void EndGame()
     {
 
