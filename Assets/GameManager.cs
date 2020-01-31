@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     float currentTime = 0f;
 
+    public ProgressBar timerBar;
+
     [Header("Chores")]
     public int numChoresToWin = 10;
 
@@ -27,6 +29,8 @@ public class GameManager : MonoBehaviour
     {
         GetDebugInput();
         currentTime += Time.deltaTime;
+        timerBar.SetProgress(1 - currentTime/levelTime);
+
         if (currentTime >= levelTime)
         {
             Debug.Log("You lose!");

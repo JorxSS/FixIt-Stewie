@@ -28,6 +28,6 @@ public class ProgressBar : MonoBehaviour
     {
         this.currentProgress = currentProgress;
         float newRight = (1 - currentProgress) * barWidth;
-        fillTransform.offsetMax = new Vector2(newRight, 0);
+        fillTransform.offsetMax = new Vector2(-newRight, 0);
     }
 }
