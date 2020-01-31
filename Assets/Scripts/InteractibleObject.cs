@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class InteractibleObject : MonoBehaviour
 {
+    public GameObject player;
     public enum TypeOfObject
     {
         MOVABLE,
@@ -56,10 +58,23 @@ public class InteractibleObject : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void IdleToAttached(){
-        GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
+    void IdleToAttached() {
         transform.parent = player.transform;
-        transform.position = new Vector3(1, 0, 0);
+        transform.localPosition = new Vector3(0.01f, 0, 0);
+        BoxCollider boxCollider = GetComponent<BoxCollider>();
+        boxCollider.enabled = false;
+        NavMeshObstacle navMeshObstacle = GetComponent<NavMeshObstacle>();
+        navMeshObstacle.enabled = false;
+        
         state = State.ATTACHED;
+    }
+
+    void Place()
+    {
+        transform.parent = transform.root;
+        BoxCollider boxCollider = GetComponent<BoxCollider>();
+        boxCollider.enabled = true;
+        NavMeshObstacle navMeshObstacle = GetComponent<NavMeshObstacle>();
+        navMeshObstacle.enabled = true;
     }
 }
