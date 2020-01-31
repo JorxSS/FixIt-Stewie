@@ -19,7 +19,7 @@ public class InteractibleObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        state = IDLE;
+        state = State.IDLE;
     }
 
     // Update is called once per frame
