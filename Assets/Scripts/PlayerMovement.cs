@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public int speed = 10;
     NavMeshAgent agent;
     Rigidbody rb;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void MoveWASD()
     {
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        if (movement.magnitude > 0)
+        {
+            agent.ResetPath();
+        }
 
         rb.transform.position += movement * speed * Time.deltaTime;
     }

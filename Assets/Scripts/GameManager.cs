@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         choresCounter.SetDoneChores(currentChoresDone);
         if (currentChoresDone >= numChoresToWin)
         {
-            Debug.Log("You win!");
+           // Debug.Log("You win!");
         }
     }
 
@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
 
         if (currentTime >= levelTime)
         {
-            Debug.Log("You lose!");
+            //Debug.Log("You lose!");
         }
     }
     

@@ -23,10 +23,27 @@ public class PlayerController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                Debug.Log("We hit.. " + hit.collider.name + " " + hit.point);
+                //sDebug.Log("We hit.. " + hit.collider.name + " " + hit.point);
                 //Move our player to what we hit
                 movement.MoveToPoint(hit.point);
                 
+
+            }
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                //Debug.Log("We hit.. " + hit.collider.name + " " + hit.point);
+                //Move our player to what we hit
+                InteractibleObject interactedObject = hit.collider.gameObject.GetComponent<InteractibleObject>();
+                if (interactedObject != null)
+                {
+                    interactedObject.TriggerAction();
+                }
+
 
             }
         }
