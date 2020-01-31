@@ -14,22 +14,10 @@ public class InteractibleObject : MonoBehaviour
     };
     
     public TypeOfObject typeOfObject;
-    enum State
-    {
-        IDLE,
-        ATTACHED,
-        DESTROYED,
-        REPAIRED
-    };
 
-    State state;
     public GameObject reparedGO;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        state = State.IDLE;
-    }
+    public ContainerScript.Container container;
 
     public void TriggerAction()
     {
@@ -65,8 +53,7 @@ public class InteractibleObject : MonoBehaviour
         boxCollider.enabled = false;
         NavMeshObstacle navMeshObstacle = GetComponent<NavMeshObstacle>();
         navMeshObstacle.enabled = false;
-        
-        state = State.ATTACHED;
+        player.GetComponent<PlayerController>().SetCarriedGO(this);
     }
 
     void Place()
