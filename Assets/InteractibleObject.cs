@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class InteractibleObject : MonoBehaviour
 {
-
     public enum TypeOfObject
     {
         MOVABLE,
@@ -20,7 +19,6 @@ public class InteractibleObject : MonoBehaviour
         ATTACHED,
         DESTROYED,
         REPAIRED
-
     };
 
     State state;
@@ -49,10 +47,8 @@ public class InteractibleObject : MonoBehaviour
             case State.REPAIRED:
                 UpdateREPAIRED();
                 break;
-
         }
     }
-
     void UpdateIDLE()
     {
         if (Input.GetKey(KeyCode.M))
@@ -72,7 +68,6 @@ public class InteractibleObject : MonoBehaviour
         }
     }
 
-
     void IdleToDestroyed()
     {
         Destroy(gameObject);
@@ -84,11 +79,14 @@ public class InteractibleObject : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void IdleToAttached(){}
+    void IdleToAttached(){
+        GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
+        transform.parent = player.transform;
+        transform.position = new Vector3(1, 0, 0);
+        state = State.ATTACHED;
+    }
 
     void UpdateATTACHED(){}
     void UpdateDESTROYED(){}
     void UpdateREPAIRED(){}
-
-
 }
