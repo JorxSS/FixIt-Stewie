@@ -157,6 +157,7 @@ public class InteractibleObject : MonoBehaviour
 
     IEnumerator WaitForActionReparable()
     {
+        SoundManager.instance.SwitchRepairing(true);
         doingSomething = true;
         int dir = 1;
         float objective = Random.Range(0.0f, 1.0f);
@@ -189,6 +190,7 @@ public class InteractibleObject : MonoBehaviour
                 }
             }
         }
+        SoundManager.instance.SwitchRepairing(false);
         choresProgres.ChoreCompleted(typeOfObject);
         doingSomething = false;
         player.GetComponent<PlayerMovement>().enableMovement();
