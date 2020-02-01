@@ -68,7 +68,6 @@ public class InteractibleObject : MonoBehaviour
                 Throw(carriedGO);
                 break;
         }
-
     }
 
     void IdleToDestroyed()
