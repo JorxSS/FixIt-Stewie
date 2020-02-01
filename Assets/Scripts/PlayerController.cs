@@ -90,11 +90,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Interaction"))
         {
             Debug.Log("Pressing interaction button");
-            InteractibleObject interactedObject = objectInFocus.GetComponent<InteractibleObject>();
-            if (interactedObject != null)
+            if (objectInFocus != null)
             {
-                interactedObject.TriggerAction();
-                objectInFocus = null;
+                InteractibleObject interactedObject = objectInFocus.GetComponent<InteractibleObject>();
+                if (interactedObject != null)
+                {
+                    interactedObject.TriggerAction();
+                    objectInFocus = null;
+                }
             }
         }
     }

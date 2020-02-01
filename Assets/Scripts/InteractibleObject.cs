@@ -23,7 +23,6 @@ public class InteractibleObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        state = State.IDLE;
         outlineMaterial = GetComponent<MeshRenderer>().material;
     }
 
