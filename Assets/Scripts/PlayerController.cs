@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
                 if (interactedObject != null)
                 {
                     interactedObject.TriggerAction(carriedGO);
+                    objectInFocus.GetComponent<InteractibleObject>().SwitchHighlight(false);
                     objectInFocus = null;
                 }
                 else if(carriedGO != null)
@@ -138,8 +139,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void SetCarriedGO(InteractibleObject go)
+    public bool SetCarriedGO(InteractibleObject go)
     {
+        if (carriedGO != null && go != null)
+            return false;
         carriedGO = go;
+        return true;
     }
 }

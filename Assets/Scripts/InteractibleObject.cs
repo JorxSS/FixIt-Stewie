@@ -82,20 +82,24 @@ public class InteractibleObject : MonoBehaviour
 
     void IdleToRepaired()
     {
-        gameObject.GetComponent<MeshFilter>().mesh = reparedGO;
-        gameObject.tag = "Repaired";
-        SwitchHighlight(false);
-        Destroy(this);
+        pBar = Instantiate(progressBarPrefab, canvas.transform);
+        Vector3 screen = Camera.main.WorldToScreenPoint(transform.position);
+        RectTransform rectTransform = pBar.GetComponent<RectTransform>();
+        rectTransform.anchoredPosition = screen;
+        player.GetComponent<PlayerMovement>().disableMovement();
+        progressTime = 0;
+        StartCoroutine(WaitForActionReparable());
     }
 
     void IdleToAttached() {
+        if (!player.GetComponent<PlayerController>().SetCarriedGO(this))
+            return;
         transform.parent = player.transform;
         transform.localPosition = new Vector3(0.01f, 0, 0);
         BoxCollider boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = false;
         NavMeshObstacle navMeshObstacle = GetComponent<NavMeshObstacle>();
         navMeshObstacle.enabled = false;
-        player.GetComponent<PlayerController>().SetCarriedGO(this);
     }
 
     public void Throw(InteractibleObject carriedGO)
@@ -105,9 +109,10 @@ public class InteractibleObject : MonoBehaviour
             carriedGO.IdleToDestroyed();
         }
     }
+
     public void Place()
     {
-        transform.localPosition = new Vector3(1, 0, 0);
+        transform.position = player.transform.GetChild(1).transform.position;
         transform.parent = null;
         BoxCollider boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = true;
@@ -128,5 +133,22 @@ public class InteractibleObject : MonoBehaviour
         player.GetComponent<PlayerMovement>().enableMovement();
         Destroy(pBar);
         Destroy(gameObject);
+    }
+
+    IEnumerator WaitForActionReparable()
+    {
+        while (progressTime < 1.5f)
+        {
+            yield return null;
+            pBar.GetComponent<ProgressBar>().SetProgress(progressTime / 1.5f);
+            progressTime += Time.deltaTime;
+            //yield on a new YieldInstruction that waits for 1.5f seconds.
+        }
+        player.GetComponent<PlayerMovement>().enableMovement();
+        gameObject.GetComponent<MeshFilter>().mesh = reparedGO;
+        gameObject.tag = "Repaired";
+        SwitchHighlight(false);
+        Destroy(this);
+        Destroy(pBar);
     }
 }
