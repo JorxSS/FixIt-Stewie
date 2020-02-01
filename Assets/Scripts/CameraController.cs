@@ -7,12 +7,13 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     public int distanceZaxis = 1;
     public int distanceYaxis = 1;
-    Transform playerTransform;
+    public Transform playerTransform;
     private RaycastHit[] hits = null;
+    private int layer_mask;
 
     void Start()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        layer_mask = LayerMask.GetMask("scenario");
     }
 
     // Update is called once per frame
@@ -29,23 +30,18 @@ public class CameraController : MonoBehaviour
                     colliderRenderer.enabled = true;
                 }
             }
-
         }
-        Vector3 direction_to_player = playerTransform.position - transform.position;
 
-        hits = Physics.RaycastAll(transform.position, direction_to_player, direction_to_player.magnitude);
+        Vector3 direction_to_player = playerTransform.position - transform.position;
+        hits = Physics.RaycastAll(transform.position, direction_to_player, direction_to_player.magnitude, layer_mask);
 
         foreach (RaycastHit hit in hits)
         {
-            if (hit.collider.tag == "Scenario")
+            Renderer colliderRenderer = hit.collider.GetComponent<Renderer>();
+            if (colliderRenderer)
             {
-                Renderer colliderRenderer = hit.collider.GetComponent<Renderer>();
-                if (colliderRenderer)
-                {
-                    colliderRenderer.enabled = false;
-                }
+                colliderRenderer.enabled = false;
             }
-
         }
     }
 }

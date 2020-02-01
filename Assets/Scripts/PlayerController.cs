@@ -26,10 +26,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Hey dude I'm trying to move to this point" + Input.mousePosition);
+            //Debug.Log("Hey dude I'm trying to move to this point" + Input.mousePosition);
 
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -39,7 +38,7 @@ public class PlayerController : MonoBehaviour
             {
                 //Debug.Log("We hit.. " + hit.collider.name + " " + hit.point);
                 //Move our player to what we hit
-                Debug.Log("Hey dude I'm trying to move to this point");
+                //Debug.Log("Hey dude I'm trying to move to this point");
                 playerMovement.MoveToPoint(hit.point);
             }
         }
@@ -63,25 +62,16 @@ public class PlayerController : MonoBehaviour
                     transform.LookAt(pos, transform.up);
                 }
 
-                
                 InteractibleObject interactedObject = hit.collider.gameObject.GetComponent<InteractibleObject>();
                 if (interactedObject != null)
                 {
                     float dist = Vector3.Distance(hit.transform.position, transform.position);
-                    Debug.Log("Detected object is :" + dist);
+                    //Debug.Log("Detected object is :" + dist);
                     if (dist <= detectionDistance)
-                        interactedObject.TriggerAction();
-                }
-                else if(carriedGO != null)
-                {
-                    ContainerScript containerScript = hit.collider.gameObject.GetComponent<ContainerScript>();
-                    if(containerScript != null)
                     {
-                        containerScript.Throw(carriedGO);
+                        interactedObject.TriggerAction(carriedGO);
                     }
                 }
-
-
             }
         }
         Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")); 
@@ -95,15 +85,19 @@ public class PlayerController : MonoBehaviour
                 InteractibleObject interactedObject = objectInFocus.GetComponent<InteractibleObject>();
                 if (interactedObject != null)
                 {
-                    interactedObject.TriggerAction();
+                    interactedObject.TriggerAction(carriedGO);
+                    objectInFocus.GetComponent<InteractibleObject>().SwitchHighlight(false);
                     objectInFocus = null;
                 }
+                else if(carriedGO != null)
+                {
+                    carriedGO.Place();
+                }
             }
-        }
-
-        if (Input.GetKeyDown(KeyCode.P) && carriedGO != null)
-        {
-            carriedGO.Place();
+            else if(carriedGO != null)
+            {
+                carriedGO.Place();
+            }
         }
     }
     Vector3 ProjectPointOnPlane(Vector3 planeNormal , Vector3 planePoint, Vector3 point)
@@ -128,7 +122,7 @@ public class PlayerController : MonoBehaviour
         objectInFocus = other.gameObject;
         objectInFocus.GetComponent<InteractibleObject>().SwitchHighlight(true);
 
-        Debug.Log("Detected object is :" + other.name);
+        //Debug.Log("Detected object is :" + other.name);
     }
 
     private void OnTriggerExit(Collider other)
@@ -145,8 +139,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void SetCarriedGO(InteractibleObject go)
+    public void removeObjectInFocus()
     {
+        objectInFocus = null;
+    }
+
+    public bool SetCarriedGO(InteractibleObject go)
+    {
+        if (carriedGO != null && go != null)
+            return false;
         carriedGO = go;
+        return true;
     }
 }
