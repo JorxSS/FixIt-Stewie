@@ -5084,6 +5084,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1994458483}
   - component: {fileID: 1994458482}
+  - component: {fileID: 1994458485}
+  - component: {fileID: 1994458484}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -5103,8 +5105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc942b76189c2e40896281ac66487b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiManager: {fileID: 0}
-  levelManager: {fileID: 0}
+  uiManager: {fileID: 1994458485}
+  levelManager: {fileID: 1994458484}
 --- !u!4 &1994458483
 Transform:
   m_ObjectHideFlags: 0
@@ -5119,6 +5121,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1994458484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994458481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b079bc50680b17445ac707556ebca0d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelTime: 100
+  currentTime: 0
+  numChoresToWin: 10
+  currentChoresDone: 0
+  timerBar: {fileID: 2051754437}
+  choresCounter: {fileID: 2006196223}
+--- !u!114 &1994458485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994458481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7946677c5578c2459181e1f8e14f8f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winScreen: {fileID: 1752628591}
+  loseScreen: {fileID: 409381058}
+  pauseScreen: {fileID: 645382620}
 --- !u!1 &2006196221
 GameObject:
   m_ObjectHideFlags: 0
