@@ -37,7 +37,6 @@ public class InteractibleObject : MonoBehaviour
     public ParticleSystem repairParticles;
     public ParticleSystem particleDone;
     public ParticleSystem throwParticle;
- 
 
     private bool doingSomething = false;
 
@@ -137,6 +136,10 @@ public class InteractibleObject : MonoBehaviour
                 levelManager.BonusTime();
                 carriedGO.IdleToDestroyed();
             }
+            else
+            {
+                StartCoroutine(wrongConainerFeedback());
+            }
 
             if(throwParticle != null)
                 throwParticle.Play();
@@ -235,5 +238,32 @@ public class InteractibleObject : MonoBehaviour
         {
             particleDone.Play();
         }
+    }
+
+    IEnumerator wrongConainerFeedback()
+    {
+        float time = 0;
+        float speed = 4;
+        float duration = 0.1f;
+        Vector3 origPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        while (time < duration)
+        {
+            float step = time / duration;
+            if (step <= 0.25)
+            {
+                transform.position = transform.position + new Vector3(0, Time.deltaTime * speed, 0);
+            }
+            else if (step <= 0.75)
+            {
+                transform.position = transform.position - new Vector3(0, Time.deltaTime * speed, 0);
+            }
+            else
+            {
+                transform.position = transform.position + new Vector3(0, Time.deltaTime * speed, 0);
+            }
+            yield return null;
+            time += Time.deltaTime;
+        }
+        transform.position = origPos;
     }
 }
