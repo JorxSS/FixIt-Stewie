@@ -28,7 +28,8 @@ public class InteractibleObject : MonoBehaviour
 
     public Mesh reparedGO;
     private Material outlineMaterial;
-
+    public Canvas canvas;
+    public GameObject progressBarPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +64,8 @@ public class InteractibleObject : MonoBehaviour
 
     void IdleToDestroyed()
     {
+        GameObject pBar = Instantiate(progressBarPrefab, canvas.transform);
+
         StartCoroutine(WaitForActionDestroyable());
     }
 
