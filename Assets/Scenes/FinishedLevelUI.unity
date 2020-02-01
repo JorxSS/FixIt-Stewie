@@ -543,6 +543,11 @@ PrefabInstance:
       propertyPath: exit
       value: 
       objectReference: {fileID: 1657275366}
+    - target: {fileID: 528677816888744984, guid: 33996bacff334034abd58c9f3230e4dc,
+        type: 3}
+      propertyPath: choresProgres
+      value: 
+      objectReference: {fileID: 1994458486}
     - target: {fileID: 528677816888744986, guid: 33996bacff334034abd58c9f3230e4dc,
         type: 3}
       propertyPath: m_Name
@@ -1610,6 +1615,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9af9179fcb7776542b718ff384aee3d9, type: 3}
+--- !u!114 &377487732 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2658458490538058853, guid: 9af9179fcb7776542b718ff384aee3d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 377487731}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &378460191
 GameObject:
   m_ObjectHideFlags: 0
@@ -3925,18 +3942,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.025400018, y: 0.44449994, z: 0.10951592}
   m_Center: {x: 0.012699996, y: 0.2476499, z: 0.181758}
---- !u!114 &692996479 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3424354682915137533, guid: 9af9179fcb7776542b718ff384aee3d9,
-    type: 3}
-  m_PrefabInstance: {fileID: 377487731}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4070d26591827cc4699a27f1ef4c0903, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &703388780 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3424354681675401778, guid: 9af9179fcb7776542b718ff384aee3d9,
@@ -8229,6 +8234,11 @@ PrefabInstance:
       propertyPath: exit
       value: 
       objectReference: {fileID: 1657275366}
+    - target: {fileID: 528677816888744984, guid: 33996bacff334034abd58c9f3230e4dc,
+        type: 3}
+      propertyPath: choresProgres
+      value: 
+      objectReference: {fileID: 1994458486}
     - target: {fileID: 528677816888744986, guid: 33996bacff334034abd58c9f3230e4dc,
         type: 3}
       propertyPath: m_Name
@@ -9312,10 +9322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelTime: 200
   currentTime: 0
-  numChoresToWin: 10
-  currentChoresDone: 0
   timerBar: {fileID: 323699922}
-  choresCounter: {fileID: 692996479}
 --- !u!114 &1994458485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9346,12 +9353,15 @@ MonoBehaviour:
   circleContainer: {fileID: 185053938}
   circleDestroy: {fileID: 1881093975}
   circleRepaired: {fileID: 703388780}
-  totalOfContainer: 14
-  totalOfDestroy: 11
-  totalOfRepaired: 9
+  circleDrunk: {fileID: 377487732}
+  totalOfContainer: 3
+  totalOfDestroy: 3
+  totalOfRepaired: 3
+  totalOfDrunk: 3
   numberOfContainer: 0
   numberOfDestroy: 0
   numberOfRepaired: 0
+  numberOfDrunk: 0
 --- !u!114 &1994458487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9378,6 +9388,11 @@ PrefabInstance:
       propertyPath: exit
       value: 
       objectReference: {fileID: 1657275366}
+    - target: {fileID: 528677816888744984, guid: 33996bacff334034abd58c9f3230e4dc,
+        type: 3}
+      propertyPath: choresProgres
+      value: 
+      objectReference: {fileID: 1994458486}
     - target: {fileID: 528677816888744986, guid: 33996bacff334034abd58c9f3230e4dc,
         type: 3}
       propertyPath: m_Name

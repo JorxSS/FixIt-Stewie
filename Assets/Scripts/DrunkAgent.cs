@@ -6,6 +6,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class DrunkAgent : MonoBehaviour
 {
+
     public GameObject vomit;
     public Canvas canvas;
     public ChoresProgres choresProgres;
@@ -56,7 +57,7 @@ public class DrunkAgent : MonoBehaviour
             {
                 if (!navMeshAgent.hasPath || navMeshAgent.velocity.sqrMagnitude == 0f)
                 {
-                    Debug.Log("BYEEEE");
+                    choresProgres.DrunkOut();
                     Destroy(gameObject);
                 }
             }
