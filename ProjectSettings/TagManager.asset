@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InteractiveObject
   - Scenario
+  - Container
   layers:
   - Default
   - TransparentFX

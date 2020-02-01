@@ -10,14 +10,23 @@ public class InteractibleObject : MonoBehaviour
     {
         MOVABLE,
         DESTROYABLE,
-        REPARABLE
+        REPARABLE,
+        CONTAINER
     };
+
+    public enum Container 
+    {
+        TRASH,
+        GLASS,
+        PLASTIC,
+        PAPER
+    };
+
+    public Container container;
     
     public TypeOfObject typeOfObject;
 
     public GameObject reparedGO;
-    public ContainerScript.Container container;
-
     private Material outlineMaterial;
 
     // Start is called before the first frame update
@@ -32,7 +41,7 @@ public class InteractibleObject : MonoBehaviour
         outlineMaterial.SetFloat("_Outline", value);
     }
 
-    public void TriggerAction()
+    public void TriggerAction(InteractibleObject carriedGO)
     {
         switch(typeOfObject)
         {
@@ -44,6 +53,9 @@ public class InteractibleObject : MonoBehaviour
                 break;
             case TypeOfObject.REPARABLE:
                 IdleToRepaired();
+                break;
+            case TypeOfObject.CONTAINER:
+                Throw(carriedGO);
                 break;
         }
     }
@@ -69,10 +81,14 @@ public class InteractibleObject : MonoBehaviour
         player.GetComponent<PlayerController>().SetCarriedGO(this);
     }
 
-    public void Throw()
+    public void Throw(InteractibleObject carriedGO)
     {
-        player.GetComponent<PlayerController>().SetCarriedGO(null);
-        IdleToDestroyed();
+        if(carriedGO != null && carriedGO.container == container)
+        {
+            carriedGO.IdleToDestroyed();
+            carriedGO = null;
+        }
+
     }
     public void Place()
     {

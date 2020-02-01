@@ -63,22 +63,13 @@ public class PlayerController : MonoBehaviour
                     transform.LookAt(pos, transform.up);
                 }
 
-                
                 InteractibleObject interactedObject = hit.collider.gameObject.GetComponent<InteractibleObject>();
                 if (interactedObject != null)
                 {
                     float dist = Vector3.Distance(hit.transform.position, transform.position);
                     Debug.Log("Detected object is :" + dist);
                     if (dist <= detectionDistance)
-                        interactedObject.TriggerAction();
-                }
-                else if(carriedGO != null)
-                {
-                    ContainerScript containerScript = hit.collider.gameObject.GetComponent<ContainerScript>();
-                    if(containerScript != null)
-                    {
-                        containerScript.Throw(carriedGO);
-                    }
+                        interactedObject.TriggerAction(carriedGO);
                 }
 
 
@@ -95,7 +86,7 @@ public class PlayerController : MonoBehaviour
                 InteractibleObject interactedObject = objectInFocus.GetComponent<InteractibleObject>();
                 if (interactedObject != null)
                 {
-                    interactedObject.TriggerAction();
+                    interactedObject.TriggerAction(carriedGO);
                     objectInFocus = null;
                 }
             }
