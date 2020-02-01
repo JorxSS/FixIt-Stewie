@@ -11,7 +11,7 @@ public class DrunkAgent : MonoBehaviour
     public Canvas canvas;
     public ChoresProgres choresProgres;
     public GameObject player;
-    NavMeshAgent navMeshAgent;
+    NavMeshAgent myNavMeshAgent;
     bool imLeaving = false;
     bool imVomiting = false;
     public Transform exit;
@@ -20,7 +20,7 @@ public class DrunkAgent : MonoBehaviour
     ParticleSystem sleepParticle;
     void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        myNavMeshAgent = GetComponent<NavMeshAgent>();
         time = 0;
         totalTime = 0;
         sleepParticle = GetComponentInChildren<ParticleSystem>();
@@ -46,7 +46,7 @@ public class DrunkAgent : MonoBehaviour
                     obj.GetComponent<InteractibleObject>().choresProgres = choresProgres;
                     choresProgres.addDestroyChore();
                     imVomiting = true;
-                    navMeshAgent.isStopped = true;
+                    myNavMeshAgent.isStopped = true;
                 }
             }
         }
@@ -57,7 +57,7 @@ public class DrunkAgent : MonoBehaviour
             {
                 totalTime = 0;
                 imVomiting = false;
-                navMeshAgent.isStopped = false;
+                myNavMeshAgent.isStopped = false;
             }
         }
     }
@@ -67,17 +67,17 @@ public class DrunkAgent : MonoBehaviour
         em.enabled = false;
 
         Debug.Log("OKAAAAAAY I'M LEAVING NOW");
-        transform.rotation = navMeshAgent.transform.rotation;
+        transform.rotation = myNavMeshAgent.transform.rotation;
         imLeaving = true;
-        navMeshAgent.SetDestination(exit.transform.position);
+        myNavMeshAgent.SetDestination(exit.transform.position);
     }
     void CheckDestinationReached()
     {
-        if (!navMeshAgent.pathPending)
+        if (!myNavMeshAgent.pathPending)
         {
-            if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
+            if (myNavMeshAgent.remainingDistance <= myNavMeshAgent.stoppingDistance)
             {
-                if (!navMeshAgent.hasPath || navMeshAgent.velocity.sqrMagnitude == 0f)
+                if (!myNavMeshAgent.hasPath || myNavMeshAgent.velocity.sqrMagnitude == 0f)
                 {
                     choresProgres.DrunkOut();
                     Destroy(gameObject);
