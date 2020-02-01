@@ -115,9 +115,17 @@ public class InteractibleObject : MonoBehaviour
         {
             choresProgres.ChoreCompleted(typeOfObject);
             if (container == Container.TRASH)
+            {
                 carriedGO.IdleToDestroyed();
+                SoundManager.instance.PlayCorrectThrow();
+            }
             else if (carriedGO.container == container)
+            {
                 carriedGO.IdleToDestroyed();
+                SoundManager.instance.PlayCorrectThrow();
+            }
+            else
+                SoundManager.instance.PlayIncorrectThrow();
         }
     }
 
