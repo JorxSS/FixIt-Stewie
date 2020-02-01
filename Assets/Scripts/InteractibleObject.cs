@@ -114,11 +114,14 @@ public class InteractibleObject : MonoBehaviour
     {
         if(carriedGO != null)
         {
-            choresProgres.ChoreCompleted(typeOfObject);
             if (container == Container.TRASH)
+            {
+                choresProgres.ChoreCompleted(typeOfObject);
                 carriedGO.IdleToDestroyed();
+            }
             else if (carriedGO.container == container)
             {
+                choresProgres.ChoreCompleted(typeOfObject);
                 levelManager.BonusTime();
                 carriedGO.IdleToDestroyed();
             }
