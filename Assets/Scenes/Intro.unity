@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 31555534}
   - component: {fileID: 31555536}
   - component: {fileID: 31555535}
+  - component: {fileID: 31555537}
   m_Layer: 5
   m_Name: ImageParent
   m_TagString: Untagged
@@ -191,6 +192,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31555533}
   m_CullTransparentMesh: 0
+--- !u!95 &31555537
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31555533}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7dcdee588852cd048a03bfa8a46f7774, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &355411855
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +222,7 @@ GameObject:
   - component: {fileID: 355411856}
   - component: {fileID: 355411858}
   - component: {fileID: 355411857}
+  - component: {fileID: 355411859}
   m_Layer: 5
   m_Name: Bocadillo
   m_TagString: Untagged
@@ -261,6 +282,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355411855}
   m_CullTransparentMesh: 0
+--- !u!95 &355411859
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355411855}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1802be636754e1b439aa44609568a7cc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &530792616
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +958,7 @@ GameObject:
   - component: {fileID: 1975376852}
   - component: {fileID: 1975376854}
   - component: {fileID: 1975376853}
+  - component: {fileID: 1975376855}
   m_Layer: 5
   m_Name: ImageMom
   m_TagString: Untagged
@@ -977,3 +1018,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975376851}
   m_CullTransparentMesh: 0
+--- !u!95 &1975376855
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975376851}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 896f6518e8c4c134fae48b8f7f619cf5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

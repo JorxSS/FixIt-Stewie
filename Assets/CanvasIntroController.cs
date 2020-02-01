@@ -11,7 +11,7 @@ public class CanvasIntroController : MonoBehaviour
     int index = 0;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetButtonDown("Interaction"))
         {
             Debug.Log("TRYINNNNNNNNNNNNNNNNN");
             if (index < obj.Length)
@@ -27,10 +27,5 @@ public class CanvasIntroController : MonoBehaviour
     GameObject GetNext()
     {
         return obj[index];
-    }
-    IEnumerator Fade(RawImage go)
-    {
-        go.CrossFadeAlpha(1, 3.0f, false);
-        yield return new WaitForSeconds(.1f);
     }
 }
