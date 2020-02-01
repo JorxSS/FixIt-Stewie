@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     [Header("Core Managers")]
     public UIManager uiManager;
     public LevelManager levelManager;
+    public Image controls;
 
 
     // Start is called before the first frame update
@@ -68,5 +70,11 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         Application.Quit();
+    }
+
+    public void SetControlsVisibility()
+    {
+        Debug.Log("About");
+        controls.gameObject.SetActive(!controls.gameObject.activeSelf);
     }
 }
