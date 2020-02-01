@@ -139,6 +139,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void removeObjectInFocus()
+    {
+        objectInFocus = null;
+    }
+
     public bool SetCarriedGO(InteractibleObject go)
     {
         if (carriedGO != null && go != null)
