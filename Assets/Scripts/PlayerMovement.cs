@@ -8,8 +8,9 @@ using UnityEngine.AI;
 public class PlayerMovement : MonoBehaviour
 {
     public int speed = 10;
+    private int realSpeed;
     NavMeshAgent navMeshAgent;
-    Rigidbody rigidbody;
+    Rigidbody myRigidBody;
 
     Vector3 movement;
 
@@ -17,7 +18,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        rigidbody = GetComponent<Rigidbody>();
+        myRigidBody = GetComponent<Rigidbody>();
+        realSpeed = speed;
     }
 
     private void FixedUpdate()
@@ -25,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         if (movement.magnitude > 0)
         {
             navMeshAgent.ResetPath();
-            rigidbody.transform.position += movement * speed * Time.fixedDeltaTime;
+            myRigidBody.transform.position += movement * realSpeed * Time.fixedDeltaTime;
             transform.rotation = Quaternion.LookRotation(movement);
         }
     }
@@ -44,5 +46,15 @@ public class PlayerMovement : MonoBehaviour
     public void StopAgent()
     {
         navMeshAgent.ResetPath();
+    }
+
+    public void disableMovement()
+    {
+        realSpeed = 0;
+    }
+
+    public void enableMovement()
+    {
+        realSpeed = speed;
     }
 }
