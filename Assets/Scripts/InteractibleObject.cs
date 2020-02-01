@@ -123,6 +123,7 @@ public class InteractibleObject : MonoBehaviour
 
     public void Place()
     {
+        SoundManager.instance.PlayDrop();
         transform.position = player.transform.GetChild(1).transform.position;
         transform.parent = null;
         BoxCollider boxCollider = GetComponent<BoxCollider>();

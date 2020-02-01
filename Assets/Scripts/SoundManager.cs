@@ -66,17 +66,17 @@ public class SoundManager : MonoBehaviour
         pickAudioSource.Play();
     }
 
-    public void DropPick()
+    public void PlayDrop()
     {
         dropAudioSource.Play();
     }
 
-    public void CorrectThrowPick()
+    public void PlayCorrectThrow()
     {
         correctThrowAudioSource.Play();
     }
 
-    public void incorrectThrowPick()
+    public void PlayIncorrectThrow()
     {
         incorrectThrowAudioSource.Play();
     }
