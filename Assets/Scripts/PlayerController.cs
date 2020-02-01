@@ -128,7 +128,6 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetButtonDown("Interaction"))
                 other.GetComponent<DrunkAgent>().LeaveHouse();
-
         }
 
 
