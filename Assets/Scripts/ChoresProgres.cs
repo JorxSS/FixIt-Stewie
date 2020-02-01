@@ -30,6 +30,13 @@ public class ChoresProgres : MonoBehaviour
         
     }
 
+    public void addDestroyChore()
+    {
+        ++totalOfDestroy;
+        float amountD = ((float)numberOfDestroy / totalOfDestroy);
+        circleDestroy.fillAmount = amountD;
+    }
+
     public void ChoreCompleted(InteractibleObject.TypeOfObject typeOfChore)
     {
         switch(typeOfChore)
