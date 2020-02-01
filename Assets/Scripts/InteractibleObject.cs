@@ -30,8 +30,12 @@ public class InteractibleObject : MonoBehaviour
     private Material outlineMaterial;
     public Canvas canvas;
     public GameObject progressBarPrefab;
+    public float repairBarSpeed = 3.5f;
     private GameObject pBar;
     private float progressTime;
+    private bool doingSomething = false;
+
+    public ChoresProgres choresProgres;
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +51,9 @@ public class InteractibleObject : MonoBehaviour
 
     public void TriggerAction(InteractibleObject carriedGO)
     {
-        switch(typeOfObject)
+        if (doingSomething)
+            return;
+        switch (typeOfObject)
         {
             case TypeOfObject.MOVABLE:
                 IdleToAttached();
@@ -104,9 +110,13 @@ public class InteractibleObject : MonoBehaviour
 
     public void Throw(InteractibleObject carriedGO)
     {
-        if(carriedGO != null && carriedGO.container == container)
+        if(carriedGO != null)
         {
-            carriedGO.IdleToDestroyed();
+            choresProgres.ChoreCompleted(typeOfObject);
+            if (container == Container.TRASH)
+                carriedGO.IdleToDestroyed();
+            else if (carriedGO.container == container)
+                carriedGO.IdleToDestroyed();
         }
     }
 
@@ -123,13 +133,23 @@ public class InteractibleObject : MonoBehaviour
 
     IEnumerator WaitForActionDestroyable()
     {
+        doingSomething = true;
+        Dissolver dissolver = GetComponent<Dissolver>();
         while (progressTime < 1.5f)
         {
             yield return null;
+
+            if (dissolver != null)
+                dissolver.SetThreshold(progressTime / 1.5f);
+
             pBar.GetComponent<ProgressBar>().SetProgress(progressTime / 1.5f);
             progressTime += Time.deltaTime;
-            //yield on a new YieldInstruction that waits for 1.5f seconds.
         }
+        if(typeOfObject == TypeOfObject.DESTROYABLE)
+        {
+            choresProgres.ChoreCompleted(typeOfObject);
+        }
+        doingSomething = false;
         player.GetComponent<PlayerMovement>().enableMovement();
         Destroy(pBar);
         Destroy(gameObject);
@@ -137,14 +157,42 @@ public class InteractibleObject : MonoBehaviour
 
     IEnumerator WaitForActionReparable()
     {
-        while (progressTime < 1.5f)
+        doingSomething = true;
+        int dir = 1;
+        float objective = Random.Range(0.0f, 1.0f);
+        RectTransform rect = pBar.transform.GetChild(2).GetComponent<RectTransform>();
+        rect.pivot = new Vector2(objective, 0);
+        int times = 3;
+        while (true)
         {
             yield return null;
-            pBar.GetComponent<ProgressBar>().SetProgress(progressTime / 1.5f);
-            progressTime += Time.deltaTime;
-            //yield on a new YieldInstruction that waits for 1.5f seconds.
+            progressTime += dir * Time.deltaTime * repairBarSpeed;
+            float currProgress = progressTime / 1.5f;
+            pBar.GetComponent<ProgressBar>().SetProgress(currProgress);
+            if (progressTime >= 1.5)
+            {
+                dir = -1;
+            }
+            else if (progressTime < 0)
+            {
+                dir = 1;
+            }
+            if (Input.GetButtonDown("Interaction") && Mathf.Abs(currProgress - objective) < 0.15f)
+            {
+                if (times == 1)
+                    break;
+                else
+                {
+                    --times;
+                    objective = Random.Range(0.0f, 1.0f);
+                    rect.pivot = new Vector2(objective, 0);
+                }
+            }
         }
+        choresProgres.ChoreCompleted(typeOfObject);
+        doingSomething = false;
         player.GetComponent<PlayerMovement>().enableMovement();
+        player.GetComponent<PlayerController>().removeObjectInFocus();
         gameObject.GetComponent<MeshFilter>().mesh = reparedGO;
         gameObject.tag = "Repaired";
         SwitchHighlight(false);
