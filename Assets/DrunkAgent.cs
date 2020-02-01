@@ -9,6 +9,8 @@ public class DrunkAgent : MonoBehaviour
     NavMeshAgent navMeshAgent;
     bool imLeaving = false;
     public Transform exit;
+    public AudioSource blamingSource;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -23,6 +25,7 @@ public class DrunkAgent : MonoBehaviour
     public void LeaveHouse()
     {
         Debug.Log("OKAAAAAAY I'M LEAVING NOW");
+        blamingSource.Play();
         transform.rotation = navMeshAgent.transform.rotation;
         imLeaving = true;
         navMeshAgent.SetDestination(exit.transform.position);
