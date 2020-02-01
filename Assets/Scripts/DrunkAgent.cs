@@ -13,32 +13,49 @@ public class DrunkAgent : MonoBehaviour
     public GameObject player;
     NavMeshAgent navMeshAgent;
     bool imLeaving = false;
+    bool imVomiting = false;
     public Transform exit;
     float time;
+    float totalTime;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         time = 0;
+        totalTime = 0;
     }
     private void Update()
     {
-        if (imLeaving)
+        if (!imVomiting && imLeaving)
         {
             CheckDestinationReached();
 
             time += Time.deltaTime;
+            totalTime += Time.deltaTime;
             if (time >= 0.1)
             {
                 time = 0;
-                if (Random.Range(0, 100) < 10)
+                if (totalTime >= 1 && Random.Range(0, 100) < 10)
                 {
+                    totalTime = 0;
                     Vector3 pos = new Vector3(transform.position.x, 19.9f, transform.position.z);
                     GameObject obj = Instantiate(vomit, pos, transform.rotation);
                     obj.GetComponent<InteractibleObject>().player = player;
                     obj.GetComponent<InteractibleObject>().canvas = canvas;
                     obj.GetComponent<InteractibleObject>().choresProgres = choresProgres;
                     choresProgres.addDestroyChore();
+                    imVomiting = true;
+                    navMeshAgent.isStopped = true;
                 }
+            }
+        }
+        else if (imVomiting)
+        {
+            totalTime += Time.deltaTime;
+            if (totalTime >= 1)
+            {
+                totalTime = 0;
+                imVomiting = false;
+                navMeshAgent.isStopped = false;
             }
         }
     }
