@@ -25,14 +25,10 @@ public class PlayerMovement : MonoBehaviour
         if (movement.magnitude > 0)
         {
             agent.ResetPath();
-        }
-        if (movement != Vector3.zero)
-        {
+            rb.transform.position += movement * speed * Time.deltaTime;
             transform.rotation = Quaternion.LookRotation(movement);
         }
-        //transform.rotation = Quaternion.LookRotation(movement);
-        //rb.transform.position += movement * speed * Time.deltaTime;
-        transform.Translate(movement * speed * Time.deltaTime, Space.World);
+
     }
     public void MoveToPoint(Vector3 point)
     {

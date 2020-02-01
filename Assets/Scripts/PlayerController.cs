@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     {
         cam = Camera.main;
         movement = GetComponent<PlayerMovement>();
+        Physics.IgnoreLayerCollision(4,5);
     }
 
     // Update is called once per frame
@@ -27,18 +28,14 @@ public class PlayerController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                //sDebug.Log("We hit.. " + hit.collider.name + " " + hit.point);
+                //Debug.Log("We hit.. " + hit.collider.name + " " + hit.point);
                 //Move our player to what we hit
                 movement.MoveToPoint(hit.point);
 
 
             }
         }
-    }
-    void FixedUpdate()
-    {
-
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonUp(1))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -46,9 +43,18 @@ public class PlayerController : MonoBehaviour
             {
                 //Debug.Log("We hit.. " + hit.collider.name + " " + hit.point);
                 //Move our player to what we hit
-                transform.rotation = Quaternion.LookRotation(hit.point - transform.position);
+                // transform.rotation = Quaternion.LookRotation(hit.point - transform.position);
+               
+                if(hit.collider.name != "Player")
+                {
+                    movement.StopAgent();
+                    Quaternion q = Quaternion.FromToRotation(transform.up, hit.normal);
+                    transform.rotation = q * transform.rotation;
+                    Vector3 pos = ProjectPointOnPlane(transform.up, transform.position, hit.point);
+                    transform.LookAt(pos, transform.up);
+                }
 
-                movement.StopAgent();
+                
                 InteractibleObject interactedObject = hit.collider.gameObject.GetComponent<InteractibleObject>();
                 if (interactedObject != null)
                 {
@@ -66,7 +72,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Pressing interaction button");
             Ray action = new Ray(raypoint.transform.position, raypoint.transform.forward);
             RaycastHit hit;
-            if(Physics.Raycast(action, out hit))
+            if (Physics.Raycast(action, out hit))
             {
                 InteractibleObject interactedObject = hit.collider.gameObject.GetComponent<InteractibleObject>();
                 if (interactedObject != null)
@@ -83,6 +89,10 @@ public class PlayerController : MonoBehaviour
             }
         }
         movement.MoveWASD();
-
+    }
+    Vector3 ProjectPointOnPlane(Vector3 planeNormal , Vector3 planePoint, Vector3 point) {
+     planeNormal.Normalize();
+     float distance = -Vector3.Dot(planeNormal.normalized, (point - planePoint));
+     return point + planeNormal* distance;
     }
 }
