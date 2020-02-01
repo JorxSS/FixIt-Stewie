@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Pressing interaction button");
             if (objectInFocus != null)
             {
+                
                 InteractibleObject interactedObject = objectInFocus.GetComponent<InteractibleObject>();
                 if (interactedObject != null)
                 {
@@ -109,18 +110,26 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (!other.CompareTag("InteractiveObject"))
+        if (!other.CompareTag("InteractiveObject") && !other.CompareTag("Drunk"))
         {
             return;
         }
-
-        if (objectInFocus != null && objectInFocus != other.gameObject)
+        if (other.CompareTag("InteractiveObject"))
         {
-            return;
+            if (objectInFocus != null && objectInFocus != other.gameObject)
+            {
+                return;
+            }
+
+            objectInFocus = other.gameObject;
+            objectInFocus.GetComponent<InteractibleObject>().SwitchHighlight(true);
+        }
+        if (other.CompareTag("Drunk"))
+        {
+            if (Input.GetButtonDown("Interaction"))
+                other.GetComponent<DrunkAgent>().LeaveHouse();
         }
 
-        objectInFocus = other.gameObject;
-        objectInFocus.GetComponent<InteractibleObject>().SwitchHighlight(true);
 
         //Debug.Log("Detected object is :" + other.name);
     }
