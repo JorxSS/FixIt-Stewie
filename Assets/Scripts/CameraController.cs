@@ -7,41 +7,42 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     public int distanceZaxis = 1;
     public int distanceYaxis = 1;
-    Transform target;
+    Transform playerTransform;
     private RaycastHit[] hits = null;
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //transform.LookAt(target);
-        transform.position = new Vector3(target.position.x, target.position.y + distanceYaxis, target.position.z + distanceZaxis);
+        transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y + distanceYaxis, playerTransform.position.z + distanceZaxis);
         if (hits != null)
         {
             foreach (RaycastHit hit in hits)
             {
-                Renderer r = hit.collider.GetComponent<Renderer>();
-                if (r)
+                Renderer colliderRenderer = hit.collider.GetComponent<Renderer>();
+                if (colliderRenderer)
                 {
-                    r.enabled = true;
+                    colliderRenderer.enabled = true;
                 }
             }
 
         }
-        hits = Physics.RaycastAll(this.transform.position, (target.transform.position - transform.position), Vector3.Distance(transform.position, target.transform.position));
+        Vector3 direction_to_player = playerTransform.position - transform.position;
+
+        hits = Physics.RaycastAll(transform.position, direction_to_player, direction_to_player.magnitude);
 
         foreach (RaycastHit hit in hits)
         {
-            if(hit.collider.name != "Player")
+            if (hit.collider.tag == "Scenario")
             {
-                Renderer r = hit.collider.GetComponent<Renderer>();
-                if (r)
+                Renderer colliderRenderer = hit.collider.GetComponent<Renderer>();
+                if (colliderRenderer)
                 {
-                    r.enabled = false;
+                    colliderRenderer.enabled = false;
                 }
             }
 

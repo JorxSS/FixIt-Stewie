@@ -30,9 +30,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void MoveWASD()
+    public void SetMovement(Vector3 movement)
     {
-        movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        this.movement = movement; 
     }
 
     public void MoveToPoint(Vector3 point)

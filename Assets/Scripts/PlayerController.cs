@@ -13,12 +13,12 @@ public class PlayerController : MonoBehaviour
     public GameObject raypoint;
     private GameObject objectInFocus = null;
     
-    PlayerMovement movement;
+    PlayerMovement playerMovement;
 
     void Start()
     {
         mainCamera = Camera.main;
-        movement = GetComponent<PlayerMovement>();
+        playerMovement = GetComponent<PlayerMovement>();
         Physics.IgnoreLayerCollision(4,5);
     }
 
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
                 //Debug.Log("We hit.. " + hit.collider.name + " " + hit.point);
                 //Move our player to what we hit
                 Debug.Log("Hey dude I'm trying to move to this point");
-                movement.MoveToPoint(hit.point);
+                playerMovement.MoveToPoint(hit.point);
             }
         }
 
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
                
                 if(hit.collider.name != "Player")
                 {
-                    movement.StopAgent();
+                    playerMovement.StopAgent();
                     Quaternion q = Quaternion.FromToRotation(transform.up, hit.normal);
                     transform.rotation = q * transform.rotation;
                     Vector3 pos = ProjectPointOnPlane(transform.up, transform.position, hit.point);
@@ -75,28 +75,9 @@ public class PlayerController : MonoBehaviour
 
             }
         }
-       /* if (Input.GetButtonDown("Interaction"))
-        {
-            Debug.Log("Pressing interaction button");
-            Ray action = new Ray(raypoint.transform.position, raypoint.transform.forward);
-            RaycastHit hit;
-            if (Physics.Raycast(action, out hit))
-            {
-                InteractibleObject interactedObject = hit.collider.gameObject.GetComponent<InteractibleObject>();
-                if (interactedObject != null)
-                {
-                    float dist = Vector3.Distance(hit.transform.position, transform.position);
-                    Debug.Log("Detected object is :" + dist);
-                    if (dist <= spaceDetectionDistance)
-                    {
-                        Debug.Log("WE ARE HITTING :" + dist);
-                        interactedObject.TriggerAction();
-                    }
+        Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")); 
+        playerMovement.SetMovement(movement);
 
-                }
-            }
-        }*/
-        movement.MoveWASD();
         if (Input.GetButtonDown("Interaction"))
         {
             Debug.Log("Pressing interaction button");
