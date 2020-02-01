@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Hey dude I'm trying to move to this point" + Input.mousePosition);
+            //Debug.Log("Hey dude I'm trying to move to this point" + Input.mousePosition);
 
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
             {
                 //Debug.Log("We hit.. " + hit.collider.name + " " + hit.point);
                 //Move our player to what we hit
-                Debug.Log("Hey dude I'm trying to move to this point");
+                //Debug.Log("Hey dude I'm trying to move to this point");
                 playerMovement.MoveToPoint(hit.point);
             }
         }
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
                 if (interactedObject != null)
                 {
                     float dist = Vector3.Distance(hit.transform.position, transform.position);
-                    Debug.Log("Detected object is :" + dist);
+                    //Debug.Log("Detected object is :" + dist);
                     if (dist <= detectionDistance)
                         interactedObject.TriggerAction(carriedGO);
                 }
@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
         objectInFocus = other.gameObject;
         objectInFocus.GetComponent<InteractibleObject>().SwitchHighlight(true);
 
-        Debug.Log("Detected object is :" + other.name);
+        //Debug.Log("Detected object is :" + other.name);
     }
 
     private void OnTriggerExit(Collider other)

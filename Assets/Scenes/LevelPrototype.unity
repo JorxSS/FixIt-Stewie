@@ -918,8 +918,7 @@ MonoBehaviour:
   player: {fileID: 1550410174}
   container: 0
   typeOfObject: 2
-  reparedGO: {fileID: 6688794638933268008, guid: 02b537462ae40904f9be9fd646ade74c,
-    type: 3}
+  reparedGO: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &379534959
 GameObject:
   m_ObjectHideFlags: 0

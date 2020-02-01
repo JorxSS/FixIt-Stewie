@@ -26,8 +26,9 @@ public class InteractibleObject : MonoBehaviour
     
     public TypeOfObject typeOfObject;
 
-    public GameObject reparedGO;
+    public Mesh reparedGO;
     private Material outlineMaterial;
+
 
     // Start is called before the first frame update
     void Start()
@@ -62,13 +63,17 @@ public class InteractibleObject : MonoBehaviour
 
     void IdleToDestroyed()
     {
-        Destroy(gameObject);
+        StartCoroutine(WaitForActionDestroyable());
     }
 
     void IdleToRepaired()
     {
-        Instantiate(reparedGO, transform.position, transform.rotation);
-        Destroy(gameObject);
+        //Instantiate(reparedGO, transform.position, transform.rotation);
+        gameObject.GetComponent<MeshFilter>().mesh = reparedGO;
+        gameObject.tag = "Repaired";
+        SwitchHighlight(false);
+        Destroy(this);
+        //Destroy(gameObject);
     }
 
     void IdleToAttached() {
@@ -99,5 +104,13 @@ public class InteractibleObject : MonoBehaviour
         NavMeshObstacle navMeshObstacle = GetComponent<NavMeshObstacle>();
         navMeshObstacle.enabled = true;
         player.GetComponent<PlayerController>().SetCarriedGO(null);
+    }
+
+    IEnumerator WaitForActionDestroyable()
+    {
+
+        //yield on a new YieldInstruction that waits for 1.5f seconds.
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
     }
 }
