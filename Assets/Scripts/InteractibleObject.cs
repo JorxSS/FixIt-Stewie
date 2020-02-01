@@ -14,7 +14,7 @@ public class InteractibleObject : MonoBehaviour
         CONTAINER
     };
 
-    public enum Container 
+    public enum Container
     {
         TRASH,
         GLASS,
@@ -23,7 +23,7 @@ public class InteractibleObject : MonoBehaviour
     };
 
     public Container container;
-    
+
     public TypeOfObject typeOfObject;
 
     public Mesh reparedGO;
@@ -33,10 +33,13 @@ public class InteractibleObject : MonoBehaviour
     public float repairBarSpeed = 3.5f;
     private GameObject pBar;
     private float progressTime;
+
+    public ParticleSystem particleSystem;
+    public ParticleSystem particleDone;
+
     private bool doingSomething = false;
 
     public ChoresProgres choresProgres;
-
     public LevelManager levelManager;
 
     // Start is called before the first frame update
@@ -55,6 +58,7 @@ public class InteractibleObject : MonoBehaviour
     {
         if (doingSomething)
             return;
+
         switch (typeOfObject)
         {
             case TypeOfObject.MOVABLE:
@@ -69,6 +73,11 @@ public class InteractibleObject : MonoBehaviour
             case TypeOfObject.CONTAINER:
                 Throw(carriedGO);
                 break;
+        }
+
+        if (particleSystem != null)
+        {
+            particleSystem.Play();
         }
     }
 
@@ -99,7 +108,8 @@ public class InteractibleObject : MonoBehaviour
         StartCoroutine(WaitForActionReparable());
     }
 
-    void IdleToAttached() {
+    void IdleToAttached()
+    {
         if (!player.GetComponent<PlayerController>().SetCarriedGO(this))
             return;
         transform.parent = player.transform;
@@ -215,5 +225,10 @@ public class InteractibleObject : MonoBehaviour
         SwitchHighlight(false);
         Destroy(this);
         Destroy(pBar);
+
+        if (particleDone != null)
+        {
+            particleDone.Play();
+        }
     }
 }
