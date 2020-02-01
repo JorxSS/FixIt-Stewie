@@ -127,6 +127,7 @@ public class InteractibleObject : MonoBehaviour
     {
         if (!player.GetComponent<PlayerController>().SetCarriedGO(this))
             return;
+        SoundManager.instance.PlayPick();
         transform.parent = player.transform;
         transform.localPosition = new Vector3(0.01f, 0, 0);
         BoxCollider boxCollider = GetComponent<BoxCollider>();
@@ -143,15 +144,18 @@ public class InteractibleObject : MonoBehaviour
             {
                 choresProgres.ChoreCompleted(typeOfObject);
                 carriedGO.IdleToDestroyed();
+				SoundManager.instance.PlayCorrectThrow();
             }
             else if (carriedGO.container == container)
             {
                 choresProgres.ChoreCompleted(typeOfObject);
                 levelManager.BonusTime();
                 carriedGO.IdleToDestroyed();
+				SoundManager.instance.PlayCorrectThrow();
             }
             else
             {
+				SoundManager.instance.PlayIncorrectThrow();
                 StartCoroutine(wrongConainerFeedback());
             }
 
@@ -162,6 +166,7 @@ public class InteractibleObject : MonoBehaviour
 
     public void Place()
     {
+        SoundManager.instance.PlayDrop();
         transform.position = player.transform.GetChild(1).transform.position;
         transform.parent = null;
         BoxCollider boxCollider = GetComponent<BoxCollider>();
@@ -173,6 +178,7 @@ public class InteractibleObject : MonoBehaviour
 
     IEnumerator WaitForActionDestroyable()
     {
+        SoundManager.instance.SwitchMop(true);
         doingSomething = true;
         Dissolver dissolver = GetComponent<Dissolver>();
         while (progressTime < 1.5f)
@@ -189,6 +195,7 @@ public class InteractibleObject : MonoBehaviour
         {
             choresProgres.ChoreCompleted(typeOfObject);
         }
+        SoundManager.instance.SwitchMop(false);
         doingSomething = false;
         player.GetComponent<PlayerMovement>().enableMovement();
         Destroy(pBar);
@@ -197,6 +204,7 @@ public class InteractibleObject : MonoBehaviour
 
     IEnumerator WaitForActionReparable()
     {
+        SoundManager.instance.SwitchRepairing(true);
         doingSomething = true;
         int dir = 1;
         float objective = Random.Range(0.0f, 1.0f);
@@ -239,9 +247,9 @@ public class InteractibleObject : MonoBehaviour
             }
         }
 
-        Debug.Log("Play animation");
         repairParticles.Stop();
         particleDone.Play();
+        SoundManager.instance.SwitchRepairing(false);
         choresProgres.ChoreCompleted(typeOfObject);
         doingSomething = false;
         player.GetComponent<PlayerMovement>().enableMovement();
@@ -249,7 +257,7 @@ public class InteractibleObject : MonoBehaviour
         gameObject.GetComponent<MeshFilter>().mesh = reparedGO;
         gameObject.tag = "Repaired";
         SwitchHighlight(false);
-        //Destroy(this);
+        Destroy(this);
         Destroy(pBar);
     }
 
