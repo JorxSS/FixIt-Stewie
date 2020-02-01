@@ -10,9 +10,9 @@ public class ChoresProgres : MonoBehaviour
     public Image circleDestroy;
     public Image circleRepaired;
 
-    public int totalOfContainer = 2;
-    public int totalOfDestroy = 1;
-    public int totalOfRepaired = 1;
+    public int totalOfContainer = 16;
+    public int totalOfDestroy = 9;
+    public int totalOfRepaired = 9;
 
     public int numberOfContainer = 0;
     public int numberOfDestroy = 0;

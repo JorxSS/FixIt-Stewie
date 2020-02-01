@@ -134,7 +134,10 @@ public class InteractibleObject : MonoBehaviour
             pBar.GetComponent<ProgressBar>().SetProgress(progressTime / 1.5f);
             progressTime += Time.deltaTime;
         }
-        choresProgres.ChoreCompleted(typeOfObject);
+        if(typeOfObject == TypeOfObject.DESTROYABLE)
+        {
+            choresProgres.ChoreCompleted(typeOfObject);
+        }
         player.GetComponent<PlayerMovement>().enableMovement();
         Destroy(pBar);
         Destroy(gameObject);
