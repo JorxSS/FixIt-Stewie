@@ -22,11 +22,19 @@ public class InteractibleObject : MonoBehaviour
 
     State state;
     public GameObject reparedGO;
+    private Material outlineMaterial;
 
     // Start is called before the first frame update
     void Start()
     {
         state = State.IDLE;
+        outlineMaterial = GetComponent<MeshRenderer>().material;
+    }
+
+    public void SwitchHighlight(bool highlighted)
+    {
+        float value = highlighted ? 0.1f : 0f;
+        outlineMaterial.SetFloat("_Outline", value);
     }
 
     public void TriggerAction()

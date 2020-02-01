@@ -128,6 +128,7 @@ public class PlayerController : MonoBehaviour
         }
 
         objectInFocus = other.gameObject;
+        objectInFocus.GetComponent<InteractibleObject>().SwitchHighlight(true);
 
         Debug.Log("Detected object is :" + other.name);
     }
@@ -141,6 +142,7 @@ public class PlayerController : MonoBehaviour
 
         if (objectInFocus == other.gameObject)
         {
+            objectInFocus.GetComponent<InteractibleObject>().SwitchHighlight(false);
             objectInFocus = null;
         }
     }
