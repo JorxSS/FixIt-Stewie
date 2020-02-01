@@ -40,4 +40,9 @@ public class PlayerMovement : MonoBehaviour
         agent.SetDestination(point);
         
     }
+    public void StopAgent()
+    {
+        agent.ResetPath();
+
+    }
 }

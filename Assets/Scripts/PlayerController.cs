@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float spaceDetectionDistance;
     PlayerMovement movement;
     public GameObject raypoint;
+
     void Start()
     {
         cam = Camera.main;
@@ -29,10 +30,14 @@ public class PlayerController : MonoBehaviour
                 //sDebug.Log("We hit.. " + hit.collider.name + " " + hit.point);
                 //Move our player to what we hit
                 movement.MoveToPoint(hit.point);
-                
+
 
             }
         }
+    }
+    void FixedUpdate()
+    {
+
         if (Input.GetMouseButtonDown(1))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -41,7 +46,9 @@ public class PlayerController : MonoBehaviour
             {
                 //Debug.Log("We hit.. " + hit.collider.name + " " + hit.point);
                 //Move our player to what we hit
-                
+                transform.rotation = Quaternion.LookRotation(hit.point - transform.position);
+
+                movement.StopAgent();
                 InteractibleObject interactedObject = hit.collider.gameObject.GetComponent<InteractibleObject>();
                 if (interactedObject != null)
                 {

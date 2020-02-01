@@ -2674,7 +2674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce76e4317bbceef4da4fc8650bf88bb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionDistance: 1.3
+  detectionDistance: 2
   spaceDetectionDistance: 2
   raypoint: {fileID: 471564652}
 --- !u!195 &1550410181
