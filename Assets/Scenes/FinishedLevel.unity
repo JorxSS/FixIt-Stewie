@@ -174,6 +174,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 3.5
 --- !u!208 &581742
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -304,6 +305,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &50336405
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -556,6 +558,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &105060912
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -686,6 +689,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &128405680
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1021,6 +1025,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 3.5
 --- !u!208 &161094164
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1150,6 +1155,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 3.5
 --- !u!208 &163648548
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1326,6 +1332,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &243921416
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1659,8 +1666,9 @@ MonoBehaviour:
   typeOfObject: 2
   reparedGO: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   canvas: {fileID: 53967850}
-  progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
+  progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!1 &365234873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,6 +1832,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 3.5
 --- !u!208 &378460194
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3018,6 +3027,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 3.5
 --- !u!208 &465060849
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3594,8 +3604,9 @@ MonoBehaviour:
   typeOfObject: 2
   reparedGO: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   canvas: {fileID: 53967850}
-  progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
+  progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &545954017
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3855,6 +3866,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &581426160
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4128,6 +4140,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &691720475
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4444,8 +4457,9 @@ MonoBehaviour:
   typeOfObject: 2
   reparedGO: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   canvas: {fileID: 53967850}
-  progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
+  progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &777987541
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4576,6 +4590,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &780264790
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4707,6 +4722,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &802960205
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5074,8 +5090,9 @@ MonoBehaviour:
   typeOfObject: 2
   reparedGO: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   canvas: {fileID: 53967850}
-  progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
+  progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &870650652
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5204,8 +5221,9 @@ MonoBehaviour:
   typeOfObject: 2
   reparedGO: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   canvas: {fileID: 53967850}
-  progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
+  progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &872341092
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5556,6 +5574,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &904465574
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5686,6 +5705,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &931125491
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5815,6 +5835,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 3.5
 --- !u!208 &934709351
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6173,6 +6194,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &1187378574
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6301,8 +6323,9 @@ MonoBehaviour:
   typeOfObject: 2
   reparedGO: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   canvas: {fileID: 53967850}
-  progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
+  progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &1212942566
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6676,6 +6699,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 3.5
 --- !u!208 &1301943921
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6953,6 +6977,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 3.5
 --- !u!208 &1355573494
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7269,6 +7294,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!1 &1372035352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2032612176005761648, guid: 0b2888f66b6afee4c912ce5a1899c333,
@@ -7450,8 +7476,9 @@ MonoBehaviour:
   typeOfObject: 2
   reparedGO: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   canvas: {fileID: 53967850}
-  progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
+  progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &1375070739
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7785,6 +7812,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 3.5
 --- !u!208 &1401476729
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -8154,6 +8182,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &1437541099
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -8753,6 +8782,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 3.5
 --- !u!1 &1644690943
 GameObject:
   m_ObjectHideFlags: 0
@@ -8807,6 +8837,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &1644690946
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9014,6 +9045,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &1705702347
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9143,6 +9175,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 3.5
 --- !u!208 &1706189883
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9382,6 +9415,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 3.5
 --- !u!208 &1725680283
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9634,6 +9668,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 3.5
 --- !u!208 &1896083012
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9762,8 +9797,9 @@ MonoBehaviour:
   typeOfObject: 2
   reparedGO: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   canvas: {fileID: 53967850}
-  progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
+  progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &1953690743
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -10250,6 +10286,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 3.5
 --- !u!208 &2084676682
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -10584,8 +10621,9 @@ MonoBehaviour:
   typeOfObject: 2
   reparedGO: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   canvas: {fileID: 53967850}
-  progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
+  progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
+  repairBarSpeed: 3.5
 --- !u!208 &2123150614
 NavMeshObstacle:
   m_ObjectHideFlags: 0
