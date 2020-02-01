@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2554101525859258419}
   - component: {fileID: 2554101525859258408}
   m_Layer: 0
-  m_Name: Des Vomito
+  m_Name: Vomito
   m_TagString: InteractiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
