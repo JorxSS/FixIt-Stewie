@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material
+  m_Name: InteractableRed
   m_Shader: {fileID: 4800000, guid: d079e02a2f7196e4ebdfe8b7f92f5eb7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
