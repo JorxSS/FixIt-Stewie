@@ -20,7 +20,7 @@ GameObject:
   m_TagString: InteractiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2554101525859258409
 Transform:
@@ -149,8 +149,6 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
   repairBarSpeed: 3.5
-  repairParticles: {fileID: 6401894249954315325}
-  particleDone: {fileID: 6326655684447538615}
   choresProgres: {fileID: 0}
   levelManager: {fileID: 0}
 --- !u!1001 &695801289468807927
@@ -225,12 +223,6 @@ PrefabInstance:
 --- !u!4 &2309830344226890499 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3002161403030399476, guid: 71e149593a5d8ea4884aee7246913869,
-    type: 3}
-  m_PrefabInstance: {fileID: 695801289468807927}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &6326655684447538615 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6803584735969773376, guid: 71e149593a5d8ea4884aee7246913869,
     type: 3}
   m_PrefabInstance: {fileID: 695801289468807927}
   m_PrefabAsset: {fileID: 0}
@@ -416,12 +408,6 @@ PrefabInstance:
 --- !u!4 &8581244073649000655 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3335967496184935437, guid: 985ceb41188433e4d890e79a0f932acb,
-    type: 3}
-  m_PrefabInstance: {fileID: 6439312690259977410}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &6401894249954315325 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 109511497959926015, guid: 985ceb41188433e4d890e79a0f932acb,
     type: 3}
   m_PrefabInstance: {fileID: 6439312690259977410}
   m_PrefabAsset: {fileID: 0}
