@@ -9,7 +9,6 @@ public class DrunkAgent : MonoBehaviour
     NavMeshAgent navMeshAgent;
     bool imLeaving = false;
     public Transform exit;
-    // Start is called before the first frame update
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
