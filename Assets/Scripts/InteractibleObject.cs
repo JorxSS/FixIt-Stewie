@@ -65,6 +65,10 @@ public class InteractibleObject : MonoBehaviour
     void IdleToDestroyed()
     {
         GameObject pBar = Instantiate(progressBarPrefab, canvas.transform);
+        Vector3 screen = Camera.main.WorldToScreenPoint(transform.position);
+        RectTransform rectTransform = pBar.GetComponent<RectTransform>();
+        Debug.Log("Screen is " + screen);
+        rectTransform.anchoredPosition = screen;
 
         StartCoroutine(WaitForActionDestroyable());
     }
