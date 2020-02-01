@@ -228,12 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc942b76189c2e40896281ac66487b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTime: 100
-  currentTime: 0
-  numChoresToWin: 10
-  currentChoresDone: 0
-  timerBar: {fileID: 0}
-  choresCounter: {fileID: 0}
+  uiManager: {fileID: 0}
+  levelManager: {fileID: 0}
 --- !u!114 &794435984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,6 +242,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b079bc50680b17445ac707556ebca0d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelTime: 100
+  currentTime: 0
+  numChoresToWin: 10
+  currentChoresDone: 0
+  timerBar: {fileID: 0}
+  choresCounter: {fileID: 0}
 --- !u!4 &794435985
 Transform:
   m_ObjectHideFlags: 0
@@ -712,7 +714,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 794435984}
+      - m_Target: {fileID: 794435983}
         m_MethodName: ChangeScene
         m_Mode: 5
         m_Arguments:
