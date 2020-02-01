@@ -145,6 +145,7 @@ public class InteractibleObject : MonoBehaviour
             //yield on a new YieldInstruction that waits for 1.5f seconds.
         }
         player.GetComponent<PlayerMovement>().enableMovement();
+        player.GetComponent<PlayerController>().removeObjectInFocus();
         gameObject.GetComponent<MeshFilter>().mesh = reparedGO;
         gameObject.tag = "Repaired";
         SwitchHighlight(false);
