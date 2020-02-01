@@ -14,7 +14,7 @@ public class InteractibleObject : MonoBehaviour
         CONTAINER
     };
 
-    public enum Container 
+    public enum Container
     {
         TRASH,
         GLASS,
@@ -23,7 +23,7 @@ public class InteractibleObject : MonoBehaviour
     };
 
     public Container container;
-    
+
     public TypeOfObject typeOfObject;
 
     public Mesh reparedGO;
@@ -32,11 +32,15 @@ public class InteractibleObject : MonoBehaviour
     public GameObject progressBarPrefab;
     private GameObject pBar;
     private float progressTime;
+    public ParticleSystem particleSystem;
+    public ParticleSystem particleDone;
 
     // Start is called before the first frame update
     void Start()
     {
         outlineMaterial = GetComponent<MeshRenderer>().material;
+
+
     }
 
     public void SwitchHighlight(bool highlighted)
@@ -47,7 +51,7 @@ public class InteractibleObject : MonoBehaviour
 
     public void TriggerAction(InteractibleObject carriedGO)
     {
-        switch(typeOfObject)
+        switch (typeOfObject)
         {
             case TypeOfObject.MOVABLE:
                 IdleToAttached();
@@ -61,6 +65,11 @@ public class InteractibleObject : MonoBehaviour
             case TypeOfObject.CONTAINER:
                 Throw(carriedGO);
                 break;
+        }
+
+        if (particleSystem != null)
+        {
+            particleSystem.Play();
         }
     }
 
@@ -91,7 +100,8 @@ public class InteractibleObject : MonoBehaviour
         StartCoroutine(WaitForActionReparable());
     }
 
-    void IdleToAttached() {
+    void IdleToAttached()
+    {
         if (!player.GetComponent<PlayerController>().SetCarriedGO(this))
             return;
         transform.parent = player.transform;
@@ -104,7 +114,7 @@ public class InteractibleObject : MonoBehaviour
 
     public void Throw(InteractibleObject carriedGO)
     {
-        if(carriedGO != null && carriedGO.container == container)
+        if (carriedGO != null && carriedGO.container == container)
         {
             carriedGO.IdleToDestroyed();
         }
@@ -151,5 +161,10 @@ public class InteractibleObject : MonoBehaviour
         SwitchHighlight(false);
         Destroy(this);
         Destroy(pBar);
+
+        if (particleDone != null)
+        {
+            particleDone.Play();
+        }
     }
 }
