@@ -10,15 +10,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     float currentTime = 0f;
 
-    [Header("Chores")]
-    public int numChoresToWin = 10;
-
-    [SerializeField]
-    int currentChoresDone = 0;
-
     [Header("UI")]
     public ProgressBar timerBar;
-    public ChoresCounter choresCounter;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,21 +26,10 @@ public class LevelManager : MonoBehaviour
         UpdateLevelTimer();
     }
 
-    public void ChoreDone()
-    {
-        ++currentChoresDone;
-        choresCounter.SetDoneChores(currentChoresDone);
-        if (currentChoresDone >= numChoresToWin)
-        {
-            GameManager.instance.WinGame();
-        }
-    }
 
     private void InitLevel()
     {
         currentTime = 0f;
-        currentChoresDone = 0;
-        choresCounter.SetDoneChores(currentChoresDone);
         timerBar.SetProgress(0);
     }
 
