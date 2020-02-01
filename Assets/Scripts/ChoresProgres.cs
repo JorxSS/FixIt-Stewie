@@ -22,7 +22,13 @@ public class ChoresProgres : MonoBehaviour
 
     public int numberOfDrunk = 0;
 
-    // Start is called before the first frame update
+    public void addDestroyChore()
+    {
+        ++totalOfDestroy;
+        float amountD = ((float)numberOfDestroy / totalOfDestroy);
+        circleDestroy.fillAmount = amountD;
+    }
+
     public void ChoreCompleted(InteractibleObject.TypeOfObject typeOfChore)
     {
         switch(typeOfChore)
