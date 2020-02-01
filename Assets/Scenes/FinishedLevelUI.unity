@@ -175,6 +175,8 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &581742
@@ -642,6 +644,22 @@ PrefabInstance:
       propertyPath: choresProgres
       value: 
       objectReference: {fileID: 1994458486}
+    - target: {fileID: 528677816888744984, guid: 33996bacff334034abd58c9f3230e4dc,
+        type: 3}
+      propertyPath: vomit
+      value: 
+      objectReference: {fileID: 2554101525859258410, guid: 98a99d19e2b37b64b9857db7b994a271,
+        type: 3}
+    - target: {fileID: 528677816888744984, guid: 33996bacff334034abd58c9f3230e4dc,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 619448101}
+    - target: {fileID: 528677816888744984, guid: 33996bacff334034abd58c9f3230e4dc,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1550410174}
     - target: {fileID: 528677816888744986, guid: 33996bacff334034abd58c9f3230e4dc,
         type: 3}
       propertyPath: m_Name
@@ -897,6 +915,8 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &161094164
@@ -1029,6 +1049,8 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &163648548
@@ -1226,6 +1248,8 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &243921416
@@ -1435,6 +1459,8 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!1 &273413889
@@ -1899,6 +1925,8 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &378460194
@@ -3068,6 +3096,8 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &465060849
@@ -3578,6 +3608,8 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &545954017
@@ -3873,6 +3905,11 @@ PrefabInstance:
       propertyPath: choresProgres
       value: 
       objectReference: {fileID: 1994458486}
+    - target: {fileID: 2554101525859258408, guid: 98a99d19e2b37b64b9857db7b994a271,
+        type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1994458484}
     - target: {fileID: 2554101525859258409, guid: 98a99d19e2b37b64b9857db7b994a271,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3979,6 +4016,11 @@ PrefabInstance:
       propertyPath: choresProgres
       value: 
       objectReference: {fileID: 1994458486}
+    - target: {fileID: 2554101525859258408, guid: 98a99d19e2b37b64b9857db7b994a271,
+        type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1994458484}
     - target: {fileID: 2554101525859258409, guid: 98a99d19e2b37b64b9857db7b994a271,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4113,6 +4155,8 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &691720475
@@ -4469,6 +4513,11 @@ PrefabInstance:
       propertyPath: choresProgres
       value: 
       objectReference: {fileID: 1994458486}
+    - target: {fileID: 2554101525859258408, guid: 98a99d19e2b37b64b9857db7b994a271,
+        type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1994458484}
     - target: {fileID: 2554101525859258409, guid: 98a99d19e2b37b64b9857db7b994a271,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4602,6 +4651,8 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &777987541
@@ -4736,6 +4787,8 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &802960205
@@ -5144,6 +5197,8 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &870650652
@@ -5277,6 +5332,8 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &872341092
@@ -5411,6 +5468,8 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &904465574
@@ -5543,6 +5602,8 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &934709351
@@ -5761,6 +5822,11 @@ PrefabInstance:
       propertyPath: choresProgres
       value: 
       objectReference: {fileID: 1994458486}
+    - target: {fileID: 2554101525859258408, guid: 98a99d19e2b37b64b9857db7b994a271,
+        type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1994458484}
     - target: {fileID: 2554101525859258409, guid: 98a99d19e2b37b64b9857db7b994a271,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6010,6 +6076,8 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1212942566
@@ -6309,6 +6377,8 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1301943921
@@ -6716,6 +6786,8 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1355573494
@@ -7088,6 +7160,8 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1375070739
@@ -7424,6 +7498,8 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1401476729
@@ -7543,6 +7619,11 @@ PrefabInstance:
       propertyPath: choresProgres
       value: 
       objectReference: {fileID: 1994458486}
+    - target: {fileID: 2554101525859258408, guid: 98a99d19e2b37b64b9857db7b994a271,
+        type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1994458484}
     - target: {fileID: 2554101525859258409, guid: 98a99d19e2b37b64b9857db7b994a271,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7863,6 +7944,11 @@ PrefabInstance:
       propertyPath: choresProgres
       value: 
       objectReference: {fileID: 1994458486}
+    - target: {fileID: 2554101525859258408, guid: 98a99d19e2b37b64b9857db7b994a271,
+        type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1994458484}
     - target: {fileID: 2554101525859258409, guid: 98a99d19e2b37b64b9857db7b994a271,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8470,6 +8556,8 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!1 &1657275365
@@ -8519,6 +8607,22 @@ PrefabInstance:
       propertyPath: choresProgres
       value: 
       objectReference: {fileID: 1994458486}
+    - target: {fileID: 528677816888744984, guid: 33996bacff334034abd58c9f3230e4dc,
+        type: 3}
+      propertyPath: vomit
+      value: 
+      objectReference: {fileID: 2554101525859258410, guid: 98a99d19e2b37b64b9857db7b994a271,
+        type: 3}
+    - target: {fileID: 528677816888744984, guid: 33996bacff334034abd58c9f3230e4dc,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 619448101}
+    - target: {fileID: 528677816888744984, guid: 33996bacff334034abd58c9f3230e4dc,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1550410174}
     - target: {fileID: 528677816888744986, guid: 33996bacff334034abd58c9f3230e4dc,
         type: 3}
       propertyPath: m_Name
@@ -8645,6 +8749,8 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1706189883
@@ -8887,6 +8993,8 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1725680283
@@ -9023,6 +9131,11 @@ PrefabInstance:
       propertyPath: choresProgres
       value: 
       objectReference: {fileID: 1994458486}
+    - target: {fileID: 2554101525859258408, guid: 98a99d19e2b37b64b9857db7b994a271,
+        type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1994458484}
     - target: {fileID: 2554101525859258409, guid: 98a99d19e2b37b64b9857db7b994a271,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9186,6 +9299,8 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1896083012
@@ -9446,6 +9561,8 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1953690743
@@ -9677,6 +9794,22 @@ PrefabInstance:
       propertyPath: choresProgres
       value: 
       objectReference: {fileID: 1994458486}
+    - target: {fileID: 528677816888744984, guid: 33996bacff334034abd58c9f3230e4dc,
+        type: 3}
+      propertyPath: vomit
+      value: 
+      objectReference: {fileID: 2554101525859258410, guid: 98a99d19e2b37b64b9857db7b994a271,
+        type: 3}
+    - target: {fileID: 528677816888744984, guid: 33996bacff334034abd58c9f3230e4dc,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 619448101}
+    - target: {fileID: 528677816888744984, guid: 33996bacff334034abd58c9f3230e4dc,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1550410174}
     - target: {fileID: 528677816888744986, guid: 33996bacff334034abd58c9f3230e4dc,
         type: 3}
       propertyPath: m_Name
@@ -9913,6 +10046,8 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &2084676682
@@ -10052,6 +10187,8 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &2123150614
@@ -10156,6 +10293,11 @@ PrefabInstance:
       propertyPath: choresProgres
       value: 
       objectReference: {fileID: 1994458486}
+    - target: {fileID: 2554101525859258408, guid: 98a99d19e2b37b64b9857db7b994a271,
+        type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1994458484}
     - target: {fileID: 2554101525859258409, guid: 98a99d19e2b37b64b9857db7b994a271,
         type: 3}
       propertyPath: m_LocalPosition.x
