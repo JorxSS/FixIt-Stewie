@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public int speed = 10;
     NavMeshAgent navMeshAgent;
-    Rigidbody rigidbody;
+    Rigidbody myRigidBody;
 
     Vector3 movement;
 
@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        rigidbody = GetComponent<Rigidbody>();
+        myRigidBody = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         if (movement.magnitude > 0)
         {
             navMeshAgent.ResetPath();
-            rigidbody.transform.position += movement * speed * Time.fixedDeltaTime;
+            myRigidBody.transform.position += movement * speed * Time.fixedDeltaTime;
             transform.rotation = Quaternion.LookRotation(movement);
         }
     }

@@ -10,15 +10,25 @@ public class InteractibleObject : MonoBehaviour
     {
         MOVABLE,
         DESTROYABLE,
-        REPARABLE
+        REPARABLE,
+        CONTAINER
     };
+
+    public enum Container 
+    {
+        TRASH,
+        GLASS,
+        PLASTIC,
+        PAPER
+    };
+
+    public Container container;
     
     public TypeOfObject typeOfObject;
 
-    public GameObject reparedGO;
-    public ContainerScript.Container container;
-
+    public Mesh reparedGO;
     private Material outlineMaterial;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +42,7 @@ public class InteractibleObject : MonoBehaviour
         outlineMaterial.SetFloat("_Outline", value);
     }
 
-    public void TriggerAction()
+    public void TriggerAction(InteractibleObject carriedGO)
     {
         switch(typeOfObject)
         {
@@ -45,18 +55,23 @@ public class InteractibleObject : MonoBehaviour
             case TypeOfObject.REPARABLE:
                 IdleToRepaired();
                 break;
+            case TypeOfObject.CONTAINER:
+                Throw(carriedGO);
+                break;
         }
     }
 
     void IdleToDestroyed()
     {
-        Destroy(gameObject);
+        StartCoroutine(WaitForActionDestroyable());
     }
 
     void IdleToRepaired()
     {
-        Instantiate(reparedGO, transform.position, transform.rotation);
-        Destroy(gameObject);
+        gameObject.GetComponent<MeshFilter>().mesh = reparedGO;
+        gameObject.tag = "Repaired";
+        SwitchHighlight(false);
+        Destroy(this);
     }
 
     void IdleToAttached() {
@@ -69,10 +84,12 @@ public class InteractibleObject : MonoBehaviour
         player.GetComponent<PlayerController>().SetCarriedGO(this);
     }
 
-    public void Throw()
+    public void Throw(InteractibleObject carriedGO)
     {
-        player.GetComponent<PlayerController>().SetCarriedGO(null);
-        IdleToDestroyed();
+        if(carriedGO != null && carriedGO.container == container)
+        {
+            carriedGO.IdleToDestroyed();
+        }
     }
     public void Place()
     {
@@ -83,5 +100,12 @@ public class InteractibleObject : MonoBehaviour
         NavMeshObstacle navMeshObstacle = GetComponent<NavMeshObstacle>();
         navMeshObstacle.enabled = true;
         player.GetComponent<PlayerController>().SetCarriedGO(null);
+    }
+
+    IEnumerator WaitForActionDestroyable()
+    {
+        //yield on a new YieldInstruction that waits for 1.5f seconds.
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
     }
 }
