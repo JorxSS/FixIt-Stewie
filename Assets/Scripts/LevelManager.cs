@@ -57,7 +57,7 @@ public class LevelManager : MonoBehaviour
 
         if (currentTime >= levelTime)
         {
-            GameManager.instance.WinGame();
+            GameManager.instance.LoseGame();
         }
     }
 
