@@ -17,12 +17,13 @@ public class DrunkAgent : MonoBehaviour
     public Transform exit;
     float time;
     float totalTime;
-    public ParticleSystem sleepParticle;
+    ParticleSystem sleepParticle;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         time = 0;
         totalTime = 0;
+        sleepParticle = GetComponentInChildren<ParticleSystem>();
     }
     private void Update()
     {

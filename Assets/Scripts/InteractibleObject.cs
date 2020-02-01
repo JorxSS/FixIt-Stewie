@@ -34,9 +34,9 @@ public class InteractibleObject : MonoBehaviour
     private GameObject pBar;
     private float progressTime;
 
-    public ParticleSystem repairParticles;
-    public ParticleSystem particleDone;
-    public ParticleSystem throwParticle;
+    ParticleSystem repairParticles;
+    ParticleSystem particleDone;
+    ParticleSystem throwParticle;
 
     private bool doingSomething = false;
 
@@ -47,6 +47,20 @@ public class InteractibleObject : MonoBehaviour
     void Start()
     {
         outlineMaterial = GetComponent<MeshRenderer>().material;
+        if (typeOfObject == TypeOfObject.MOVABLE)
+        {
+            throwParticle = GetComponentInChildren<ParticleSystem>();
+        }
+        else if (typeOfObject == TypeOfObject.REPARABLE)
+        {
+            repairParticles = transform.GetChild(0).GetComponent<ParticleSystem>();
+            particleDone = transform.GetChild(1).GetComponent<ParticleSystem>();
+        }
+        else if (typeOfObject == TypeOfObject.DESTROYABLE)
+        {
+            repairParticles = transform.GetChild(1).GetComponent<ParticleSystem>();
+            particleDone = transform.GetChild(2).GetComponent<ParticleSystem>();
+        }
     }
 
     public void SwitchHighlight(bool highlighted)
@@ -224,6 +238,10 @@ public class InteractibleObject : MonoBehaviour
                 }
             }
         }
+
+        Debug.Log("Play animation");
+        repairParticles.Stop();
+        particleDone.Play();
         choresProgres.ChoreCompleted(typeOfObject);
         doingSomething = false;
         player.GetComponent<PlayerMovement>().enableMovement();
@@ -231,13 +249,8 @@ public class InteractibleObject : MonoBehaviour
         gameObject.GetComponent<MeshFilter>().mesh = reparedGO;
         gameObject.tag = "Repaired";
         SwitchHighlight(false);
-        Destroy(this);
+        //Destroy(this);
         Destroy(pBar);
-
-        if (particleDone != null)
-        {
-            particleDone.Play();
-        }
     }
 
     IEnumerator wrongConainerFeedback()

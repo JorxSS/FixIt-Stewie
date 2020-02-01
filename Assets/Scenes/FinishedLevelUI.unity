@@ -176,8 +176,6 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &581742
@@ -935,8 +933,6 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &161094164
@@ -1069,8 +1065,6 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &163648548
@@ -1268,8 +1262,6 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &243921416
@@ -1348,6 +1340,80 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243921413}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &259673733
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 264396848}
+    m_Modifications:
+    - target: {fileID: 2262649276245181084, guid: 0d1ae226ec862a548afcb782b266121a,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055053899058522542, guid: 0d1ae226ec862a548afcb782b266121a,
+        type: 3}
+      propertyPath: m_Name
+      value: Repair particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567151712909800666, guid: 0d1ae226ec862a548afcb782b266121a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567151712909800666, guid: 0d1ae226ec862a548afcb782b266121a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567151712909800666, guid: 0d1ae226ec862a548afcb782b266121a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567151712909800666, guid: 0d1ae226ec862a548afcb782b266121a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567151712909800666, guid: 0d1ae226ec862a548afcb782b266121a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567151712909800666, guid: 0d1ae226ec862a548afcb782b266121a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567151712909800666, guid: 0d1ae226ec862a548afcb782b266121a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567151712909800666, guid: 0d1ae226ec862a548afcb782b266121a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567151712909800666, guid: 0d1ae226ec862a548afcb782b266121a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567151712909800666, guid: 0d1ae226ec862a548afcb782b266121a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567151712909800666, guid: 0d1ae226ec862a548afcb782b266121a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0d1ae226ec862a548afcb782b266121a, type: 3}
 --- !u!1 &264396847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,7 +1445,9 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -10.25, y: -1.11, z: -4.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 663287218}
+  - {fileID: 1668976016}
   m_Father: {fileID: 397455892}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1479,8 +1547,6 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!1 &273413889
@@ -1945,8 +2011,6 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &378460194
@@ -3116,8 +3180,6 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &465060849
@@ -3314,6 +3376,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 429961683}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &510661911
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 264396848}
+    m_Modifications:
+    - target: {fileID: 3002161403030399476, guid: 71e149593a5d8ea4884aee7246913869,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002161403030399476, guid: 71e149593a5d8ea4884aee7246913869,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002161403030399476, guid: 71e149593a5d8ea4884aee7246913869,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002161403030399476, guid: 71e149593a5d8ea4884aee7246913869,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002161403030399476, guid: 71e149593a5d8ea4884aee7246913869,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002161403030399476, guid: 71e149593a5d8ea4884aee7246913869,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002161403030399476, guid: 71e149593a5d8ea4884aee7246913869,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002161403030399476, guid: 71e149593a5d8ea4884aee7246913869,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002161403030399476, guid: 71e149593a5d8ea4884aee7246913869,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002161403030399476, guid: 71e149593a5d8ea4884aee7246913869,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002161403030399476, guid: 71e149593a5d8ea4884aee7246913869,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002161403030399476, guid: 71e149593a5d8ea4884aee7246913869,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.123399995
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997654765644168276, guid: 71e149593a5d8ea4884aee7246913869,
+        type: 3}
+      propertyPath: m_Name
+      value: Object fixed
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 71e149593a5d8ea4884aee7246913869, type: 3}
 --- !u!1 &519723349
 GameObject:
   m_ObjectHideFlags: 0
@@ -3628,8 +3764,6 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &545954017
@@ -4014,6 +4148,12 @@ Canvas:
     type: 3}
   m_PrefabInstance: {fileID: 377487731}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &663287218 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8567151712909800666, guid: 0d1ae226ec862a548afcb782b266121a,
+    type: 3}
+  m_PrefabInstance: {fileID: 259673733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &684366810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4175,8 +4315,6 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &691720475
@@ -4671,8 +4809,6 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &777987541
@@ -4807,8 +4943,6 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &802960205
@@ -5217,8 +5351,6 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &870650652
@@ -5352,8 +5484,6 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &872341092
@@ -5488,8 +5618,6 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &904465574
@@ -5622,8 +5750,6 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &934709351
@@ -6096,8 +6222,6 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1212942566
@@ -6397,8 +6521,6 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1301943921
@@ -6806,8 +6928,6 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1355573494
@@ -7180,8 +7300,6 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1375070739
@@ -7518,8 +7636,6 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1401476729
@@ -8576,8 +8692,6 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!1 &1657275365
@@ -8715,6 +8829,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33996bacff334034abd58c9f3230e4dc, type: 3}
+--- !u!4 &1668976016 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3002161403030399476, guid: 71e149593a5d8ea4884aee7246913869,
+    type: 3}
+  m_PrefabInstance: {fileID: 510661911}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1706189880
 GameObject:
   m_ObjectHideFlags: 0
@@ -8769,8 +8889,6 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1706189883
@@ -9013,8 +9131,6 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1725680283
@@ -9319,8 +9435,6 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1896083012
@@ -9581,8 +9695,6 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &1953690743
@@ -10066,8 +10178,6 @@ MonoBehaviour:
   canvas: {fileID: 619448101}
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &2084676682
@@ -10207,8 +10317,6 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
   repairBarSpeed: 3.5
-  particleSystem: {fileID: 0}
-  particleDone: {fileID: 0}
   choresProgres: {fileID: 1994458486}
   levelManager: {fileID: 0}
 --- !u!208 &2123150614
