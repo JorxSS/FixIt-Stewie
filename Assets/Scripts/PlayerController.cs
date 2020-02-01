@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
             }
         }
-        if (Input.GetButtonDown("Interaction"))
+       /* if (Input.GetButtonDown("Interaction"))
         {
             Debug.Log("Pressing interaction button");
             Ray action = new Ray(raypoint.transform.position, raypoint.transform.forward);
@@ -87,12 +87,28 @@ public class PlayerController : MonoBehaviour
 
                 }
             }
-        }
+        }*/
         movement.MoveWASD();
     }
     Vector3 ProjectPointOnPlane(Vector3 planeNormal , Vector3 planePoint, Vector3 point) {
-     planeNormal.Normalize();
-     float distance = -Vector3.Dot(planeNormal.normalized, (point - planePoint));
-     return point + planeNormal* distance;
+        planeNormal.Normalize();
+        float distance = -Vector3.Dot(planeNormal.normalized, (point - planePoint));
+        return point + planeNormal* distance;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("Detected object is :" + other.name);
+        if (Input.GetButtonDown("Interaction"))
+        {
+            Debug.Log("Pressing interaction button");
+            InteractibleObject interactedObject = other.gameObject.GetComponent<InteractibleObject>();
+            if (interactedObject != null)
+            {
+                interactedObject.TriggerAction();
+
+            }
+        }
+
     }
 }
