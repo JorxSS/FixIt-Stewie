@@ -174,6 +174,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 0
 --- !u!208 &581742
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -304,6 +305,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &50336405
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -471,8 +473,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2006196222}
-  - {fileID: 2051754436}
   - {fileID: 1752628592}
+  - {fileID: 919675361}
   - {fileID: 409381059}
   - {fileID: 645382621}
   m_Father: {fileID: 0}
@@ -556,6 +558,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &105060912
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -686,6 +689,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &128405680
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1021,6 +1025,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 0
 --- !u!208 &161094164
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1150,6 +1155,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 0
 --- !u!208 &163648548
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1528,8 +1534,9 @@ MonoBehaviour:
   typeOfObject: 2
   reparedGO: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   canvas: {fileID: 53967850}
-  progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
+  progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
+  repairBarSpeed: 3
 --- !u!1 &365234873
 GameObject:
   m_ObjectHideFlags: 0
@@ -2884,6 +2891,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 0
 --- !u!208 &465060849
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3462,6 +3470,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &545954017
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3721,6 +3730,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &581426160
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3994,6 +4004,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &691720475
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4312,6 +4323,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &777987541
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4442,6 +4454,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &780264790
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4811,6 +4824,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &870650652
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4941,6 +4955,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &872341092
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5290,6 +5305,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &931125491
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5419,6 +5435,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 0
 --- !u!208 &934709351
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5613,6 +5630,136 @@ MonoBehaviour:
   distanceZaxis: -4
   distanceYaxis: 3
   playerTransform: {fileID: 1550410179}
+--- !u!1 &1088221183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1088221184}
+  - component: {fileID: 1088221189}
+  - component: {fileID: 1088221188}
+  - component: {fileID: 1088221187}
+  - component: {fileID: 1088221186}
+  - component: {fileID: 1088221185}
+  m_Layer: 0
+  m_Name: Mov. Botella (16)
+  m_TagString: InteractiveObject
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1088221184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088221183}
+  m_LocalRotation: {x: -0.68211406, y: -0.186249, z: -0.1862548, w: 0.6821591}
+  m_LocalPosition: {x: -3.84, y: -0.45, z: 1.41}
+  m_LocalScale: {x: 0.16, y: 0.7026, z: 0.165}
+  m_Children: []
+  m_Father: {fileID: 397455892}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -30.543001}
+--- !u!114 &1088221185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088221183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dc433cd6cf3dd46a4b2e09bd5fce9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1550410174}
+  container: 0
+  typeOfObject: 0
+  reparedGO: {fileID: 0}
+  canvas: {fileID: 0}
+  progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 0
+--- !u!208 &1088221186
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088221183}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!65 &1088221187
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088221183}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1088221188
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088221183}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1149df86c20846d408157b2e2a6bdb53, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1088221189
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088221183}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1105467909
 GameObject:
   m_ObjectHideFlags: 0
@@ -5777,6 +5924,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &1187378574
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5907,6 +6055,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &1212942566
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6280,6 +6429,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 0
 --- !u!208 &1301943921
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6873,6 +7023,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!1 &1372035352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2032612176005761648, guid: 0b2888f66b6afee4c912ce5a1899c333,
@@ -7056,6 +7207,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &1375070739
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7389,6 +7541,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 0
 --- !u!208 &1401476729
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7758,6 +7911,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &1437541099
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -8357,6 +8511,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 0
 --- !u!1 &1644690943
 GameObject:
   m_ObjectHideFlags: 0
@@ -8411,6 +8566,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &1644690946
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -8618,6 +8774,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &1705702347
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9070,6 +9227,136 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+  - component: {fileID: 1749613344}
+  - component: {fileID: 1749613349}
+  - component: {fileID: 1749613348}
+  - component: {fileID: 1749613347}
+  - component: {fileID: 1749613346}
+  - component: {fileID: 1749613345}
+  m_Layer: 0
+  m_Name: Mov. Botella (15)
+  m_TagString: InteractiveObject
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1749613344
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749613343}
+  m_LocalRotation: {x: -0.68268317, y: 0.18415172, z: 0.18416949, w: 0.682725}
+  m_LocalPosition: {x: -3.83, y: -0.45, z: -0.12}
+  m_LocalScale: {x: 0.16, y: 0.7026, z: 0.165}
+  m_Children: []
+  m_Father: {fileID: 397455892}
+  m_RootOrder: 33
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 30.193}
+--- !u!114 &1749613345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749613343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dc433cd6cf3dd46a4b2e09bd5fce9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1550410174}
+  container: 0
+  typeOfObject: 0
+  reparedGO: {fileID: 0}
+  canvas: {fileID: 0}
+  progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 0
+--- !u!208 &1749613346
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749613343}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!65 &1749613347
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749613343}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1749613348
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749613343}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1149df86c20846d408157b2e2a6bdb53, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1749613349
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749613343}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1752628591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
   - component: {fileID: 1752628592}
   - component: {fileID: 1752628594}
   - component: {fileID: 1752628593}
@@ -9093,7 +9380,7 @@ RectTransform:
   m_Children:
   - {fileID: 2059594966}
   m_Father: {fileID: 53967851}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9238,6 +9525,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 0
 --- !u!208 &1896083012
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9368,6 +9656,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &1953690743
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9526,7 +9815,7 @@ MonoBehaviour:
   currentTime: 0
   numChoresToWin: 10
   currentChoresDone: 0
-  timerBar: {fileID: 2051754437}
+  timerBar: {fileID: 919675363}
   choresCounter: {fileID: 2006196223}
 --- !u!114 &1994458485
 MonoBehaviour:
@@ -9596,24 +9885,136 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalChoresText: {fileID: 898007474}
   currentChoresText: {fileID: 777674847}
---- !u!224 &2051754436 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-    type: 3}
-  m_PrefabInstance: {fileID: 3660073386708111298}
+--- !u!1 &2059023815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2051754437 stripped
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2059023816}
+  - component: {fileID: 2059023821}
+  - component: {fileID: 2059023820}
+  - component: {fileID: 2059023819}
+  - component: {fileID: 2059023818}
+  - component: {fileID: 2059023817}
+  m_Layer: 0
+  m_Name: Mov. Botella (14)
+  m_TagString: InteractiveObject
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2059023816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059023815}
+  m_LocalRotation: {x: -0.68268317, y: 0.18415172, z: 0.18416949, w: 0.682725}
+  m_LocalPosition: {x: 1.9300003, y: -0.44999886, z: -0.5300007}
+  m_LocalScale: {x: 0.16, y: 0.7026, z: 0.165}
+  m_Children: []
+  m_Father: {fileID: 397455892}
+  m_RootOrder: 32
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 30.193}
+--- !u!114 &2059023817
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3660073384933475847, guid: 94c341aae2646f4498de4f28da9c4a56,
-    type: 3}
-  m_PrefabInstance: {fileID: 3660073386708111298}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2059023815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b908cadb127515a4385b242433b6db32, type: 3}
+  m_Script: {fileID: 11500000, guid: 59dc433cd6cf3dd46a4b2e09bd5fce9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1550410174}
+  container: 0
+  typeOfObject: 0
+  reparedGO: {fileID: 0}
+  canvas: {fileID: 0}
+  progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 0
+--- !u!208 &2059023818
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059023815}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!65 &2059023819
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059023815}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &2059023820
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059023815}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1149df86c20846d408157b2e2a6bdb53, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &2059023821
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059023815}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2059594965
 GameObject:
   m_ObjectHideFlags: 0
@@ -9854,6 +10255,7 @@ MonoBehaviour:
   reparedGO: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 0}
+  repairBarSpeed: 0
 --- !u!208 &2084676682
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -10190,6 +10592,7 @@ MonoBehaviour:
   canvas: {fileID: 53967850}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
+  repairBarSpeed: 0
 --- !u!208 &2123150614
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -10266,122 +10669,3 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123150611}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &3660073386708111298
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 53967851}
-    m_Modifications:
-    - target: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_Name
-      value: TimerBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660073384933475846, guid: 94c341aae2646f4498de4f28da9c4a56,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 94c341aae2646f4498de4f28da9c4a56, type: 3}
