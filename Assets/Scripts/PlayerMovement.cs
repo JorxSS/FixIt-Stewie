@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     NavMeshAgent navMeshAgent;
     Rigidbody rigidbody;
 
+    Vector3 lastMovement;
     Vector3 movement;
 
     // Start is called before the first frame update
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         rigidbody = GetComponent<Rigidbody>();
+        lastMovement = Vector3.zero;
     }
 
     private void FixedUpdate()
@@ -32,7 +34,17 @@ public class PlayerMovement : MonoBehaviour
 
     public void SetMovement(Vector3 movement)
     {
+        lastMovement = this.movement;
         this.movement = movement; 
+        
+        if (lastMovement.magnitude == 0 && movement.magnitude != 0)
+        {
+            SoundManager.instance.SwitchFootsteps(true);
+        }
+        if (lastMovement.magnitude != 0 && movement.magnitude == 0)
+        {
+            SoundManager.instance.SwitchFootsteps(false);
+        }
     }
 
     public void MoveToPoint(Vector3 point)
