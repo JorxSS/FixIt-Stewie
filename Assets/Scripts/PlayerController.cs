@@ -100,6 +100,11 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.P) && carriedGO != null)
+        {
+            carriedGO.Place();
+        }
     }
     Vector3 ProjectPointOnPlane(Vector3 planeNormal , Vector3 planePoint, Vector3 point)
     {
@@ -137,11 +142,6 @@ public class PlayerController : MonoBehaviour
         {
             objectInFocus.GetComponent<InteractibleObject>().SwitchHighlight(false);
             objectInFocus = null;
-        }
-
-        if (Input.GetKeyDown(KeyCode.P) && carriedGO != null)
-        {
-            carriedGO.Place();
         }
     }
 
