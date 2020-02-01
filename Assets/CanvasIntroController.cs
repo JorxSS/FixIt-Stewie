@@ -12,41 +12,42 @@ public class CanvasIntroController : MonoBehaviour
     public GameObject dad;
     public GameObject mom;
     public GameObject bocata;
-    Stack<GameObject> obj;
-    RawImage currentObj;
+    Stack<GameObject> obj = new Stack<GameObject>();
+    RawImage currentObj = null;
 
-    bool fading = false;
     void Start()
     {
-        obj.Push(house0)
+        obj.Push(houseNight);
+        obj.Push(house1);
+        obj.Push(bocata);
         obj.Push(dad);
         obj.Push(mom);
-        obj.Push(bocata);
-        obj.Push(houseNight);
-   
+        obj.Push(house0);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (fading == true)
-        {
-            //Fully fade in Image (1) with the duration of 2
-            
-            imageHouseDay.CrossFadeAlpha(0, 2.0f, false);
+        if (Input.GetKeyDown(KeyCode.Q)){
+            Debug.Log("TRYINNNNNNNNNNNNNNNNN");
+            if (obj.Count > 0)
+            {
+                Debug.Log("hellowwwwwwwwwwwwwwwwwwwwwwww");
+                GameObject current = GetNext();
+                currentObj = current.GetComponent<RawImage>();
+                //currentObj.CrossFadeAlpha(1, 3.0f, false);
+                Fade(currentObj);
+            }
         }
-        if (fading == false)
-        {
-            imageHouseDay.CrossFadeAlpha(1, 2.0f, false);
-        }
-    }
-    void OnGUI()
-    {
-        //Fetch the Toggle's state
-        fading = GUI.Toggle(new Rect(0, 0, 100, 30), fading, "Fade In/Out");
     }
     GameObject GetNext()
     {
-        for(int)
+        return obj.Pop();
+    }
+    IEnumerator Fade(RawImage go)
+    {
+        go.CrossFadeAlpha(0, 2.0f, false);
+        yield return new WaitForSeconds(.1f);
     }
 }

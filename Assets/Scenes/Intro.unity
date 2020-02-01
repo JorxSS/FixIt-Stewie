@@ -519,7 +519,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc9744985734fa48a14fcbfaea77159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  house: {fileID: 530792616}
+  house0: {fileID: 530792616}
+  house1: {fileID: 1634751479}
+  houseNight: {fileID: 1126043368}
+  dad: {fileID: 31555533}
+  mom: {fileID: 1975376851}
+  bocata: {fileID: 355411855}
 --- !u!1 &922672072
 GameObject:
   m_ObjectHideFlags: 0
