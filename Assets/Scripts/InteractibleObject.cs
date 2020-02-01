@@ -156,10 +156,12 @@ public class InteractibleObject : MonoBehaviour
         RectTransform rect = pBar.transform.GetChild(2).GetComponent<RectTransform>();
         rect.pivot = new Vector2(objective, 0);
         int times = 3;
+        float time = 0.6f;
         while (true)
         {
             yield return null;
             progressTime += dir * Time.deltaTime * repairBarSpeed;
+            time += Time.deltaTime;
             float currProgress = progressTime / 1.5f;
             pBar.GetComponent<ProgressBar>().SetProgress(currProgress);
             if (progressTime >= 1.5)
@@ -170,15 +172,22 @@ public class InteractibleObject : MonoBehaviour
             {
                 dir = 1;
             }
-            if (Input.GetButtonDown("Interaction") && Mathf.Abs(currProgress - objective) < 0.15f)
+            if (Input.GetButtonDown("Interaction"))
             {
-                if (times == 1)
-                    break;
-                else
+                if (time >= 0.6f)
                 {
-                    --times;
-                    objective = Random.Range(0.0f, 1.0f);
-                    rect.pivot = new Vector2(objective, 0);
+                    time = 0;
+                    if (Mathf.Abs(currProgress - objective) < 0.15f)
+                    {
+                        if (times == 1)
+                            break;
+                        else
+                        {
+                            --times;
+                            objective = Random.Range(0.0f, 1.0f);
+                            rect.pivot = new Vector2(objective, 0);
+                        }
+                    }
                 }
             }
         }
