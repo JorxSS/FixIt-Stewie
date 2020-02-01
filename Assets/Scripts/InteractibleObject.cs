@@ -10,15 +10,28 @@ public class InteractibleObject : MonoBehaviour
     {
         MOVABLE,
         DESTROYABLE,
-        REPARABLE
+        REPARABLE,
+        CONTAINER
     };
+
+    public enum Container 
+    {
+        TRASH,
+        GLASS,
+        PLASTIC,
+        PAPER
+    };
+
+    public Container container;
     
     public TypeOfObject typeOfObject;
 
-    public GameObject reparedGO;
-    public ContainerScript.Container container;
-
+    public Mesh reparedGO;
     private Material outlineMaterial;
+    public Canvas canvas;
+    public GameObject progressBarPrefab;
+    private GameObject pBar;
+    private float progressTime;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +45,7 @@ public class InteractibleObject : MonoBehaviour
         outlineMaterial.SetFloat("_Outline", value);
     }
 
-    public void TriggerAction()
+    public void TriggerAction(InteractibleObject carriedGO)
     {
         switch(typeOfObject)
         {
@@ -45,43 +58,98 @@ public class InteractibleObject : MonoBehaviour
             case TypeOfObject.REPARABLE:
                 IdleToRepaired();
                 break;
+            case TypeOfObject.CONTAINER:
+                Throw(carriedGO);
+                break;
         }
     }
 
     void IdleToDestroyed()
     {
-        Destroy(gameObject);
+        if (typeOfObject == TypeOfObject.MOVABLE)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        pBar = Instantiate(progressBarPrefab, canvas.transform);
+        Vector3 screen = Camera.main.WorldToScreenPoint(transform.position);
+        RectTransform rectTransform = pBar.GetComponent<RectTransform>();
+        rectTransform.anchoredPosition = screen;
+        player.GetComponent<PlayerMovement>().disableMovement();
+        progressTime = 0;
+        StartCoroutine(WaitForActionDestroyable());
     }
 
     void IdleToRepaired()
     {
-        Instantiate(reparedGO, transform.position, transform.rotation);
-        Destroy(gameObject);
+        pBar = Instantiate(progressBarPrefab, canvas.transform);
+        Vector3 screen = Camera.main.WorldToScreenPoint(transform.position);
+        RectTransform rectTransform = pBar.GetComponent<RectTransform>();
+        rectTransform.anchoredPosition = screen;
+        player.GetComponent<PlayerMovement>().disableMovement();
+        progressTime = 0;
+        StartCoroutine(WaitForActionReparable());
     }
 
     void IdleToAttached() {
+        if (!player.GetComponent<PlayerController>().SetCarriedGO(this))
+            return;
         transform.parent = player.transform;
         transform.localPosition = new Vector3(0.01f, 0, 0);
         BoxCollider boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = false;
         NavMeshObstacle navMeshObstacle = GetComponent<NavMeshObstacle>();
         navMeshObstacle.enabled = false;
-        player.GetComponent<PlayerController>().SetCarriedGO(this);
     }
 
-    public void Throw()
+    public void Throw(InteractibleObject carriedGO)
     {
-        player.GetComponent<PlayerController>().SetCarriedGO(null);
-        IdleToDestroyed();
+        if(carriedGO != null && carriedGO.container == container)
+        {
+            carriedGO.IdleToDestroyed();
+        }
     }
+
     public void Place()
     {
-        transform.localPosition = new Vector3(1, 0, 0);
+        transform.position = player.transform.GetChild(1).transform.position;
         transform.parent = null;
         BoxCollider boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = true;
         NavMeshObstacle navMeshObstacle = GetComponent<NavMeshObstacle>();
         navMeshObstacle.enabled = true;
         player.GetComponent<PlayerController>().SetCarriedGO(null);
+    }
+
+    IEnumerator WaitForActionDestroyable()
+    {
+        while (progressTime < 1.5f)
+        {
+            yield return null;
+            pBar.GetComponent<ProgressBar>().SetProgress(progressTime / 1.5f);
+            progressTime += Time.deltaTime;
+            //yield on a new YieldInstruction that waits for 1.5f seconds.
+        }
+        player.GetComponent<PlayerMovement>().enableMovement();
+        Destroy(pBar);
+        Destroy(gameObject);
+    }
+
+    IEnumerator WaitForActionReparable()
+    {
+        while (progressTime < 1.5f)
+        {
+            yield return null;
+            pBar.GetComponent<ProgressBar>().SetProgress(progressTime / 1.5f);
+            progressTime += Time.deltaTime;
+            //yield on a new YieldInstruction that waits for 1.5f seconds.
+        }
+        player.GetComponent<PlayerMovement>().enableMovement();
+        player.GetComponent<PlayerController>().removeObjectInFocus();
+        gameObject.GetComponent<MeshFilter>().mesh = reparedGO;
+        gameObject.tag = "Repaired";
+        SwitchHighlight(false);
+        Destroy(this);
+        Destroy(pBar);
     }
 }
