@@ -9,27 +9,20 @@ public class ChoresProgres : MonoBehaviour
     public Image circleContainer;
     public Image circleDestroy;
     public Image circleRepaired;
+    public Image circleDrunk;
 
     public int totalOfContainer = 16;
     public int totalOfDestroy = 9;
     public int totalOfRepaired = 9;
+    public int totalOfDrunk = 3;
 
     public int numberOfContainer = 0;
     public int numberOfDestroy = 0;
     public int numberOfRepaired = 0;
 
+    public int numberOfDrunk = 0;
+
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ChoreCompleted(InteractibleObject.TypeOfObject typeOfChore)
     {
         switch(typeOfChore)
@@ -50,6 +43,20 @@ public class ChoresProgres : MonoBehaviour
                 circleRepaired.fillAmount = amountR;
                 break; 
         }
+        if (numberOfDestroy == totalOfDestroy && numberOfContainer == totalOfContainer && numberOfRepaired == totalOfRepaired)
+        {
+            GameManager.instance.WinGame();
+        }
+    }
+
+    public void DrunkOut()
+    {
+        //Duplicated code because no time
+        ++numberOfDrunk;
+        float amountDr = ((float)numberOfDrunk/totalOfDrunk);
+        circleDrunk.fillAmount = amountDr;   
+
+
         if (numberOfDestroy == totalOfDestroy && numberOfContainer == totalOfContainer && numberOfRepaired == totalOfRepaired)
         {
             GameManager.instance.WinGame();
