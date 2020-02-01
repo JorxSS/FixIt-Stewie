@@ -34,8 +34,10 @@ public class InteractibleObject : MonoBehaviour
     private GameObject pBar;
     private float progressTime;
 
-    public ParticleSystem particleSystem;
+    public ParticleSystem repairParticles;
     public ParticleSystem particleDone;
+    public ParticleSystem throwParticle;
+ 
 
     private bool doingSomething = false;
 
@@ -75,9 +77,9 @@ public class InteractibleObject : MonoBehaviour
                 break;
         }
 
-        if (particleSystem != null)
+        if (repairParticles != null)
         {
-            particleSystem.Play();
+            repairParticles.Play();
         }
     }
 
@@ -135,6 +137,9 @@ public class InteractibleObject : MonoBehaviour
                 levelManager.BonusTime();
                 carriedGO.IdleToDestroyed();
             }
+
+            if(throwParticle != null)
+                throwParticle.Play();
         }
     }
 
