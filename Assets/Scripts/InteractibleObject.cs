@@ -37,6 +37,8 @@ public class InteractibleObject : MonoBehaviour
 
     public ChoresProgres choresProgres;
 
+    public LevelManager levelManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -116,7 +118,10 @@ public class InteractibleObject : MonoBehaviour
             if (container == Container.TRASH)
                 carriedGO.IdleToDestroyed();
             else if (carriedGO.container == container)
+            {
+                levelManager.BonusTime();
                 carriedGO.IdleToDestroyed();
+            }
         }
     }
 

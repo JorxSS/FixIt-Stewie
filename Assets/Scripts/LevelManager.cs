@@ -46,4 +46,10 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void BonusTime()
+    {
+        //Sound for recycling :D
+        currentTime -= 2.0f;
+    }
+
 }
