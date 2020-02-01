@@ -33,6 +33,7 @@ public class InteractibleObject : MonoBehaviour
     public float repairBarSpeed = 3.5f;
     private GameObject pBar;
     private float progressTime;
+    private bool doingSomething = false;
 
     public ChoresProgres choresProgres;
 
@@ -50,7 +51,9 @@ public class InteractibleObject : MonoBehaviour
 
     public void TriggerAction(InteractibleObject carriedGO)
     {
-        switch(typeOfObject)
+        if (doingSomething)
+            return;
+        switch (typeOfObject)
         {
             case TypeOfObject.MOVABLE:
                 IdleToAttached();
@@ -108,10 +111,13 @@ public class InteractibleObject : MonoBehaviour
 
     public void Throw(InteractibleObject carriedGO)
     {
-        if(carriedGO != null && carriedGO.container == container)
+        if(carriedGO != null)
         {
-            carriedGO.IdleToDestroyed();
             choresProgres.ChoreCompleted(typeOfObject);
+            if (container == Container.TRASH)
+                carriedGO.IdleToDestroyed();
+            else if (carriedGO.container == container)
+                carriedGO.IdleToDestroyed();
         }
     }
 
@@ -128,9 +134,15 @@ public class InteractibleObject : MonoBehaviour
 
     IEnumerator WaitForActionDestroyable()
     {
+        doingSomething = true;
+        Dissolver dissolver = GetComponent<Dissolver>();
         while (progressTime < 1.5f)
         {
             yield return null;
+
+            if (dissolver != null)
+                dissolver.SetThreshold(progressTime / 1.5f);
+
             pBar.GetComponent<ProgressBar>().SetProgress(progressTime / 1.5f);
             progressTime += Time.deltaTime;
         }
@@ -138,6 +150,7 @@ public class InteractibleObject : MonoBehaviour
         {
             choresProgres.ChoreCompleted(typeOfObject);
         }
+        doingSomething = false;
         player.GetComponent<PlayerMovement>().enableMovement();
         Destroy(pBar);
         Destroy(gameObject);
@@ -145,6 +158,7 @@ public class InteractibleObject : MonoBehaviour
 
     IEnumerator WaitForActionReparable()
     {
+        doingSomething = true;
         int dir = 1;
         float objective = Random.Range(0.0f, 1.0f);
         RectTransform rect = pBar.transform.GetChild(2).GetComponent<RectTransform>();
@@ -164,7 +178,7 @@ public class InteractibleObject : MonoBehaviour
             {
                 dir = 1;
             }
-            if (Input.GetKeyDown(KeyCode.R) && Mathf.Abs(currProgress - objective) < 0.15f)
+            if (Input.GetButtonDown("Interaction") && Mathf.Abs(currProgress - objective) < 0.15f)
             {
                 if (times == 1)
                     break;
@@ -177,6 +191,7 @@ public class InteractibleObject : MonoBehaviour
             }
         }
         choresProgres.ChoreCompleted(typeOfObject);
+        doingSomething = false;
         player.GetComponent<PlayerMovement>().enableMovement();
         player.GetComponent<PlayerController>().removeObjectInFocus();
         gameObject.GetComponent<MeshFilter>().mesh = reparedGO;
