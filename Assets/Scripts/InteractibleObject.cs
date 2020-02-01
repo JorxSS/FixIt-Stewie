@@ -30,6 +30,8 @@ public class InteractibleObject : MonoBehaviour
     private Material outlineMaterial;
     public Canvas canvas;
     public GameObject progressBarPrefab;
+    private GameObject pBar;
+    private float progressTime;
 
     // Start is called before the first frame update
     void Start()
@@ -64,12 +66,12 @@ public class InteractibleObject : MonoBehaviour
 
     void IdleToDestroyed()
     {
-        GameObject pBar = Instantiate(progressBarPrefab, canvas.transform);
+        pBar = Instantiate(progressBarPrefab, canvas.transform);
         Vector3 screen = Camera.main.WorldToScreenPoint(transform.position);
         RectTransform rectTransform = pBar.GetComponent<RectTransform>();
-        Debug.Log("Screen is " + screen);
         rectTransform.anchoredPosition = screen;
-
+        player.GetComponent<PlayerMovement>().disableMovement();
+        progressTime = 0;
         StartCoroutine(WaitForActionDestroyable());
     }
 
@@ -111,8 +113,15 @@ public class InteractibleObject : MonoBehaviour
 
     IEnumerator WaitForActionDestroyable()
     {
-        //yield on a new YieldInstruction that waits for 1.5f seconds.
-        yield return new WaitForSeconds(1.5f);
+        while (progressTime < 1.5f)
+        {
+            yield return null;
+            pBar.GetComponent<ProgressBar>().SetProgress(progressTime / 1.5f);
+            progressTime += Time.deltaTime;
+            //yield on a new YieldInstruction that waits for 1.5f seconds.
+        }
+        player.GetComponent<PlayerMovement>().enableMovement();
+        Destroy(pBar);
         Destroy(gameObject);
     }
 }
