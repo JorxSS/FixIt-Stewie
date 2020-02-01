@@ -16,7 +16,9 @@ public class DrunkAgent : MonoBehaviour
     private void Update()
     {
         if (imLeaving)
+        {
             CheckDestinationReached();
+        }
     }
     public void LeaveHouse()
     {
