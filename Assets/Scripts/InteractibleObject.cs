@@ -104,9 +104,12 @@ public class InteractibleObject : MonoBehaviour
 
     public void Throw(InteractibleObject carriedGO)
     {
-        if(carriedGO != null && carriedGO.container == container)
+        if(carriedGO != null)
         {
-            carriedGO.IdleToDestroyed();
+            if (container == Container.TRASH)
+                carriedGO.IdleToDestroyed();
+            else if (carriedGO.container == container)
+                carriedGO.IdleToDestroyed();
         }
     }
 
