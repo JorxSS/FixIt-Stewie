@@ -34,19 +34,19 @@ public class ChoresProgres : MonoBehaviour
     {
         switch(typeOfChore)
         {
-            case InteractibleObject.TypeOfObject.CONTAINER:
+            case InteractibleObject.TypeOfObject.MOVABLE:
                 ++numberOfContainer;
-                float amountC = (numberOfContainer/totalOfContainer) * 180.0f/360.0f;
+                float amountC = (numberOfContainer/totalOfContainer);
                 circleContainer.fillAmount = amountC;
                 break;
             case InteractibleObject.TypeOfObject.DESTROYABLE:
                 ++numberOfDestroy;
-                float amountD = (numberOfDestroy/totalOfDestroy) * 180.0f/360.0f;
+                float amountD = (numberOfDestroy/totalOfDestroy);
                 circleDestroy.fillAmount = amountD;            
                 break;
             case InteractibleObject.TypeOfObject.REPARABLE:
                 ++numberOfRepaired;
-                float amountR = (numberOfRepaired/totalOfRepaired) * 180.0f/360.0f;
+                float amountR = (numberOfRepaired/totalOfRepaired);
                 circleRepaired.fillAmount = amountR;
                 break; 
         }

@@ -65,7 +65,6 @@ public class InteractibleObject : MonoBehaviour
                 break;
         }
 
-        choresProgres.ChoreCompleted(typeOfObject);
     }
 
     void IdleToDestroyed()
@@ -111,6 +110,7 @@ public class InteractibleObject : MonoBehaviour
         if(carriedGO != null && carriedGO.container == container)
         {
             carriedGO.IdleToDestroyed();
+            choresProgres.ChoreCompleted(typeOfObject);
         }
     }
 
@@ -134,6 +134,7 @@ public class InteractibleObject : MonoBehaviour
             progressTime += Time.deltaTime;
             //yield on a new YieldInstruction that waits for 1.5f seconds.
         }
+        choresProgres.ChoreCompleted(typeOfObject);
         player.GetComponent<PlayerMovement>().enableMovement();
         Destroy(pBar);
         Destroy(gameObject);
@@ -148,6 +149,7 @@ public class InteractibleObject : MonoBehaviour
             progressTime += Time.deltaTime;
             //yield on a new YieldInstruction that waits for 1.5f seconds.
         }
+        choresProgres.ChoreCompleted(typeOfObject);
         player.GetComponent<PlayerMovement>().enableMovement();
         player.GetComponent<PlayerController>().removeObjectInFocus();
         gameObject.GetComponent<MeshFilter>().mesh = reparedGO;
