@@ -24,12 +24,17 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("Hey dude I'm trying to move to this point" + Input.mousePosition);
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            bool hitted = Physics.Raycast(ray, out hit);
+            Debug.Log("I hitted something?" + hitted);
+            if (hitted)
             {
                 //Debug.Log("We hit.. " + hit.collider.name + " " + hit.point);
                 //Move our player to what we hit
+                Debug.Log("Hey dude I'm trying to move to this point");
                 movement.MoveToPoint(hit.point);
 
 

@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void MoveToPoint(Vector3 point)
     {
+        Debug.Log("Hey dude I'm trying to move to this point");
         transform.rotation = agent.transform.rotation;
         agent.SetDestination(point);
         
