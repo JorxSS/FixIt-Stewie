@@ -12,6 +12,8 @@ public class ProgressBar : MonoBehaviour
     [SerializeField]
     float currentProgress = 0f;
 
+    public RectTransform carImage;
+
     // Start is called before the first frame update
     void Start()
     {

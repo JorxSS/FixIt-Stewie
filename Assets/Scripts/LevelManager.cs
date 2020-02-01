@@ -52,12 +52,14 @@ public class LevelManager : MonoBehaviour
 
     private void UpdateLevelTimer()
     {
-        currentTime += Time.deltaTime;
-        timerBar.SetProgress(1 - currentTime / levelTime);
-
         if (currentTime >= levelTime)
         {
             GameManager.instance.WinGame();
+        }
+        else
+        {
+            currentTime += Time.deltaTime;
+            timerBar.SetProgress(1 - currentTime / levelTime);
         }
     }
 
