@@ -469,8 +469,8 @@ Canvas:
   m_GameObject: {fileID: 836790242}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1362807847}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -519,12 +519,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc9744985734fa48a14fcbfaea77159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  house0: {fileID: 530792616}
-  house1: {fileID: 1634751479}
-  houseNight: {fileID: 1126043368}
-  dad: {fileID: 1975376851}
-  mom: {fileID: 31555533}
-  bocata: {fileID: 355411855}
+  obj:
+  - {fileID: 530792616}
+  - {fileID: 355411855}
+  - {fileID: 31555533}
+  - {fileID: 1975376851}
+  - {fileID: 1634751479}
+  - {fileID: 1126043368}
 --- !u!1 &922672072
 GameObject:
   m_ObjectHideFlags: 0
