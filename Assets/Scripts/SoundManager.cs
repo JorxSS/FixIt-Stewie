@@ -19,6 +19,7 @@ public class SoundManager : MonoBehaviour
     }
 
     public AudioSource footstepsAudioSource;
+    public AudioSource repairingAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,17 @@ public class SoundManager : MonoBehaviour
         else
         {
             footstepsAudioSource.Stop();
+        }
+    }
+    public void SwitchRepairing(bool enabled)
+    {
+        if (enabled)
+        {
+            repairingAudioSource.Play();
+        }
+        else
+        {
+            repairingAudioSource.Stop();
         }
     }
 }
