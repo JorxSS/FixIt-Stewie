@@ -143,6 +143,7 @@ public class InteractibleObject : MonoBehaviour
 
     IEnumerator WaitForActionDestroyable()
     {
+        SoundManager.instance.SwitchMop(true);
         doingSomething = true;
         Dissolver dissolver = GetComponent<Dissolver>();
         while (progressTime < 1.5f)
@@ -159,6 +160,7 @@ public class InteractibleObject : MonoBehaviour
         {
             choresProgres.ChoreCompleted(typeOfObject);
         }
+        SoundManager.instance.SwitchMop(false);
         doingSomething = false;
         player.GetComponent<PlayerMovement>().enableMovement();
         Destroy(pBar);

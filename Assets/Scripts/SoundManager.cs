@@ -20,6 +20,7 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource footstepsAudioSource;
     public AudioSource repairingAudioSource;
+    public AudioSource mopAudioSource;
 
     public AudioSource pickAudioSource;
     public AudioSource dropAudioSource;
@@ -58,6 +59,17 @@ public class SoundManager : MonoBehaviour
         else
         {
             repairingAudioSource.Stop();
+        }
+    }
+    public void SwitchMop(bool enabled)
+    {
+        if (enabled)
+        {
+            mopAudioSource.Play();
+        }
+        else
+        {
+            mopAudioSource.Stop();
         }
     }
 
