@@ -146,3 +146,7 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
   repairBarSpeed: 3.5
+  particleSystem: {fileID: 0}
+  particleDone: {fileID: 0}
+  choresProgres: {fileID: 0}
+  levelManager: {fileID: 0}
