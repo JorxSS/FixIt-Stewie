@@ -33,6 +33,8 @@ public class InteractibleObject : MonoBehaviour
     private GameObject pBar;
     private float progressTime;
 
+    public ChoresProgres choresProgres;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +64,8 @@ public class InteractibleObject : MonoBehaviour
                 Throw(carriedGO);
                 break;
         }
+
+        choresProgres.ChoreCompleted(typeOfObject);
     }
 
     void IdleToDestroyed()
