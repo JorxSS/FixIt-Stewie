@@ -17,6 +17,7 @@ public class DrunkAgent : MonoBehaviour
     public Transform exit;
     float time;
     float totalTime;
+    public ParticleSystem sleepParticle;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -61,6 +62,9 @@ public class DrunkAgent : MonoBehaviour
     }
     public void LeaveHouse()
     {
+        ParticleSystem.EmissionModule em = sleepParticle.emission;
+        em.enabled = false;
+
         Debug.Log("OKAAAAAAY I'M LEAVING NOW");
         transform.rotation = navMeshAgent.transform.rotation;
         imLeaving = true;
