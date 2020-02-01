@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetMouseButtonDown(0))
         {
             //Debug.Log("Hey dude I'm trying to move to this point" + Input.mousePosition);
@@ -69,10 +68,10 @@ public class PlayerController : MonoBehaviour
                     float dist = Vector3.Distance(hit.transform.position, transform.position);
                     //Debug.Log("Detected object is :" + dist);
                     if (dist <= detectionDistance)
+                    {
                         interactedObject.TriggerAction(carriedGO);
+                    }
                 }
-
-
             }
         }
         Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")); 
@@ -89,12 +88,15 @@ public class PlayerController : MonoBehaviour
                     interactedObject.TriggerAction(carriedGO);
                     objectInFocus = null;
                 }
+                else if(carriedGO != null)
+                {
+                    carriedGO.Place();
+                }
             }
-        }
-
-        if (Input.GetKeyDown(KeyCode.P) && carriedGO != null)
-        {
-            carriedGO.Place();
+            else if(carriedGO != null)
+            {
+                carriedGO.Place();
+            }
         }
     }
     Vector3 ProjectPointOnPlane(Vector3 planeNormal , Vector3 planePoint, Vector3 point)

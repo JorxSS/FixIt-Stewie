@@ -68,12 +68,10 @@ public class InteractibleObject : MonoBehaviour
 
     void IdleToRepaired()
     {
-        //Instantiate(reparedGO, transform.position, transform.rotation);
         gameObject.GetComponent<MeshFilter>().mesh = reparedGO;
         gameObject.tag = "Repaired";
         SwitchHighlight(false);
         Destroy(this);
-        //Destroy(gameObject);
     }
 
     void IdleToAttached() {
@@ -91,9 +89,7 @@ public class InteractibleObject : MonoBehaviour
         if(carriedGO != null && carriedGO.container == container)
         {
             carriedGO.IdleToDestroyed();
-            carriedGO = null;
         }
-
     }
     public void Place()
     {
@@ -108,7 +104,6 @@ public class InteractibleObject : MonoBehaviour
 
     IEnumerator WaitForActionDestroyable()
     {
-
         //yield on a new YieldInstruction that waits for 1.5f seconds.
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
