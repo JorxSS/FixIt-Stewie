@@ -6,17 +6,12 @@ using UnityEngine.UI;
 public class CanvasIntroController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Image imageParent1;
-    public Image imageParent2;
-    public Image imageDialogue;
-    public Image imageNoParty1;
-    public Image imageNoParty2;
-    public Image imageHouseDay;
-    public Image imageHouseNight;
+    public GameObject house;
+    RawImage imageHouseDay;
     bool fading;
     void Start()
     {
-        
+        imageHouseDay = house.GetComponent<RawImage>();
     }
 
     // Update is called once per frame
