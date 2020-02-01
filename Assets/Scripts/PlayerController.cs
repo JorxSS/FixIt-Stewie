@@ -5,16 +5,19 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMovement))]
 public class PlayerController : MonoBehaviour
 {
-    Camera cam;
-    // Start is called before the first frame update
+    Camera mainCamera;
+
+    [Header("Raycast Detection")]
     public float detectionDistance;
     public float spaceDetectionDistance;
-    PlayerMovement movement;
     public GameObject raypoint;
+    private GameObject objectInFocus = null;
+    
+    PlayerMovement movement;
 
     void Start()
     {
-        cam = Camera.main;
+        mainCamera = Camera.main;
         movement = GetComponent<PlayerMovement>();
         Physics.IgnoreLayerCollision(4,5);
     }
@@ -22,11 +25,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("Hey dude I'm trying to move to this point" + Input.mousePosition);
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            
+
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             bool hitted = Physics.Raycast(ray, out hit);
             Debug.Log("I hitted something?" + hitted);
@@ -36,13 +40,12 @@ public class PlayerController : MonoBehaviour
                 //Move our player to what we hit
                 Debug.Log("Hey dude I'm trying to move to this point");
                 movement.MoveToPoint(hit.point);
-
-
             }
         }
+
         if (Input.GetMouseButtonUp(1))
         {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
@@ -94,8 +97,19 @@ public class PlayerController : MonoBehaviour
             }
         }*/
         movement.MoveWASD();
+        if (Input.GetButtonDown("Interaction"))
+        {
+            Debug.Log("Pressing interaction button");
+            InteractibleObject interactedObject = objectInFocus.GetComponent<InteractibleObject>();
+            if (interactedObject != null)
+            {
+                interactedObject.TriggerAction();
+                objectInFocus = null;
+            }
+        }
     }
-    Vector3 ProjectPointOnPlane(Vector3 planeNormal , Vector3 planePoint, Vector3 point) {
+    Vector3 ProjectPointOnPlane(Vector3 planeNormal , Vector3 planePoint, Vector3 point)
+    {
         planeNormal.Normalize();
         float distance = -Vector3.Dot(planeNormal.normalized, (point - planePoint));
         return point + planeNormal* distance;
@@ -103,17 +117,31 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("Detected object is :" + other.name);
-        if (Input.GetButtonDown("Interaction"))
+        if (!other.CompareTag("InteractiveObject"))
         {
-            Debug.Log("Pressing interaction button");
-            InteractibleObject interactedObject = other.gameObject.GetComponent<InteractibleObject>();
-            if (interactedObject != null)
-            {
-                interactedObject.TriggerAction();
-
-            }
+            return;
         }
 
+        if (objectInFocus != null && objectInFocus != other.gameObject)
+        {
+            return;
+        }
+
+        objectInFocus = other.gameObject;
+
+        Debug.Log("Detected object is :" + other.name);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.CompareTag("InteractiveObject"))
+        {
+            return;
+        }
+
+        if (objectInFocus == other.gameObject)
+        {
+            objectInFocus = null;
+        }
     }
 }
