@@ -176,6 +176,7 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &581742
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -379,6 +380,99 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &48086620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 48086621}
+  - component: {fileID: 48086624}
+  - component: {fileID: 48086623}
+  - component: {fileID: 48086622}
+  m_Layer: 8
+  m_Name: wall2 (1)
+  m_TagString: Scenario
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &48086621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48086620}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.281, y: 0, z: -0.0000010014}
+  m_LocalScale: {x: 0.08049029, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 490771017}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &48086622
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48086620}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7874, y: 0.025400048, z: 0.10951592}
+  m_Center: {x: -0.11430001, y: -0.5334002, z: 0.181758}
+--- !u!23 &48086623
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48086620}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 670224309865224971, guid: 0b2888f66b6afee4c912ce5a1899c333, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &48086624
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48086620}
+  m_Mesh: {fileID: 4377865600221286077, guid: 0b2888f66b6afee4c912ce5a1899c333, type: 3}
 --- !u!1 &67870939 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4408146321207005465, guid: 0b2888f66b6afee4c912ce5a1899c333,
@@ -804,6 +898,7 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &161094164
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -935,6 +1030,7 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &163648548
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1131,6 +1227,7 @@ MonoBehaviour:
     type: 3}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &243921416
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1339,6 +1436,7 @@ MonoBehaviour:
     type: 3}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!1 &273413889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1682,6 +1780,7 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &378460194
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1858,6 +1957,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8157321653557624474, guid: 0b2888f66b6afee4c912ce5a1899c333,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.260446
+      objectReference: {fileID: 0}
     - target: {fileID: -7942815456734524022, guid: 0b2888f66b6afee4c912ce5a1899c333,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1877,6 +1981,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -6391737186361012577, guid: 0b2888f66b6afee4c912ce5a1899c333,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.074
+      objectReference: {fileID: 0}
+    - target: {fileID: -6391737186361012577, guid: 0b2888f66b6afee4c912ce5a1899c333,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000008583
+      objectReference: {fileID: 0}
+    - target: {fileID: -6391737186361012577, guid: 0b2888f66b6afee4c912ce5a1899c333,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8893955
+      objectReference: {fileID: 0}
+    - target: {fileID: -5834548476397155412, guid: 0b2888f66b6afee4c912ce5a1899c333,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.04129
+      objectReference: {fileID: 0}
+    - target: {fileID: -5834548476397155412, guid: 0b2888f66b6afee4c912ce5a1899c333,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1275
       objectReference: {fileID: 0}
     - target: {fileID: -5300334211199987738, guid: 0b2888f66b6afee4c912ce5a1899c333,
         type: 3}
@@ -2087,6 +2216,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 904254181261603674, guid: 0b2888f66b6afee4c912ce5a1899c333,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.042258
+      objectReference: {fileID: 0}
+    - target: {fileID: 904254181261603674, guid: 0b2888f66b6afee4c912ce5a1899c333,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1305
       objectReference: {fileID: 0}
     - target: {fileID: 963303070990244549, guid: 0b2888f66b6afee4c912ce5a1899c333,
         type: 3}
@@ -2810,6 +2949,7 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &465060849
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2998,6 +3138,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471564652}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &490771017 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 0b2888f66b6afee4c912ce5a1899c333,
+    type: 3}
+  m_PrefabInstance: {fileID: 429961683}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519723349
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,6 +3459,7 @@ MonoBehaviour:
     type: 3}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &545954017
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3847,6 +3994,7 @@ MonoBehaviour:
     type: 3}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &691720475
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4335,6 +4483,7 @@ MonoBehaviour:
     type: 3}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &777987541
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4468,6 +4617,7 @@ MonoBehaviour:
     type: 3}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &802960205
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4875,6 +5025,7 @@ MonoBehaviour:
     type: 3}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &870650652
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5007,6 +5158,7 @@ MonoBehaviour:
     type: 3}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &872341092
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5140,6 +5292,7 @@ MonoBehaviour:
     type: 3}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &904465574
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5271,6 +5424,7 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &934709351
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5737,6 +5891,7 @@ MonoBehaviour:
     type: 3}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &1212942566
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6035,6 +6190,7 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &1301943921
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6441,6 +6597,7 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &1355573494
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6812,6 +6969,7 @@ MonoBehaviour:
     type: 3}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &1375070739
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7147,6 +7305,7 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &1401476729
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -8192,6 +8351,7 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!1 &1657275365
 GameObject:
   m_ObjectHideFlags: 0
@@ -8366,6 +8526,7 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &1706189883
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -8607,6 +8768,7 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &1725680283
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -8905,6 +9067,7 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &1896083012
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9164,6 +9327,7 @@ MonoBehaviour:
     type: 3}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &1953690743
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9630,6 +9794,7 @@ MonoBehaviour:
   progressBarPrefab: {fileID: 0}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &2084676682
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9768,6 +9933,7 @@ MonoBehaviour:
     type: 3}
   repairBarSpeed: 3.5
   choresProgres: {fileID: 1994458486}
+  levelManager: {fileID: 0}
 --- !u!208 &2123150614
 NavMeshObstacle:
   m_ObjectHideFlags: 0
