@@ -18,6 +18,11 @@ public class DrunkAgent : MonoBehaviour
     float time;
     float totalTime;
     ParticleSystem sleepParticle;
+    public AudioSource vomitingSource;
+    public AudioSource snoreSource;
+    public AudioSource groanSource;
+    public AudioSource exitSource;
+
     void Start()
     {
         myNavMeshAgent = GetComponent<NavMeshAgent>();
@@ -47,6 +52,7 @@ public class DrunkAgent : MonoBehaviour
                     choresProgres.addDestroyChore();
                     imVomiting = true;
                     myNavMeshAgent.isStopped = true;
+                    vomitingSource.Play();
                 }
             }
         }
@@ -63,9 +69,10 @@ public class DrunkAgent : MonoBehaviour
     }
     public void LeaveHouse()
     {
+        snoreSource.Stop();
         ParticleSystem.EmissionModule em = sleepParticle.emission;
         em.enabled = false;
-
+        groanSource.Play();
         Debug.Log("OKAAAAAAY I'M LEAVING NOW");
         transform.rotation = myNavMeshAgent.transform.rotation;
         imLeaving = true;
@@ -80,6 +87,7 @@ public class DrunkAgent : MonoBehaviour
                 if (!myNavMeshAgent.hasPath || myNavMeshAgent.velocity.sqrMagnitude == 0f)
                 {
                     choresProgres.DrunkOut();
+                    exitSource.Play();
                     Destroy(gameObject);
                 }
             }
