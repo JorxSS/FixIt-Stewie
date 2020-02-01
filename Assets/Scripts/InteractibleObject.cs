@@ -100,6 +100,7 @@ public class InteractibleObject : MonoBehaviour
     void IdleToAttached() {
         if (!player.GetComponent<PlayerController>().SetCarriedGO(this))
             return;
+        SoundManager.instance.PlayPick();
         transform.parent = player.transform;
         transform.localPosition = new Vector3(0.01f, 0, 0);
         BoxCollider boxCollider = GetComponent<BoxCollider>();
