@@ -13,10 +13,8 @@ public class CanvasIntroController : MonoBehaviour
     {
         if (Input.GetButtonDown("Interaction"))
         {
-            Debug.Log("TRYINNNNNNNNNNNNNNNNN");
             if (index < obj.Length)
             {
-                Debug.Log("hellowwwwwwwwwwwwwwwwwwwwwwww");
                 GameObject current = GetNext();
                 ++index;
                 currentObj = current.GetComponent<RawImage>();
