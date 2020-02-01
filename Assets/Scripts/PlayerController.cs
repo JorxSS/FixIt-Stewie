@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private GameObject objectInFocus = null;
     
     PlayerMovement playerMovement;
+    InteractibleObject carriedGO = null;
 
     void Start()
     {
@@ -71,6 +72,14 @@ public class PlayerController : MonoBehaviour
                     if (dist <= detectionDistance)
                         interactedObject.TriggerAction();
                 }
+                else if(carriedGO != null)
+                {
+                    ContainerScript containerScript = hit.collider.gameObject.GetComponent<ContainerScript>();
+                    if(containerScript != null)
+                    {
+                        containerScript.Throw(carriedGO);
+                    }
+                }
 
 
             }
@@ -126,5 +135,15 @@ public class PlayerController : MonoBehaviour
             objectInFocus.GetComponent<InteractibleObject>().SwitchHighlight(false);
             objectInFocus = null;
         }
+
+        if (Input.GetKeyDown(KeyCode.P) && carriedGO != null)
+        {
+            carriedGO.Place();
+        }
+    }
+
+    public void SetCarriedGO(InteractibleObject go)
+    {
+        carriedGO = go;
     }
 }

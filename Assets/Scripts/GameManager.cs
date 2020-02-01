@@ -1,78 +1,68 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Timers")]
-    public float levelTime = 100f;
+    public static GameManager instance = null;
+    //Awake is always called before any Start functions
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
 
-    [SerializeField]
-    float currentTime = 0f;
+    [Header("Core Managers")]
+    public UIManager uiManager;
+    public LevelManager levelManager;
 
-    [Header("Chores")]
-    public int numChoresToWin = 10;
-
-    [SerializeField]
-    int currentChoresDone = 0;
-
-    [Header("UI")]
-    public ProgressBar timerBar;
-    public ChoresCounter choresCounter;
 
     // Start is called before the first frame update
     void Start()
     {
-        InitLevel();
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetDebugInput();
-        UpdateLevelTimer();
     }
 
-    public void ChoreDone()
+    public void ChangeScene(string newScene)
     {
-        ++currentChoresDone;
-        choresCounter.SetDoneChores(currentChoresDone);
-        if (currentChoresDone >= numChoresToWin)
-        {
-           // Debug.Log("You win!");
-        }
+        SceneManager.LoadScene(newScene);
     }
 
-    private void InitLevel()
+    public void PauseGame()
     {
-        currentTime = 0f;
-        currentChoresDone = 0;
-        choresCounter.SetDoneChores(currentChoresDone);
-        timerBar.SetProgress(0);
+        uiManager.SwitchPauseScreen(true);
+        Time.timeScale = 0;
     }
 
-    private void GetDebugInput()
+    public void ResumeGame()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            ChoreDone();
-        }
+        uiManager.SwitchPauseScreen(false);
+        Time.timeScale = 1;
     }
-    
-    private void UpdateLevelTimer()
-    {
-        currentTime += Time.deltaTime;
-        timerBar.SetProgress(1 - currentTime / levelTime);
 
-        if (currentTime >= levelTime)
-        {
-            //Debug.Log("You lose!");
-        }
+    public void WinGame()
+    {
+        uiManager.SwitchWinScreen(true);
     }
-    
+
+    public void LoseGame()
+    {
+        uiManager.SwitchLoseScreen(true);
+    }
+
     public void EndGame()
     {
-
         Application.Quit();
     }
 }
