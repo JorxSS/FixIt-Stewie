@@ -16,8 +16,22 @@ public class InteractibleObject : MonoBehaviour
     public TypeOfObject typeOfObject;
 
     public GameObject reparedGO;
-
     public ContainerScript.Container container;
+
+    private Material outlineMaterial;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        state = State.IDLE;
+        outlineMaterial = GetComponent<MeshRenderer>().material;
+    }
+
+    public void SwitchHighlight(bool highlighted)
+    {
+        float value = highlighted ? 0.1f : 0f;
+        outlineMaterial.SetFloat("_Outline", value);
+    }
 
     public void TriggerAction()
     {

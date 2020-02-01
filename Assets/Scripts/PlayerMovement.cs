@@ -8,29 +8,41 @@ using UnityEngine.AI;
 public class PlayerMovement : MonoBehaviour
 {
     public int speed = 10;
-    NavMeshAgent agent;
-    Rigidbody rb;
+    NavMeshAgent navMeshAgent;
+    Rigidbody rigidbody;
 
+    Vector3 movement;
 
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        rb = GetComponent<Rigidbody>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        rigidbody = GetComponent<Rigidbody>();
     }
 
-    public void MoveWASD()
+    private void FixedUpdate()
     {
-        Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         if (movement.magnitude > 0)
         {
-            agent.ResetPath();
+            navMeshAgent.ResetPath();
+            rigidbody.transform.position += movement * speed * Time.fixedDeltaTime;
+            transform.rotation = Quaternion.LookRotation(movement);
         }
-
-        rb.transform.position += movement * speed * Time.deltaTime;
     }
+
+    public void SetMovement(Vector3 movement)
+    {
+        this.movement = movement; 
+    }
+
     public void MoveToPoint(Vector3 point)
     {
-        agent.SetDestination(point);
+        Debug.Log("Hey dude I'm trying to move to this point");
+        transform.rotation = navMeshAgent.transform.rotation;
+        navMeshAgent.SetDestination(point);
+    }
+    public void StopAgent()
+    {
+        navMeshAgent.ResetPath();
     }
 }
