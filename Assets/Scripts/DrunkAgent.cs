@@ -6,7 +6,6 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class DrunkAgent : MonoBehaviour
 {
-
     public GameObject vomit;
     public Canvas canvas;
     public ChoresProgres choresProgres;
@@ -66,7 +65,6 @@ public class DrunkAgent : MonoBehaviour
         ParticleSystem.EmissionModule em = sleepParticle.emission;
         em.enabled = false;
 
-        Debug.Log("OKAAAAAAY I'M LEAVING NOW");
         transform.rotation = myNavMeshAgent.transform.rotation;
         imLeaving = true;
         myNavMeshAgent.SetDestination(exit.transform.position);
