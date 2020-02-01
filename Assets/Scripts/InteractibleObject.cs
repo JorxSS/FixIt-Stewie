@@ -30,6 +30,7 @@ public class InteractibleObject : MonoBehaviour
     private Material outlineMaterial;
     public Canvas canvas;
     public GameObject progressBarPrefab;
+    public float repairBarSpeed = 3.5f;
     private GameObject pBar;
     private float progressTime;
 
@@ -128,7 +129,6 @@ public class InteractibleObject : MonoBehaviour
             yield return null;
             pBar.GetComponent<ProgressBar>().SetProgress(progressTime / 1.5f);
             progressTime += Time.deltaTime;
-            //yield on a new YieldInstruction that waits for 1.5f seconds.
         }
         player.GetComponent<PlayerMovement>().enableMovement();
         Destroy(pBar);
@@ -137,12 +137,36 @@ public class InteractibleObject : MonoBehaviour
 
     IEnumerator WaitForActionReparable()
     {
-        while (progressTime < 1.5f)
+        int dir = 1;
+        float objective = Random.Range(0.0f, 1.0f);
+        RectTransform rect = pBar.transform.GetChild(2).GetComponent<RectTransform>();
+        rect.pivot = new Vector2(objective, 0);
+        int times = 3;
+        while (true)
         {
             yield return null;
-            pBar.GetComponent<ProgressBar>().SetProgress(progressTime / 1.5f);
-            progressTime += Time.deltaTime;
-            //yield on a new YieldInstruction that waits for 1.5f seconds.
+            progressTime += dir * Time.deltaTime * repairBarSpeed;
+            float currProgress = progressTime / 1.5f;
+            pBar.GetComponent<ProgressBar>().SetProgress(currProgress);
+            if (progressTime >= 1.5)
+            {
+                dir = -1;
+            }
+            else if (progressTime < 0)
+            {
+                dir = 1;
+            }
+            if (Input.GetKeyDown(KeyCode.R) && Mathf.Abs(currProgress - objective) < 0.15f)
+            {
+                if (times == 1)
+                    break;
+                else
+                {
+                    --times;
+                    objective = Random.Range(0.0f, 1.0f);
+                    rect.pivot = new Vector2(objective, 0);
+                }
+            }
         }
         player.GetComponent<PlayerMovement>().enableMovement();
         player.GetComponent<PlayerController>().removeObjectInFocus();
