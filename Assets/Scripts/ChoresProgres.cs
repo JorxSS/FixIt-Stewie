@@ -49,7 +49,7 @@ public class ChoresProgres : MonoBehaviour
                 circleRepaired.fillAmount = amountR;
                 break; 
         }
-        if (numberOfDestroy >= totalOfDestroy && numberOfContainer >= totalOfContainer && numberOfRepaired >= totalOfRepaired)
+        if (numberOfDestroy >= totalOfDestroy && numberOfContainer >= totalOfContainer && numberOfRepaired >= totalOfRepaired && numberOfDrunk >= totalOfDrunk)
         {
             GameManager.instance.WinGame();
         }
@@ -63,7 +63,7 @@ public class ChoresProgres : MonoBehaviour
         circleDrunk.fillAmount = amountDr;   
 
 
-        if (numberOfDestroy >= totalOfDestroy && numberOfContainer >= totalOfContainer && numberOfRepaired >= totalOfRepaired)
+        if (numberOfDestroy >= totalOfDestroy && numberOfContainer >= totalOfContainer && numberOfRepaired >= totalOfRepaired && numberOfDrunk >= totalOfDrunk)
         {
             GameManager.instance.WinGame();
         }
