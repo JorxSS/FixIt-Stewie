@@ -45,8 +45,9 @@ public class DrunkAgent : MonoBehaviour
                 time = 0;
                 if (totalTime >= 1 && Random.Range(0, 100) < 10)
                 {
+                    Debug.Log("Im vomiting!");
                     totalTime = 0;
-                    Vector3 pos = new Vector3(transform.position.x, 19.9f, transform.position.z);
+                    Vector3 pos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                     GameObject obj = Instantiate(vomit, pos, transform.rotation);
                     obj.GetComponent<InteractibleObject>().player = player;
                     obj.GetComponent<InteractibleObject>().canvas = canvas;

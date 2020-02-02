@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4787099912187851835}
   - component: {fileID: 4787099912187851837}
   - component: {fileID: 4787099912187851836}
-  - component: {fileID: -3415589528039360551}
+  - component: {fileID: 1953806963662187839}
   m_Layer: 0
   m_Name: Basura Gris
   m_TagString: InteractiveObject
@@ -120,8 +120,8 @@ MonoBehaviour:
   repairBarSpeed: 3.5
   choresProgres: {fileID: 0}
   levelManager: {fileID: 0}
---- !u!64 &-3415589528039360551
-MeshCollider:
+--- !u!65 &1953806963662187839
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -130,7 +130,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5613986468345920113, guid: 647a06af580ce094e9aa062b05162026, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.8198068, y: 0.91493225, z: 0.82432175}
+  m_Center: {x: 0.00000014901161, y: 0, z: 0}
