@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
     [Header("Core Managers")]
     public UIManager uiManager;
     public LevelManager levelManager;
-    public Image controls;
 
     public bool game_won = false;
 
@@ -78,11 +77,5 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         Application.Quit();
-    }
-
-    public void SetControlsVisibility()
-    {
-        Debug.Log("About");
-        controls.gameObject.SetActive(!controls.gameObject.activeSelf);
     }
 }

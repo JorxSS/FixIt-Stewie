@@ -45,7 +45,7 @@ public class MoveCursor : MonoBehaviour
                     GameManager.instance.ChangeScene("sceneExterior");
                     break;
                 case 1:
-                    GameManager.instance.SetControlsVisibility();
+                    UIManager.instance.SwitchControlsVisibility();
                     break;
                 case 2:
                     GameManager.instance.EndGame();
