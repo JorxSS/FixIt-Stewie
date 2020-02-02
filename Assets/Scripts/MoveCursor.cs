@@ -63,19 +63,19 @@ public class MoveCursor : MonoBehaviour
         switch(currentPosition)
         {
             case 0:
-                cursor0.gameObject.SetActive(true);
-                cursor1.gameObject.SetActive(false);
-                cursor2.gameObject.SetActive(false);
+                cursor0.enabled = true;
+                cursor1.enabled = false;
+                cursor2.enabled = false;
                 break;
             case 1:
-                cursor1.gameObject.SetActive(true);
-                cursor0.gameObject.SetActive(false);
-                cursor2.gameObject.SetActive(false);
+                cursor1.enabled = true;
+                cursor0.enabled = false;
+                cursor2.enabled = false;
                 break;
             case 2:
-                cursor2.gameObject.SetActive(true);
-                cursor0.gameObject.SetActive(false);
-                cursor1.gameObject.SetActive(false);
+                cursor2.enabled = true;
+                cursor0.enabled = false;
+                cursor1.enabled = false;
                 break;
         }
     }
