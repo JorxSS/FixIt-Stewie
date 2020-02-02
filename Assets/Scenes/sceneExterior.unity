@@ -1878,7 +1878,7 @@ PrefabInstance:
     - target: {fileID: 3424354681516278761, guid: 9af9179fcb7776542b718ff384aee3d9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3424354681516278761, guid: 9af9179fcb7776542b718ff384aee3d9,
         type: 3}
@@ -3225,6 +3225,76 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531442775}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &540750623
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 153506, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
+      propertyPath: m_Name
+      value: Character_BusinessMan_Shirt_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 435868, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.3977747
+      objectReference: {fileID: 0}
+    - target: {fileID: 435868, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.973347
+      objectReference: {fileID: 0}
+    - target: {fileID: 435868, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.155697
+      objectReference: {fileID: 0}
+    - target: {fileID: 435868, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435868, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435868, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435868, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 435868, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 435868, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435868, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435868, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9509074, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: dff2d1650a110b44e80f1f64b1cfd39f, type: 2}
+    - target: {fileID: 9509074, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'Root'\n\tTransform 'Elbow_R'\n\tTransform
+        'Clavicle_L'\n\tTransform 'Neck'\n\tTransform 'Elbow_L'\n\tTransform 'Head'\n\tTransform
+        'UpperLeg_L'\n\tTransform 'UpperLeg_R'\n\tTransform 'Hand_L'\n\tTransform
+        'Shoulder_L'\n\tand more ...\n\tFrom animation clip 'SleepingZombie'"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
 --- !u!1 &545954014
 GameObject:
   m_ObjectHideFlags: 0
@@ -3534,7 +3604,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &600040678
 PrefabInstance:
@@ -4095,7 +4165,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 41.561, y: 11.93, z: 0.79}
 --- !u!1 &711416835
 GameObject:
@@ -4866,7 +4936,7 @@ Transform:
   - {fileID: 273413890}
   - {fileID: 1171143350}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &870650649
 GameObject:
@@ -7813,7 +7883,7 @@ PrefabInstance:
     - target: {fileID: 3417040064838354106, guid: 1d705de1557689149be29585a31eb61e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3417040064838354106, guid: 1d705de1557689149be29585a31eb61e,
         type: 3}
@@ -10224,7 +10294,7 @@ Transform:
   - {fileID: 1576873241}
   - {fileID: 397455892}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1550410174
 GameObject:
@@ -10343,7 +10413,7 @@ Transform:
   - {fileID: 1834063727}
   - {fileID: 2065315394}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1550410180
 MonoBehaviour:
@@ -10741,7 +10811,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1659899722
 PrefabInstance:
@@ -11829,7 +11899,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1994458484
 MonoBehaviour:
