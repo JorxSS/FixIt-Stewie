@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public LevelManager levelManager;
     public Image controls;
 
+    public bool game_won = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             PauseGame();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            LoseGame();
         }
     }
 
@@ -59,12 +65,14 @@ public class GameManager : MonoBehaviour
 
     public void WinGame()
     {
-        uiManager.SwitchWinScreen(true);
+        game_won = true;
+        uiManager.FadeBlackScreen();
     }
 
     public void LoseGame()
     {
-        uiManager.SwitchLoseScreen(true);
+        game_won = false;
+        uiManager.FadeBlackScreen();
     }
 
     public void EndGame()
