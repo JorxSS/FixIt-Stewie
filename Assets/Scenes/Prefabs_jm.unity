@@ -11061,6 +11061,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vomito (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2554101525859258421, guid: 98a99d19e2b37b64b9857db7b994a271,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d6d77f0b0ab27c4093a8b14ccc769ec, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98a99d19e2b37b64b9857db7b994a271, type: 3}
 --- !u!4 &1780666625 stripped
