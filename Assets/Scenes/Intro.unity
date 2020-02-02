@@ -1898,6 +1898,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiManager: {fileID: 0}
   levelManager: {fileID: 0}
+  controls: {fileID: 0}
+  game_won: 0
 --- !u!4 &910831633
 Transform:
   m_ObjectHideFlags: 0
