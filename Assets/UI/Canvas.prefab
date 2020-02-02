@@ -31,7 +31,7 @@ RectTransform:
   m_Children:
   - {fileID: 5201050063614528323}
   m_Father: {fileID: 3424354681516278761}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -572,12 +572,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 3424354682741813702}
-  - {fileID: 3424354682141276639}
   - {fileID: 3424354681863510214}
   - {fileID: 3424354681818887341}
   - {fileID: 3424354681642752358}
   - {fileID: 6766170086983455679}
   - {fileID: 8126867946403125624}
+  - {fileID: 3424354682141276639}
   - {fileID: 3424354683047167346}
   - {fileID: 3424354681167057089}
   m_Father: {fileID: 0}
@@ -679,7 +679,7 @@ RectTransform:
   m_Children:
   - {fileID: 3424354682426928265}
   m_Father: {fileID: 3424354681516278761}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -826,7 +826,7 @@ RectTransform:
   m_Children:
   - {fileID: 3424354681675401773}
   m_Father: {fileID: 3424354681516278761}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -900,7 +900,7 @@ RectTransform:
   m_Children:
   - {fileID: 3424354681914983188}
   m_Father: {fileID: 3424354681516278761}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1178,7 +1178,7 @@ RectTransform:
   - {fileID: 3424354681883003984}
   - {fileID: 3424354682808998790}
   m_Father: {fileID: 3424354681516278761}
-  m_RootOrder: 1
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1857,7 +1857,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3424354681516278761}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1912,6 +1912,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 554feb38d7c766c4cbfa6a08f2b343d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToFade: 1
+  blackImage: {fileID: 0}
+  currentFadeTime: 0
 --- !u!1 &5130545637667377429
 GameObject:
   m_ObjectHideFlags: 0

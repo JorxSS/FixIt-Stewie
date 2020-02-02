@@ -82,7 +82,6 @@ public class GameManager : MonoBehaviour
 
     public void SetControlsVisibility()
     {
-        Debug.Log("About");
         controls.gameObject.SetActive(!controls.gameObject.activeSelf);
     }
 }
