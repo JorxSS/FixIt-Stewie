@@ -19487,6 +19487,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1647040776}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &727007933 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1974068425520140598, guid: 9af9179fcb7776542b718ff384aee3d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1647040776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727007930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &727703160 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4661321904486582, guid: 6feb631b9ce5ff940802dd0f457bf373,
@@ -45860,6 +45872,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 73228791998421341, guid: 9af9179fcb7776542b718ff384aee3d9,
+        type: 3}
+      propertyPath: blackImage
+      value: 
+      objectReference: {fileID: 727007933}
     - target: {fileID: 3424354681437474989, guid: 9af9179fcb7776542b718ff384aee3d9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -46130,6 +46147,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EndGame
       objectReference: {fileID: 0}
+    - target: {fileID: 3467666846671283707, guid: 9af9179fcb7776542b718ff384aee3d9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6766170086983455679, guid: 9af9179fcb7776542b718ff384aee3d9,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -46159,6 +46181,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126867946403125624, guid: 9af9179fcb7776542b718ff384aee3d9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 321
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9af9179fcb7776542b718ff384aee3d9, type: 3}
@@ -54443,7 +54470,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1241168581}
     - target: {fileID: 2554101525859258408, guid: 98a99d19e2b37b64b9857db7b994a271,
         type: 3}
       propertyPath: canvas
@@ -54880,7 +54907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b079bc50680b17445ac707556ebca0d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTime: 200
+  levelTime: 320
   currentTime: 0
   timerBar: {fileID: 1652662806}
 --- !u!114 &1994458485
