@@ -27,6 +27,7 @@ public class InteractibleObject : MonoBehaviour
     public TypeOfObject typeOfObject;
 
     public Mesh reparedGO;
+    public Material reparedMaterial;
     private Material outlineMaterial;
     public Canvas canvas;
     public GameObject progressBarPrefab;
@@ -128,8 +129,10 @@ public class InteractibleObject : MonoBehaviour
         if (!player.GetComponent<PlayerController>().SetCarriedGO(this))
             return;
         SoundManager.instance.PlayPick();
-        transform.parent = player.transform;
-        transform.localPosition = new Vector3(0.01f, 0, 0);
+        GameObject go = GameObject.Find("grabObject");
+        transform.parent = go.transform;
+        transform.localPosition = new Vector3(-0.215f, 0.023f, 0.046f);
+        transform.localEulerAngles = new Vector3(-165.673f, -17.14301f, 92.38899f);
         BoxCollider boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = false;
         NavMeshObstacle navMeshObstacle = GetComponent<NavMeshObstacle>();
@@ -255,6 +258,7 @@ public class InteractibleObject : MonoBehaviour
         player.GetComponent<PlayerMovement>().enableMovement();
         player.GetComponent<PlayerController>().removeObjectInFocus();
         gameObject.GetComponent<MeshFilter>().mesh = reparedGO;
+        gameObject.GetComponent<MeshRenderer>().material = reparedMaterial;
         gameObject.tag = "Repaired";
         SwitchHighlight(false);
         Destroy(this);
