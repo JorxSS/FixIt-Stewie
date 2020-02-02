@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5062239117893357535}
-  m_Mesh: {fileID: -3452426282682445874, guid: f39939b9617429142a432642302e7400, type: 3}
+  m_Mesh: {fileID: -3452426282682445874, guid: 6a92c4d2417f7f8429aa7b7f4eeb14d8, type: 3}
 --- !u!23 &5062239117893357528
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   player: {fileID: 0}
   container: 0
   typeOfObject: 2
-  reparedGO: {fileID: -3794419794936722215, guid: f39939b9617429142a432642302e7400,
+  reparedGO: {fileID: -3794419794936722215, guid: 5e9a6c4563ac67c4ebe0c7a2d7ce0fb5,
     type: 3}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
