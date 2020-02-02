@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [Header("GameState Windows")]
+    public GameObject blackScreen;
     public GameObject winScreen;
     public GameObject loseScreen;
     public GameObject pauseScreen;
@@ -35,4 +36,36 @@ public class UIManager : MonoBehaviour
     {
         pauseScreen.SetActive(enabled);
     }
+
+    public void FadeBlackScreen()
+    {
+        StartCoroutine(FadeBlackScreenCoroutine());
+    }
+
+    IEnumerator FadeBlackScreenCoroutine()
+    {
+        blackScreen.GetComponent<Fader>().Fade();
+        yield return new WaitForSeconds(1);
+        if (GameManager.instance.game_won)
+        {
+            StartCoroutine(WinCoroutine());
+        }
+        else
+        {
+            StartCoroutine(LoseCoroutine());
+        }
+    }
+    IEnumerator WinCoroutine()
+    {
+        SwitchWinScreen(true);
+        yield return new WaitForSeconds(2);
+        GameManager.instance.ChangeScene("MainMenu");
+    }
+      IEnumerator LoseCoroutine()
+    {
+        SwitchWinScreen(true);
+        yield return new WaitForSeconds(2);
+        GameManager.instance.ChangeScene("MainMenu");
+    }
+    
 }

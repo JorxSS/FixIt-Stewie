@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,7 +23,9 @@ public class GameManager : MonoBehaviour
     [Header("Core Managers")]
     public UIManager uiManager;
     public LevelManager levelManager;
+    public Image controls;
 
+    public bool game_won = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +38,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             PauseGame();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            LoseGame();
         }
     }
 
@@ -57,16 +65,24 @@ public class GameManager : MonoBehaviour
 
     public void WinGame()
     {
-        uiManager.SwitchWinScreen(true);
+        game_won = true;
+        uiManager.FadeBlackScreen();
     }
 
     public void LoseGame()
     {
-        uiManager.SwitchLoseScreen(true);
+        game_won = false;
+        uiManager.FadeBlackScreen();
     }
 
     public void EndGame()
     {
         Application.Quit();
+    }
+
+    public void SetControlsVisibility()
+    {
+        Debug.Log("About");
+        controls.gameObject.SetActive(!controls.gameObject.activeSelf);
     }
 }
