@@ -55,6 +55,7 @@ public class DrunkAgent : MonoBehaviour
                     imVomiting = true;
                     myNavMeshAgent.isStopped = true;
                     vomitingSource.Play();
+                    transform.parent = null;
                 }
             }
         }
