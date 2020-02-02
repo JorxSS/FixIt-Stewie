@@ -178,6 +178,7 @@ MonoBehaviour:
   uiManager: {fileID: 0}
   levelManager: {fileID: 0}
   controls: {fileID: 121558178}
+  game_won: 0
 --- !u!114 &794435984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,6 +884,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 794435983}
+    - target: {fileID: 7926297097551855, guid: 729042244a138c943885b0c28f976eba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: sceneExterior
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 729042244a138c943885b0c28f976eba, type: 3}
 --- !u!1001 &504302873954861744

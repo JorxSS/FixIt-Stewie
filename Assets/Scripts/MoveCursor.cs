@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MoveCursor : MonoBehaviour
@@ -41,7 +42,7 @@ public class MoveCursor : MonoBehaviour
             switch(currentPosition)
             {
                 case 0:
-                    GameManager.instance.ChangeScene("FinishedLevelUI");
+                    GameManager.instance.ChangeScene("sceneExterior");
                     break;
                 case 1:
                     GameManager.instance.SetControlsVisibility();
