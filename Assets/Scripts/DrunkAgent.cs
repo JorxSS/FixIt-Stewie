@@ -76,6 +76,10 @@ public class DrunkAgent : MonoBehaviour
         em.enabled = false;
         animator.SetTrigger("Awake");
         groanSource.Play();
+    }
+
+    public void TriggerLeaveHouse()
+    {
         transform.rotation = myNavMeshAgent.transform.rotation;
         imLeaving = true;
         myNavMeshAgent.SetDestination(exit.transform.position);
