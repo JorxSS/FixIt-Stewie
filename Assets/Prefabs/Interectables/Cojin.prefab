@@ -28,9 +28,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3700575976775186176}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2, y: 20.575, z: 18.73}
-  m_LocalScale: {x: 1.3144984, y: 1.110996, z: 0.886}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5025934897274900047}
   - {fileID: 1941834142087838487}
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3700575976775186176}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 532591105809680800, guid: 9784c768cda775e42963d755488a676b, type: 3}
 --- !u!23 &3700575976775186189
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -128,7 +128,8 @@ MonoBehaviour:
   player: {fileID: 0}
   container: 0
   typeOfObject: 2
-  reparedGO: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  reparedGO: {fileID: 4982488361156597595, guid: a1102ffb24ac532469b4cd3d2c081de4,
+    type: 3}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 5546020167007693530, guid: d302ea98a6fb8c84bad686dad4cd3bb8,
     type: 3}
