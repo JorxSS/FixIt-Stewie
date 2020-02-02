@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3700575976775186177}
   - component: {fileID: 3700575976775186186}
   - component: {fileID: 3700575976775186189}
-  - component: {fileID: 3700575976775186188}
   - component: {fileID: 3700575976775186191}
   - component: {fileID: 3700575976775186190}
+  - component: {fileID: -1091684132074117850}
   m_Layer: 0
   m_Name: Cojin
   m_TagString: InteractiveObject
@@ -84,19 +84,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3700575976775186188
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3700575976775186176}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &3700575976775186191
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -136,6 +123,20 @@ MonoBehaviour:
   repairBarSpeed: 3.5
   choresProgres: {fileID: 0}
   levelManager: {fileID: 0}
+--- !u!64 &-1091684132074117850
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3700575976775186176}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 532591105809680800, guid: 9784c768cda775e42963d755488a676b, type: 3}
 --- !u!1001 &3700575976515795605
 PrefabInstance:
   m_ObjectHideFlags: 0

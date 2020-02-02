@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4559200205356452048}
   - component: {fileID: 4559200205356452061}
   - component: {fileID: 4559200205356452060}
-  - component: {fileID: 4559200205356452051}
   - component: {fileID: 4559200205356452050}
   - component: {fileID: 4559200205356452049}
+  - component: {fileID: 2633165947601060838}
   m_Layer: 0
   m_Name: Basura Verde
   m_TagString: InteractiveObject
@@ -82,19 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4559200205356452051
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4559200205356452055}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &4559200205356452050
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -133,3 +120,17 @@ MonoBehaviour:
   repairBarSpeed: 3.5
   choresProgres: {fileID: 0}
   levelManager: {fileID: 0}
+--- !u!64 &2633165947601060838
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559200205356452055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -137217258142192679, guid: 94bc5076bb99a2f4d9f6a02781b295ee, type: 3}

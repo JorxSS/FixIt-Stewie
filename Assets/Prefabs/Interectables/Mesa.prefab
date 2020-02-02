@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1724825128723975235}
   - component: {fileID: 1724825128723975230}
   - component: {fileID: 1724825128723975231}
-  - component: {fileID: 1724825128723975228}
   - component: {fileID: 1724825128723975229}
   - component: {fileID: 1724825128723975234}
+  - component: {fileID: 752086244942051725}
   m_Layer: 0
   m_Name: Mesa
   m_TagString: InteractiveObject
@@ -84,19 +84,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1724825128723975228
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1724825128723975232}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &1724825128723975229
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -136,6 +123,20 @@ MonoBehaviour:
   repairBarSpeed: 3.5
   choresProgres: {fileID: 0}
   levelManager: {fileID: 0}
+--- !u!64 &752086244942051725
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724825128723975232}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4789679332910474710, guid: c9360a73fe08dfd44bd7b7a662f196f8, type: 3}
 --- !u!1001 &1724825128493540141
 PrefabInstance:
   m_ObjectHideFlags: 0

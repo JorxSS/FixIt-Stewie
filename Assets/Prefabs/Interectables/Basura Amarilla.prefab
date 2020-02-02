@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2734874141758509169}
   - component: {fileID: 2734874141758509180}
   - component: {fileID: 2734874141758509181}
-  - component: {fileID: 2734874141758509182}
   - component: {fileID: 2734874141758509183}
   - component: {fileID: 2734874141758509168}
+  - component: {fileID: 1924581076616666545}
   m_Layer: 0
   m_Name: Basura Amarilla
   m_TagString: InteractiveObject
@@ -82,19 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2734874141758509182
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2734874141758509170}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &2734874141758509183
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -133,3 +120,17 @@ MonoBehaviour:
   repairBarSpeed: 3.5
   choresProgres: {fileID: 0}
   levelManager: {fileID: 0}
+--- !u!64 &1924581076616666545
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2734874141758509170}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -137217258142192679, guid: 94bc5076bb99a2f4d9f6a02781b295ee, type: 3}

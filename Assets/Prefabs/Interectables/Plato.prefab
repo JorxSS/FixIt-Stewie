@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1939093149412862392}
   - component: {fileID: 1939093149412862387}
   - component: {fileID: 1939093149412862388}
-  - component: {fileID: 1939093149412862389}
   - component: {fileID: 1939093149412862390}
   - component: {fileID: 1939093149412862391}
+  - component: {fileID: 7757764225724203639}
   m_Layer: 0
   m_Name: Plato
   m_TagString: InteractiveObject
@@ -84,19 +84,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1939093149412862389
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939093149412862393}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &1939093149412862390
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -136,6 +123,20 @@ MonoBehaviour:
   repairBarSpeed: 3.5
   choresProgres: {fileID: 0}
   levelManager: {fileID: 0}
+--- !u!64 &7757764225724203639
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939093149412862393}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7939034096713244988, guid: e01fde7e4a8ce9a4cb8c856928cb1d3b, type: 3}
 --- !u!1001 &1939093149561509716
 PrefabInstance:
   m_ObjectHideFlags: 0
