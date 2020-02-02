@@ -25,7 +25,6 @@ public class Fader : MonoBehaviour
             currentFadeTime += Time.deltaTime;
             float progress = Mathf.Min(currentFadeTime / timeToFade, 1);
             float alpha = faded_in ? progress : 1 - progress;
-            Debug.Log("Alpha is " + alpha);
             blackImage.color = new Vector4(1f, 1f, 1f, alpha);
             if (progress == 1)
             {
