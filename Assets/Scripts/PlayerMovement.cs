@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     public int speed = 10;
     private int realSpeed;
     Rigidbody myRigidBody;
-
     Vector3 lastMovement;
     Vector3 movement;
 
