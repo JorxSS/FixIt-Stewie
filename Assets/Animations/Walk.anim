@@ -84940,7 +84940,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.16666667
-    functionName: TriggerLeaveHouse()
+    functionName: TriggerLeaveHouse
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: 850ce2cf2f0b18141b8c24012cefce1c,
       type: 3}
