@@ -114,6 +114,7 @@ MonoBehaviour:
   container: 0
   typeOfObject: 3
   reparedGO: {fileID: 0}
+  reparedMaterial: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
