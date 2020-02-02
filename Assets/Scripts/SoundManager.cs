@@ -20,6 +20,12 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource footstepsAudioSource;
     public AudioSource repairingAudioSource;
+    public AudioSource mopAudioSource;
+
+    public AudioSource pickAudioSource;
+    public AudioSource dropAudioSource;
+    public AudioSource correctThrowAudioSource;
+    public AudioSource incorrectThrowAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -54,5 +60,36 @@ public class SoundManager : MonoBehaviour
         {
             repairingAudioSource.Stop();
         }
+    }
+    public void SwitchMop(bool enabled)
+    {
+        if (enabled)
+        {
+            mopAudioSource.Play();
+        }
+        else
+        {
+            mopAudioSource.Stop();
+        }
+    }
+
+    public void PlayPick()
+    {
+        pickAudioSource.Play();
+    }
+
+    public void PlayDrop()
+    {
+        dropAudioSource.Play();
+    }
+
+    public void PlayCorrectThrow()
+    {
+        correctThrowAudioSource.Play();
+    }
+
+    public void PlayIncorrectThrow()
+    {
+        incorrectThrowAudioSource.Play();
     }
 }

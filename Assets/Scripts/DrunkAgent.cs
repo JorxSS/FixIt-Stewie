@@ -6,22 +6,28 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class DrunkAgent : MonoBehaviour
 {
-
     public GameObject vomit;
     public Canvas canvas;
     public ChoresProgres choresProgres;
     public GameObject player;
-    NavMeshAgent navMeshAgent;
+    NavMeshAgent myNavMeshAgent;
     bool imLeaving = false;
     bool imVomiting = false;
     public Transform exit;
     float time;
     float totalTime;
+    ParticleSystem sleepParticle;
+    public AudioSource vomitingSource;
+    public AudioSource snoreSource;
+    public AudioSource groanSource;
+    public AudioSource exitSource;
+
     void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        myNavMeshAgent = GetComponent<NavMeshAgent>();
         time = 0;
         totalTime = 0;
+        sleepParticle = GetComponentInChildren<ParticleSystem>();
     }
     private void Update()
     {
@@ -44,7 +50,8 @@ public class DrunkAgent : MonoBehaviour
                     obj.GetComponent<InteractibleObject>().choresProgres = choresProgres;
                     choresProgres.addDestroyChore();
                     imVomiting = true;
-                    navMeshAgent.isStopped = true;
+                    myNavMeshAgent.isStopped = true;
+                    vomitingSource.Play();
                 }
             }
         }
@@ -55,26 +62,30 @@ public class DrunkAgent : MonoBehaviour
             {
                 totalTime = 0;
                 imVomiting = false;
-                navMeshAgent.isStopped = false;
+                myNavMeshAgent.isStopped = false;
             }
         }
     }
     public void LeaveHouse()
     {
-        Debug.Log("OKAAAAAAY I'M LEAVING NOW");
-        transform.rotation = navMeshAgent.transform.rotation;
+        snoreSource.Stop();
+        ParticleSystem.EmissionModule em = sleepParticle.emission;
+        em.enabled = false;
+        groanSource.Play();
+        transform.rotation = myNavMeshAgent.transform.rotation;
         imLeaving = true;
-        navMeshAgent.SetDestination(exit.transform.position);
+        myNavMeshAgent.SetDestination(exit.transform.position);
     }
     void CheckDestinationReached()
     {
-        if (!navMeshAgent.pathPending)
+        if (!myNavMeshAgent.pathPending)
         {
-            if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
+            if (myNavMeshAgent.remainingDistance <= myNavMeshAgent.stoppingDistance)
             {
-                if (!navMeshAgent.hasPath || navMeshAgent.velocity.sqrMagnitude == 0f)
+                if (!myNavMeshAgent.hasPath || myNavMeshAgent.velocity.sqrMagnitude == 0f)
                 {
                     choresProgres.DrunkOut();
+                    exitSource.Play();
                     Destroy(gameObject);
                 }
             }

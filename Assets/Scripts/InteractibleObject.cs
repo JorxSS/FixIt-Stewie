@@ -34,8 +34,9 @@ public class InteractibleObject : MonoBehaviour
     private GameObject pBar;
     private float progressTime;
 
-    public ParticleSystem particleSystem;
-    public ParticleSystem particleDone;
+    ParticleSystem repairParticles;
+    ParticleSystem particleDone;
+    ParticleSystem throwParticle;
 
     private bool doingSomething = false;
 
@@ -46,6 +47,20 @@ public class InteractibleObject : MonoBehaviour
     void Start()
     {
         outlineMaterial = GetComponent<MeshRenderer>().material;
+        if (typeOfObject == TypeOfObject.MOVABLE)
+        {
+            throwParticle = GetComponentInChildren<ParticleSystem>();
+        }
+        else if (typeOfObject == TypeOfObject.REPARABLE)
+        {
+            repairParticles = transform.GetChild(0).GetComponent<ParticleSystem>();
+            particleDone = transform.GetChild(1).GetComponent<ParticleSystem>();
+        }
+        else if (typeOfObject == TypeOfObject.DESTROYABLE)
+        {
+            repairParticles = transform.GetChild(1).GetComponent<ParticleSystem>();
+            particleDone = transform.GetChild(2).GetComponent<ParticleSystem>();
+        }
     }
 
     public void SwitchHighlight(bool highlighted)
@@ -75,9 +90,9 @@ public class InteractibleObject : MonoBehaviour
                 break;
         }
 
-        if (particleSystem != null)
+        if (repairParticles != null)
         {
-            particleSystem.Play();
+            repairParticles.Play();
         }
     }
 
@@ -112,6 +127,7 @@ public class InteractibleObject : MonoBehaviour
     {
         if (!player.GetComponent<PlayerController>().SetCarriedGO(this))
             return;
+        SoundManager.instance.PlayPick();
         transform.parent = player.transform;
         transform.localPosition = new Vector3(0.01f, 0, 0);
         BoxCollider boxCollider = GetComponent<BoxCollider>();
@@ -128,18 +144,29 @@ public class InteractibleObject : MonoBehaviour
             {
                 choresProgres.ChoreCompleted(typeOfObject);
                 carriedGO.IdleToDestroyed();
+				SoundManager.instance.PlayCorrectThrow();
             }
             else if (carriedGO.container == container)
             {
                 choresProgres.ChoreCompleted(typeOfObject);
                 levelManager.BonusTime();
                 carriedGO.IdleToDestroyed();
+				SoundManager.instance.PlayCorrectThrow();
             }
+            else
+            {
+				SoundManager.instance.PlayIncorrectThrow();
+                StartCoroutine(wrongConainerFeedback());
+            }
+
+            if(throwParticle != null)
+                throwParticle.Play();
         }
     }
 
     public void Place()
     {
+        SoundManager.instance.PlayDrop();
         transform.position = player.transform.GetChild(1).transform.position;
         transform.parent = null;
         BoxCollider boxCollider = GetComponent<BoxCollider>();
@@ -151,6 +178,7 @@ public class InteractibleObject : MonoBehaviour
 
     IEnumerator WaitForActionDestroyable()
     {
+        SoundManager.instance.SwitchMop(true);
         doingSomething = true;
         Dissolver dissolver = GetComponent<Dissolver>();
         while (progressTime < 1.5f)
@@ -167,6 +195,7 @@ public class InteractibleObject : MonoBehaviour
         {
             choresProgres.ChoreCompleted(typeOfObject);
         }
+        SoundManager.instance.SwitchMop(false);
         doingSomething = false;
         player.GetComponent<PlayerMovement>().enableMovement();
         Destroy(pBar);
@@ -175,6 +204,7 @@ public class InteractibleObject : MonoBehaviour
 
     IEnumerator WaitForActionReparable()
     {
+        SoundManager.instance.SwitchRepairing(true);
         doingSomething = true;
         int dir = 1;
         float objective = Random.Range(0.0f, 1.0f);
@@ -216,6 +246,10 @@ public class InteractibleObject : MonoBehaviour
                 }
             }
         }
+
+        repairParticles.Stop();
+        particleDone.Play();
+        SoundManager.instance.SwitchRepairing(false);
         choresProgres.ChoreCompleted(typeOfObject);
         doingSomething = false;
         player.GetComponent<PlayerMovement>().enableMovement();
@@ -225,10 +259,32 @@ public class InteractibleObject : MonoBehaviour
         SwitchHighlight(false);
         Destroy(this);
         Destroy(pBar);
+    }
 
-        if (particleDone != null)
+    IEnumerator wrongConainerFeedback()
+    {
+        float time = 0;
+        float speed = 4;
+        float duration = 0.1f;
+        Vector3 origPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        while (time < duration)
         {
-            particleDone.Play();
+            float step = time / duration;
+            if (step <= 0.25)
+            {
+                transform.position = transform.position + new Vector3(0, Time.deltaTime * speed, 0);
+            }
+            else if (step <= 0.75)
+            {
+                transform.position = transform.position - new Vector3(0, Time.deltaTime * speed, 0);
+            }
+            else
+            {
+                transform.position = transform.position + new Vector3(0, Time.deltaTime * speed, 0);
+            }
+            yield return null;
+            time += Time.deltaTime;
         }
+        transform.position = origPos;
     }
 }
