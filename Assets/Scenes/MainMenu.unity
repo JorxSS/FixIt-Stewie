@@ -1261,8 +1261,12 @@ PrefabInstance:
       objectReference: {fileID: 794435983}
     - target: {fileID: 7926297097551855, guid: 729042244a138c943885b0c28f976eba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: sceneExterior
+      value: Intro
       objectReference: {fileID: 0}
+    - target: {fileID: 7926297097551855, guid: 729042244a138c943885b0c28f976eba, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 1328106392}
     - target: {fileID: 7926297372861562, guid: 729042244a138c943885b0c28f976eba, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0

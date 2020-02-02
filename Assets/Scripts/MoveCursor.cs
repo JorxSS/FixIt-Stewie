@@ -42,7 +42,7 @@ public class MoveCursor : MonoBehaviour
             switch(currentPosition)
             {
                 case 0:
-                    GameManager.instance.ChangeScene("sceneExterior");
+                    GameManager.instance.ChangeScene("Intro");
                     break;
                 case 1:
                     UIManager.instance.SwitchControlsVisibility();
