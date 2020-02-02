@@ -78,7 +78,7 @@ public class UIManager : MonoBehaviour
     }
       IEnumerator LoseCoroutine()
     {
-        SwitchWinScreen(true);
+        SwitchLoseScreen(true);
         yield return new WaitForSeconds(2);
         GameManager.instance.ChangeScene("MainMenu");
     }
