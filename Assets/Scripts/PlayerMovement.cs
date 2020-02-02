@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
     public int speed = 10;
     private int realSpeed;
-    NavMeshAgent navMeshAgent;
     Rigidbody myRigidBody;
 
     Vector3 lastMovement;
@@ -18,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
         lastMovement = Vector3.zero;
         myRigidBody = GetComponent<Rigidbody>();
         realSpeed = speed;
@@ -28,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (movement.magnitude > 0)
         {
-            navMeshAgent.ResetPath();
             myRigidBody.transform.position += movement * realSpeed * Time.fixedDeltaTime;
             transform.rotation = Quaternion.LookRotation(movement);
         }
@@ -47,17 +43,6 @@ public class PlayerMovement : MonoBehaviour
         {
             SoundManager.instance.SwitchFootsteps(false);
         }
-    }
-
-    public void MoveToPoint(Vector3 point)
-    {
-        Debug.Log("Hey dude I'm trying to move to this point");
-        transform.rotation = navMeshAgent.transform.rotation;
-        navMeshAgent.SetDestination(point);
-    }
-    public void StopAgent()
-    {
-        navMeshAgent.ResetPath();
     }
 
     public void disableMovement()

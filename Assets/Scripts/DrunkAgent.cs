@@ -22,12 +22,15 @@ public class DrunkAgent : MonoBehaviour
     public AudioSource groanSource;
     public AudioSource exitSource;
 
+    private Animator animator;
+
     void Start()
     {
         myNavMeshAgent = GetComponent<NavMeshAgent>();
         time = 0;
         totalTime = 0;
         sleepParticle = GetComponentInChildren<ParticleSystem>();
+        animator = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -71,7 +74,12 @@ public class DrunkAgent : MonoBehaviour
         snoreSource.Stop();
         ParticleSystem.EmissionModule em = sleepParticle.emission;
         em.enabled = false;
+        animator.SetTrigger("Awake");
         groanSource.Play();
+    }
+
+    public void TriggerLeaveHouse()
+    {
         transform.rotation = myNavMeshAgent.transform.rotation;
         imLeaving = true;
         myNavMeshAgent.SetDestination(exit.transform.position);
