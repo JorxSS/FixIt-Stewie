@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2554101525859258421}
   - component: {fileID: 2554101525859258419}
   - component: {fileID: 2554101525859258408}
+  - component: {fileID: 2068182610}
   m_Layer: 0
   m_Name: Vomito
   m_TagString: InteractiveObject
@@ -120,6 +121,19 @@ MonoBehaviour:
   repairBarSpeed: 3.5
   choresProgres: {fileID: 0}
   levelManager: {fileID: 0}
+--- !u!65 &2068182610
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2554101525859258410}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0021689, y: 0.09348082, z: 1.2855394}
+  m_Center: {x: 0.00000014901161, y: 0.0000000037252903, z: 0.000000059604645}
 --- !u!1001 &695801289468807927
 PrefabInstance:
   m_ObjectHideFlags: 0
