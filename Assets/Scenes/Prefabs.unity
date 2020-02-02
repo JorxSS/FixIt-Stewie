@@ -1470,6 +1470,25 @@ MonoBehaviour:
   distanceZaxis: -4
   distanceYaxis: 3
   playerTransform: {fileID: 1550410179}
+--- !u!1 &1014458904 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2554101525859258410, guid: 98a99d19e2b37b64b9857db7b994a271,
+    type: 3}
+  m_PrefabInstance: {fileID: 790082081}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1014458909
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014458904}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0021691, y: 0.09348082, z: 1.2855395}
+  m_Center: {x: 3.7531288, y: 0.046734612, z: 2.5583606}
 --- !u!4 &1049636538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2595609493865565260, guid: 6524d2ebf54fd77419b37d3dc3f64429,
@@ -4089,11 +4108,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2082253218}
     m_Modifications:
-    - target: {fileID: 752086244942051725, guid: bddd3dbeb6bf8e047a7087d14215785f,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1724825128723975232, guid: bddd3dbeb6bf8e047a7087d14215785f,
         type: 3}
       propertyPath: m_Name

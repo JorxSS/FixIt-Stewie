@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 90304576877990978}
   - component: {fileID: 90304576877990976}
   - component: {fileID: 90304576877990977}
-  - component: {fileID: -2655263591119343160}
+  - component: {fileID: 782673436}
   m_Layer: 0
   m_Name: Silla
   m_TagString: InteractiveObject
@@ -123,8 +123,8 @@ MonoBehaviour:
   repairBarSpeed: 3.5
   choresProgres: {fileID: 0}
   levelManager: {fileID: 0}
---- !u!64 &-2655263591119343160
-MeshCollider:
+--- !u!65 &782673436
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,10 +133,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4702485658933444194, guid: e3e3975598e09d54485fcc9ee8aad699, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.95356506, y: 0.8218858, z: 0.74615234}
+  m_Center: {x: 0, y: -0.000000014901161, z: 0}
 --- !u!1001 &90304576370928020
 PrefabInstance:
   m_ObjectHideFlags: 0
