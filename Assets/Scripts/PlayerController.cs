@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private GameObject objectInFocus = null;
-    
+    public Animator animator;
     PlayerMovement playerMovement;
     InteractibleObject carriedGO = null;
 
@@ -19,9 +19,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")); 
+        Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        animator.SetFloat("speed", movement.magnitude);
         playerMovement.SetMovement(movement);
-
+        if(carriedGO != null)
+        {
+            animator.SetBool("carryObject", true);
+        }
+        else
+        {
+            animator.SetBool("carryObject", false);
+        }
         if (Input.GetButtonDown("Interaction"))
         {
             if (objectInFocus != null)
