@@ -38,11 +38,6 @@ public class GameManager : MonoBehaviour
         {
             PauseGame();
         }
-
-        if (Input.GetKeyUp(KeyCode.Q))
-        {
-            LoseGame();
-        }
     }
 
     public void ChangeScene(string newScene)

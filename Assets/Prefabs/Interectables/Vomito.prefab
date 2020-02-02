@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0727c4a64bd77144798fbda9fc14355a, type: 2}
+  - {fileID: 2100000, guid: 3d6d77f0b0ab27c4093a8b14ccc769ec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -115,6 +115,7 @@ MonoBehaviour:
   container: 0
   typeOfObject: 1
   reparedGO: {fileID: 0}
+  reparedMaterial: {fileID: 0}
   canvas: {fileID: 0}
   progressBarPrefab: {fileID: 3660073384933475841, guid: 94c341aae2646f4498de4f28da9c4a56,
     type: 3}
