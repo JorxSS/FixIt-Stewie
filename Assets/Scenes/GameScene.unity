@@ -45915,7 +45915,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1994458482}
     - target: {fileID: 3424354681516278757, guid: 9af9179fcb7776542b718ff384aee3d9,
         type: 3}
       propertyPath: m_Name
@@ -46125,16 +46125,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1994458482}
     - target: {fileID: 3424354681883003985, guid: 9af9179fcb7776542b718ff384aee3d9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeScene
+      value: ResumeGame
       objectReference: {fileID: 0}
     - target: {fileID: 3424354681883003985, guid: 9af9179fcb7776542b718ff384aee3d9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3424354681883003985, guid: 9af9179fcb7776542b718ff384aee3d9,
         type: 3}
@@ -46145,16 +46145,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1994458482}
     - target: {fileID: 3424354681883003985, guid: 9af9179fcb7776542b718ff384aee3d9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ResumeGame
+      value: ChangeScene
       objectReference: {fileID: 0}
     - target: {fileID: 3424354681883003985, guid: 9af9179fcb7776542b718ff384aee3d9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424354681883003985, guid: 9af9179fcb7776542b718ff384aee3d9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424354681883003985, guid: 9af9179fcb7776542b718ff384aee3d9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 3424354682141276638, guid: 9af9179fcb7776542b718ff384aee3d9,
         type: 3}
@@ -46170,7 +46180,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1994458482}
     - target: {fileID: 3424354682808998791, guid: 9af9179fcb7776542b718ff384aee3d9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -54979,7 +54989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b079bc50680b17445ac707556ebca0d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTime: 320
+  levelTime: 300
   currentTime: 0
   timerBar: {fileID: 1652662806}
 --- !u!114 &1994458485
@@ -55016,7 +55026,7 @@ MonoBehaviour:
   circleRepaired: {fileID: 1647040779}
   circleDrunk: {fileID: 1647040777}
   totalOfContainer: 34
-  totalOfDestroy: 13
+  totalOfDestroy: 10
   totalOfRepaired: 14
   totalOfDrunk: 4
   numberOfContainer: 0
