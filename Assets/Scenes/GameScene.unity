@@ -9310,7 +9310,7 @@ PrefabInstance:
     - target: {fileID: 191846433, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
       propertyPath: canvas
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1647040781}
     - target: {fileID: 191846433, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
       propertyPath: choresProgres
       value: 
@@ -12700,7 +12700,7 @@ PrefabInstance:
     - target: {fileID: 191846433, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
       propertyPath: canvas
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1647040781}
     - target: {fileID: 191846433, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
       propertyPath: choresProgres
       value: 
@@ -21203,7 +21203,7 @@ PrefabInstance:
     - target: {fileID: 191846433, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
       propertyPath: canvas
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1647040781}
     - target: {fileID: 191846433, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
       propertyPath: choresProgres
       value: 
@@ -22697,7 +22697,7 @@ PrefabInstance:
     - target: {fileID: 191846433, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
       propertyPath: canvas
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1647040781}
     - target: {fileID: 191846433, guid: 5e488cfd825ce044395037d93a9d8eb6, type: 3}
       propertyPath: choresProgres
       value: 
