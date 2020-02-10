@@ -15,7 +15,7 @@
   <a href="https://github.com/JorxSS/FixIt-Stewie/">
     <img alt="GitHub repo size in bytes" src="https://img.shields.io/github/repo-size/JorxSS/FixIt-Stewie.svg">
   </a>
-  <a href="https://github.com/JorxSS/FixIt-Stewie/LICENSE">
+  <a href="https://github.com/JorxSS/FixIt-Stewie/blob/master/LICENSE">
     <img alt="GitHub license" src="https://img.shields.io/github/license/JorxSS/FixIt-Stewie.svg">
   </a>
 </p>
